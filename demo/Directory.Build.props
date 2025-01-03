@@ -3,6 +3,6 @@
     <Nullable>enable</Nullable>
     <AvaloniaVersion>11.2.3</AvaloniaVersion>
     <!--<SemiAvaloniaVersion>11.1.0-beta1.1</SemiAvaloniaVersion>-->
-    <SemiAvaloniaVersion>11.2.1</SemiAvaloniaVersion>
+    <SemiAvaloniaVersion>11.2.1.3</SemiAvaloniaVersion>
   </PropertyGroup>
 </Project>

@@ -1,5 +1,15 @@
 # VariableBox
 
+<p align="center">
+
+Wanna help
+
+> 欢迎任何人士帮忙支持并让这个简单控件变得更好，我们需要你们。
+
+> welcome any one to help and make this simple control better, we need you.
+
+</p>
+
 [![GitHub stars](https://img.shields.io/github/stars/heartacker/VariableBox.Avalonia?style=for-the-badge)](https://github.com/heartacker/VariableBox.Avalonia)
 [![GitHub release](https://img.shields.io/github/v/release/heartacker/VariableBox.Avalonia?style=for-the-badge)](https://github.com/heartacker/VariableBox.Avalonia/releases)
 [![Nuget](https://img.shields.io/nuget/v/VariableBox.Avalonia?style=for-the-badge)](https://www.nuget.org/packages/VariableBox.Avalonia)

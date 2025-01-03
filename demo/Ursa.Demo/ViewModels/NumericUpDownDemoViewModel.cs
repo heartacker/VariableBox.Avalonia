@@ -10,9 +10,9 @@ namespace VariableBox.Demo.ViewModels;
 
 public partial class NumericUpDownDemoViewModel : ObservableObject
 {
-    private double _oldWidth = 300;
-    [ObservableProperty] private bool _AutoWidth = true;
-    [ObservableProperty] private double _Width = Double.NaN;
+    private double _oldWidth = 200;
+    [ObservableProperty] private bool _AutoWidth  = false;
+    [ObservableProperty] private double _Width = 200;//Double.NaN;
     [ObservableProperty] private uint _Value;
     [ObservableProperty] private string _FontFamily = "Consolas";
     [ObservableProperty] private bool _IsAllowDrag = false;
@@ -24,7 +24,7 @@ public partial class NumericUpDownDemoViewModel : ObservableObject
     [ObservableProperty] private Array _Array_HorizontalContentAlignment;
     [ObservableProperty] private HorizontalAlignment _HorizontalContentAlignment = HorizontalAlignment.Center;
     [ObservableProperty] private object? _HeaderContent = "0x";
-    [ObservableProperty] private string _Watermark = "Water mark showed";
+    [ObservableProperty] private string _Watermark = "Water mark";
     [ObservableProperty] private string _FormatString = "X8";
     [ObservableProperty] private Array _Array_ParsingNumberStyle;
     [ObservableProperty] private NumberStyles _ParsingNumberStyle = NumberStyles.AllowHexSpecifier;

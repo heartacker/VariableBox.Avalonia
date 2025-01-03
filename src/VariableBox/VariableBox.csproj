@@ -19,6 +19,7 @@
             Enums Updown GetSetBox</Description>
         <Copyright>MIT</Copyright>
         <PackageReadmeFile>README.md</PackageReadmeFile>
+        <Platforms>AnyCPU;x64</Platforms>
     </PropertyGroup>
 
     <ItemGroup>
