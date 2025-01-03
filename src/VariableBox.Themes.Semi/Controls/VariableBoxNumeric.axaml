@@ -60,7 +60,7 @@
 
     <ControlTheme x:Key="{x:Type v:NumericUpDown}" TargetType="{x:Type v:NumericUpDown}">
         <Setter Property="CornerRadius" Value="{DynamicResource NumericUpDownCornerRadius}" />
-        <Setter Property="MinHeight" Value="{DynamicResource NumericUpDownDefaultHeight}"></Setter>
+        <Setter Property="MinHeight" Value="{DynamicResource NumericUpDownDefaultHeight}" />
         <Setter Property="Template">
             <ControlTemplate TargetType="v:NumericUpDown">
                 <DataValidationErrors>
@@ -110,6 +110,7 @@
                                     Margin="2,1,2,0"
                                     Background="Transparent"
                                     Content="*"
+                                    IsHitTestVisible="False"
                                     IsVisible="{TemplateBinding IsEditingVisiable}" />
                             </Panel>
                         </ButtonSpinner>
