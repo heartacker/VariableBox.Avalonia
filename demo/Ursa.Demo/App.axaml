@@ -2,13 +2,15 @@
     x:Class="VariableBox.Demo.App"
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:semi="https://irihi.tech/semi"
     xmlns:v-semi="using:VariableBox.Avalonia.Themes.Semi"
     RequestedThemeVariant="Default">
     <Application.Styles>
         <FluentTheme />
         <SimpleTheme />
-        <StyleInclude Source="avares://Semi.Avalonia/Themes/Index.axaml" />
+        <!-- <StyleInclude Source="avares://Semi.Avalonia/Themes/Index.axaml" /> -->
         <!--  later apply  -->
+        <semi:SemiTheme Locale="zh-CN" />
         <v-semi:SemiTheme Locale="zh-CN" />
     </Application.Styles>
 </Application>

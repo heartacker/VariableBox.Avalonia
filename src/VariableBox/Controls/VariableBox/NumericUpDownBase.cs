@@ -400,12 +400,17 @@ public abstract class NumericUpDown : TemplatedControl/* , Control */ /*, IClear
         }
         if (e.Key == Key.Enter || (e.Key == Key.Right && e.KeyModifiers == KeyModifiers.Alt))
         {
-            if (IsEditing)
+            // var _fmtedString = ConvertValueToText(Value);
+            // if (IsEditing)
             {
+                // if value changed, fire a changed,
+                // if value not changed but text is changed, SyncTextAndValue without trigger
                 var commitSuccess = CommitInput(true);
                 e.Handled = !commitSuccess;
             }
-            else if (e.KeyModifiers == KeyModifiers.Alt)
+            // if value changed, trigger had been fired above,
+            // if value not changed, fire a changed anyway
+            if (!IsEditing && e.KeyModifiers == KeyModifiers.Alt)
             {
                 OnWrite(this, e);
                 e.Handled = true;
@@ -524,6 +529,13 @@ public abstract class NumericUpDown : TemplatedControl/* , Control */ /*, IClear
         return SyncTextAndValue(true, _textBox?.Text, forceTextUpdate);
     }
 
+    /// <summary>
+    /// 同步更新 value 和显示的 text
+    /// </summary>
+    /// <param name="fromTextToValue">指示是否从text 的变化更新到值，还是值反过来</param>
+    /// <param name="text">text 2 value 的时候，text</param>
+    /// <param name="forceTextUpdate"></param>
+    /// <returns></returns>
     protected abstract bool SyncTextAndValue(bool fromTextToValue = false, string? text = null,
         bool forceTextUpdate = false);
 
@@ -1080,7 +1092,7 @@ public abstract class NumericUpDownBase<T> : NumericUpDown where T : struct, ICo
             return string.Format(NumberFormat, FormatString, value);
         }
 
-        return ValueToString(Value);
+        return ValueToString(value);
     }
 
 
