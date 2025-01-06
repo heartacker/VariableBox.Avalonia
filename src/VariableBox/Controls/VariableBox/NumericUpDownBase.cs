@@ -337,9 +337,10 @@ public abstract class NumericUpDown : TemplatedControl/* , Control */ /*, IClear
     {
         var commitSuccess = CommitInput(true);
         e.Handled = !commitSuccess;
-        if (commitSuccess)
+        if (commitSuccess && !IsEditing)
             OnWrite(sender, e);
     }
+
     protected abstract void OnWrite(object sender, RoutedEventArgs e);
 
     private void OnReadBefore(object sender, RoutedEventArgs e)
