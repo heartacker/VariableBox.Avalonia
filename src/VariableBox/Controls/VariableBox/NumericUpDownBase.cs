@@ -314,13 +314,13 @@ public abstract class NumericUpDown : TemplatedControl/* , Control */ /*, IClear
     protected void OnApplyTemplateReadWrite(TemplateAppliedEventArgs e)
     {
         RepeatButton.ClickEvent.RemoveHandler(OnReadBefore, _repeatReadButton);
-        RepeatButton.ClickEvent.RemoveHandler(OnWrite, _repeatWriteButton);
+        RepeatButton.ClickEvent.RemoveHandler(OnWriteBefore, _repeatWriteButton);
 
         _repeatReadButton = e.NameScope.Find<RepeatButton>(PART_RepeatRead);
         _repeatWriteButton = e.NameScope.Find<RepeatButton>(PART_RepeatWrite);
 
         RepeatButton.ClickEvent.AddHandler(OnReadBefore, _repeatReadButton);
-        RepeatButton.ClickEvent.AddHandler(OnWrite, _repeatWriteButton);
+        RepeatButton.ClickEvent.AddHandler(OnWriteBefore, _repeatWriteButton);
     }
 
     private void OnTextBoxDoubleTapped(object? sender, TappedEventArgs e)
@@ -333,11 +333,19 @@ public abstract class NumericUpDown : TemplatedControl/* , Control */ /*, IClear
     }
     protected abstract void OnHeaderDoubleTaped(object? sender, TappedEventArgs e);
 
+    private void OnWriteBefore(object sender, RoutedEventArgs e)
+    {
+        var commitSuccess = CommitInput(true);
+        e.Handled = !commitSuccess;
+        if (commitSuccess)
+            OnWrite(sender, e);
+    }
     protected abstract void OnWrite(object sender, RoutedEventArgs e);
 
     private void OnReadBefore(object sender, RoutedEventArgs e)
     {
-        if (IsEditing) return;
+        if (IsEditing)
+            return;
         OnRead(sender, e);
     }
 
@@ -827,7 +835,9 @@ public abstract class NumericUpDownBase<T> : NumericUpDown where T : struct, ICo
         ValueProperty.Changed.AddClassHandler<NumericUpDownBase<T>>((o, e) => o.OnValueChanged(e));
     }
 
-    private void OnConstraintChanged(AvaloniaPropertyChangedEventArgs avaloniaPropertyChangedEventArgs)
+    private void OnConstraintChanged(
+        AvaloniaPropertyChangedEventArgs avaloniaPropertyChangedEventArgs
+    )
     {
         if (IsInitialized)
         {
