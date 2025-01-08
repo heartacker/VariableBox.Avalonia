@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <Import Project="../Package.props" />
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <LangVersion>latest</LangVersion>
+        <Version>$(VariableBoxVersion)</Version>
+        <Authors>heartacker</Authors>
+        <PackageId>VariableBox.Avalonia.Themes.Semi</PackageId>
+        <PackageIcon></PackageIcon>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/heartacker/VariableBox.Avalonia</PackageProjectUrl>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+        <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+        <Platforms>AnyCPU;x64</Platforms>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Avalonia" Version="$(AvaloniaVersion)" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\VariableBox\VariableBox.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="irihi.png" Pack="true" PackagePath="" />
+    </ItemGroup>
+
+</Project>

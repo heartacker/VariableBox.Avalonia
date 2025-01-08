@@ -1,0 +1,6 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StreamGeometry x:Key="ButtonSpinnerIncreaseButtonIcon">M0,5 L4.5,.5 9,5 6,5 4.5,3.5 3,5 z</StreamGeometry>
+    <StreamGeometry x:Key="ButtonSpinnerDecreaseButtonIcon">M0,0 L3,0 4.5,1.5 6,0 9,0 4.5,4.5 z</StreamGeometry>
+    <CornerRadius x:Key="ButtonSpinnerButtonGroupCornerRadius">1</CornerRadius>
+    <Thickness x:Key="ButtonSpinnerButtonGroupBorderThickness">1</Thickness>
+</ResourceDictionary>

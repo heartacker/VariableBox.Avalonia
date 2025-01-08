@@ -1,0 +1,162 @@
+﻿<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:v="VariableBox">
+
+    <ControlTheme x:Key="InputClearButton" TargetType="Button">
+        <Setter Property="Button.Foreground" Value="{DynamicResource TextBoxButtonDefaultForeground}" />
+        <Setter Property="Button.Cursor" Value="Hand" />
+        <Setter Property="Button.Template">
+            <ControlTemplate TargetType="Button">
+                <!--  Background must be transparent or hit test will fail  -->
+                <ContentControl Background="Transparent">
+                    <PathIcon
+                        Width="16"
+                        Height="16"
+                        Data="{DynamicResource TextBoxClearButtonData}"
+                        Foreground="{TemplateBinding Foreground}" />
+                </ContentControl>
+            </ControlTemplate>
+        </Setter>
+        <Style Selector="^:pointerover">
+            <Setter Property="Foreground" Value="{DynamicResource TextBoxButtonPointeroverForeground}" />
+        </Style>
+    </ControlTheme>
+
+    <ControlTheme x:Key="{x:Type v:NumericUpDown}" TargetType="{x:Type v:NumericUpDown}">
+        <Setter Property="CornerRadius" Value="{DynamicResource NumericUpDownCornerRadius}" />
+        <Setter Property="MinHeight" Value="{DynamicResource NumericUpDownDefaultHeight}" />
+        <Setter Property="Template">
+            <ControlTemplate TargetType="v:NumericUpDown">
+                <DataValidationErrors>
+                    <Grid ColumnDefinitions="*,auto">
+                        <ButtonSpinner
+                            Name="PART_Spinner"
+                            MinWidth="0"
+                            HorizontalContentAlignment="Stretch"
+                            VerticalContentAlignment="Stretch"
+                            AllowSpin="{TemplateBinding IsAllowSpin}"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            ShowButtonSpinner="{TemplateBinding ShowButtonSpinner}">
+                            <Panel Background="Transparent">
+                                <TextBox
+                                    Name="PART_TextBox"
+                                    Height="{TemplateBinding Height}"
+                                    MinHeight="{TemplateBinding MinHeight}"
+                                    HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                    VerticalContentAlignment="Center"
+                                    AcceptsReturn="False"
+                                    CornerRadius="{TemplateBinding CornerRadius}"
+                                    DataValidationErrors.Errors="{ReflectionBinding $parent[v:NumericUpDown].(DataValidationErrors.Errors)}"
+                                    FontSize="{TemplateBinding FontSize}"
+                                    Foreground="{TemplateBinding Foreground}"
+                                    InnerLeftContent="{TemplateBinding HeaderContent}"
+                                    TextWrapping="NoWrap"
+                                    Theme="{DynamicResource NonErrorTextBox}"
+                                    Watermark="{TemplateBinding Watermark}" />
+                                <Panel
+                                    Name="PART_DragPanel"
+                                    HorizontalAlignment="Stretch"
+                                    VerticalAlignment="Stretch"
+                                    Background="Transparent"
+                                    Cursor="SizeAll"
+                                    IsVisible="{TemplateBinding IsAllowDrag}" />
+                                <Button
+                                    Name="PART_ClearButton"
+                                    Margin="0,0,8,0"
+                                    HorizontalAlignment="Right"
+                                    Command="{Binding $parent[v:NumericUpDown].Clear}"
+                                    Focusable="False"
+                                    IsVisible="False"
+                                    Theme="{StaticResource InputClearButton}" />
+                                <Label
+                                    Name="PART_Id_IsEditing"
+                                    Margin="2,1,2,0"
+                                    Background="Transparent"
+                                    Content="*"
+                                    IsHitTestVisible="False"
+                                    IsVisible="{TemplateBinding IsEditingVisiable}" />
+                            </Panel>
+                        </ButtonSpinner>
+
+                        <Border
+                            Name="ButtonGroup2"
+                            Grid.Column="1"
+                            MinWidth="16"
+                            Margin="1,0,0,0"
+                            Background="Transparent"
+                            BorderBrush="{DynamicResource ButtonSpinnerRepeatButtonBorderBrush}"
+                            BorderThickness="{DynamicResource ButtonSpinnerButtonGroupBorderThickness}"
+                            CornerRadius="{DynamicResource ButtonSpinnerButtonGroupCornerRadius}"
+                            IsVisible="{TemplateBinding IsReadWriteButtonShow}"
+                            UseLayoutRounding="False">
+                            <Grid Background="Transparent" ColumnDefinitions="auto,auto">
+                                <RepeatButton
+                                    Name="PART_RepeatRead"
+                                    Grid.Column="0"
+                                    Width="16"
+                                    MinWidth="0"
+                                    Padding="0,0,0,0"
+                                    HorizontalContentAlignment="Center"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{DynamicResource ButtonSpinnerRepeatButtonBorderBrush}"
+                                    BorderThickness="{DynamicResource ButtonSpinnerButtonGroupBorderThickness}"
+                                    CornerRadius="{DynamicResource ButtonSpinnerButtonGroupCornerRadius}"
+                                    IsVisible="{TemplateBinding IsShowReadButton}">
+                                    <PathIcon Width="9" Data="{DynamicResource ButtonSpinnerIncreaseButtonIcon}">
+                                        <PathIcon.RenderTransform>
+                                            <RotateTransform Angle="-90" />
+                                        </PathIcon.RenderTransform>
+                                    </PathIcon>
+                                </RepeatButton>
+
+                                <RepeatButton
+                                    Name="PART_RepeatWrite"
+                                    Grid.Column="1"
+                                    Width="16"
+                                    MinWidth="0"
+                                    Padding="0"
+                                    HorizontalContentAlignment="Center"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{DynamicResource ButtonSpinnerRepeatButtonBorderBrush}"
+                                    BorderThickness="{DynamicResource ButtonSpinnerButtonGroupBorderThickness}"
+                                    CornerRadius="{DynamicResource ButtonSpinnerButtonGroupCornerRadius}"
+                                    IsVisible="{TemplateBinding IsShowWriteButton}">
+                                    <PathIcon Width="9" Data="{DynamicResource ButtonSpinnerDecreaseButtonIcon}">
+                                        <!--  Data="{DynamicResource ButtonSpinnerWriteButtonGlyph}">  -->
+                                        <!--  Width="14" fluent  -->
+                                        <PathIcon.RenderTransform>
+                                            <RotateTransform Angle="-90" />
+                                        </PathIcon.RenderTransform>
+                                    </PathIcon>
+                                </RepeatButton>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </DataValidationErrors>
+            </ControlTemplate>
+        </Setter>
+
+        <Style Selector="^.clearButton, ^.ClearButton">
+            <Style Selector="^[IsReadOnly=False]:focus /template/ Button#PART_ClearButton">
+                <Setter Property="IsVisible" Value="True" />
+            </Style>
+            <Style Selector="^[IsReadOnly=False]:pointerover /template/ Button#PART_ClearButton">
+                <Setter Property="IsVisible" Value="True" />
+            </Style>
+        </Style>
+        <Style Selector="^[IsShowReadButton=false] /template/ RepeatButton#PART_RepeatWrite">
+            <Setter Property="Margin" Value="0 0 0 0" />
+        </Style>
+
+        <Style Selector="^[IsEditingValid=false] /template/ Label#PART_Id_IsEditing">
+            <Setter Property="Foreground" Value="Red" />
+        </Style>
+        <Style Selector="^[IsEditingValid=true] /template/ Label#PART_Id_IsEditing">
+            <Setter Property="Foreground" Value="Green" />
+        </Style>
+
+    </ControlTheme>
+</ResourceDictionary>
