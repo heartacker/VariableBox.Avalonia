@@ -81,6 +81,7 @@
                                     Height="{TemplateBinding Height}"
                                     MinHeight="{TemplateBinding MinHeight}"
                                     HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                    VerticalContentAlignment="Center"
                                     AcceptsReturn="False"
                                     CornerRadius="{TemplateBinding CornerRadius}"
                                     DataValidationErrors.Errors="{ReflectionBinding $parent[v:NumericUpDown].(DataValidationErrors.Errors)}"
@@ -139,8 +140,8 @@
                                     BorderBrush="{DynamicResource ButtonSpinnerRepeatButtonBorderBrush}"
                                     BorderThickness="{DynamicResource ButtonSpinnerButtonGroupBorderThickness}"
                                     CornerRadius="{DynamicResource ButtonSpinnerButtonGroupCornerRadius}"
-                                    IsVisible="{TemplateBinding IsShowReadButton}"
-                                    Theme="{StaticResource ButtonSpinnerRepeatButton}">
+                                    IsVisible="{TemplateBinding IsShowReadButton}">
+                                    <!--  Theme="{StaticResource ButtonSpinnerRepeatButton}">  -->
                                     <PathIcon
                                         Width="8"
                                         Height="8"
@@ -160,8 +161,8 @@
                                     BorderBrush="{DynamicResource ButtonSpinnerRepeatButtonBorderBrush}"
                                     BorderThickness="{DynamicResource ButtonSpinnerButtonGroupBorderThickness}"
                                     CornerRadius="{DynamicResource ButtonSpinnerButtonGroupCornerRadius}"
-                                    IsVisible="{TemplateBinding IsShowWriteButton}"
-                                    Theme="{StaticResource ButtonSpinnerRepeatButton}">
+                                    IsVisible="{TemplateBinding IsShowWriteButton}">
+                                    <!--  Theme="{StaticResource ButtonSpinnerRepeatButton}">  -->
                                     <PathIcon
                                         Width="8"
                                         Height="8"
