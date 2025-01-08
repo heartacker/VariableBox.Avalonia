@@ -2,9 +2,9 @@ using System.Globalization;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using Avalonia.Styling;
-using VariableBox.Avalonia.Themes.Simple.Locale;
+using VariableBox.Avalonia.Themes.Locale;
 
-namespace VariableBox.Avalonia.Themes.Simple;
+namespace VariableBox.Avalonia.Themes;
 
 /// <summary>
 /// Notice: Don't set Locale if your app is in InvariantGlobalization mode.

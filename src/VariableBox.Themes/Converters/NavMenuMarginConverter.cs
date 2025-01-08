@@ -2,7 +2,7 @@ using System.Globalization;
 using Avalonia;
 using Avalonia.Data.Converters;
 
-namespace VariableBox.Themes.Simple.Converters;
+namespace VariableBox.Themes.Converters;
 
 public class NavMenuMarginConverter: IMultiValueConverter
 {

@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
 using Avalonia.Data.Converters;
 
-namespace VariableBox.Themes.Simple.Converters;
+namespace VariableBox.Themes.Converters;
 
 public class BooleansToOpacityConverter: IValueConverter
 {

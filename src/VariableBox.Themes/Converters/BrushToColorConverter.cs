@@ -3,7 +3,7 @@ using Avalonia;
 using Avalonia.Data.Converters;
 using Avalonia.Media;
 
-namespace VariableBox.Themes.Simple.Converters;
+namespace VariableBox.Themes.Converters;
 
 public class BrushToColorConverter: IValueConverter
 {

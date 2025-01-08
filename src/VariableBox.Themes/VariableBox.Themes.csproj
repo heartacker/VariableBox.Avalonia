@@ -9,7 +9,7 @@
         <LangVersion>latest</LangVersion>
         <Version>$(VariableBoxVersion)</Version>
         <Authors>heartacker</Authors>
-        <PackageId>VariableBox.Avalonia.Themes.Semi</PackageId>
+        <PackageId>VariableBox.Avalonia.Themes</PackageId>
         <PackageIcon></PackageIcon>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/heartacker/VariableBox.Avalonia</PackageProjectUrl>
@@ -24,10 +24,6 @@
 
     <ItemGroup>
         <ProjectReference Include="..\VariableBox\VariableBox.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-        <None Include="irihi.png" Pack="true" PackagePath="" />
     </ItemGroup>
 
 </Project>
