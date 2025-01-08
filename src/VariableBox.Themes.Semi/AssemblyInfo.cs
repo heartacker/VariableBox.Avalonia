@@ -1,4 +1,4 @@
 ﻿using Avalonia.Metadata;
 
-[assembly:XmlnsPrefix("VariableBox.Avalonia.Themes.Semi", "v-semi")]
-[assembly:XmlnsDefinition("VariableBox.Avalonia.Themes.Semi", "VariableBox.Avalonia.Themes.Semi")]
+[assembly: XmlnsPrefix("vbox-semi", "VariableBox.Avalonia.Themes.Semi")]
+[assembly: XmlnsDefinition("VariableBox", "VariableBox.Avalonia.Themes.Semi")]

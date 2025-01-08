@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:v="VariableBox">
+    xmlns:v="using:VariableBox.Controls">
 
     <!--  Add Resources Here  -->
     <StreamGeometry x:Key="ButtonSpinnerReadButtonGlyph">M20 5 10 30 20 55 30 55 20 30 30 5Z</StreamGeometry>

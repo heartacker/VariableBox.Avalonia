@@ -1,6 +1,6 @@
 using Avalonia.Metadata;
 
-[assembly:XmlnsPrefix("VariableBox", "v")]
+[assembly:XmlnsPrefix("vbox", "VariableBox")]
 [assembly:XmlnsDefinition("VariableBox", "VariableBox")]
 [assembly:XmlnsDefinition("VariableBox", "VariableBox.Controls")]
 // [assembly:XmlnsDefinition("VariableBox", "VariableBox.Controls.Shapes")]
