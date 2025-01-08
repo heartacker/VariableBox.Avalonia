@@ -2,15 +2,23 @@
     x:Class="VariableBox.Demo.App"
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:VariableBox.Demo.Converters"
     xmlns:semi="https://irihi.tech/semi"
+    xmlns:v-Simple="using:VariableBox.Avalonia.Themes.Simple"
     xmlns:v-semi="using:VariableBox.Avalonia.Themes.Semi"
-    RequestedThemeVariant="Default">
+    RequestedThemeVariant="Light">
+    <Application.DataTemplates>
+        <!--<local:ViewLocator />-->
+    </Application.DataTemplates>
     <Application.Styles>
-        <FluentTheme />
-        <SimpleTheme />
-        <!-- <StyleInclude Source="avares://Semi.Avalonia/Themes/Index.axaml" /> -->
+        <!--<FluentTheme />-->
+        <!--<SimpleTheme />-->
+
         <!--  later apply  -->
+        <!-- <StyleInclude Source="avares://Semi.Avalonia/Themes/Index.axaml" /> -->
         <semi:SemiTheme Locale="zh-CN" />
+
         <v-semi:SemiTheme Locale="zh-CN" />
+        <!--<v-Simple:SimpleTheme Locale="zh-CN" />-->
     </Application.Styles>
 </Application>

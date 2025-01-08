@@ -36,13 +36,11 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\src\VariableBox.Themes.Semi\VariableBox.Themes.Semi.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-    </ItemGroup>
-
-    <ItemGroup>
         <Folder Include="Models\" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\src\VariableBox.Themes.Semi\VariableBox.Themes.Semi.csproj" />
+        <ProjectReference Include="..\..\src\VariableBox.Themes.Simple\VariableBox.Themes.Simple.csproj" />
     </ItemGroup>
 </Project>
