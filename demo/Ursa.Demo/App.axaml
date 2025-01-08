@@ -5,7 +5,7 @@
     xmlns:local="clr-namespace:VariableBox.Demo.Converters"
     xmlns:semi="https://irihi.tech/semi"
     xmlns:v-semi="using:VariableBox.Avalonia.Themes.Semi"
-    xmlns:vbox-theme="using:VariableBox.Avalonia.Themes"
+    xmlns:vbox="VariableBox"
     RequestedThemeVariant="Light">
     <Application.DataTemplates>
         <!--<local:ViewLocator />-->
@@ -16,8 +16,8 @@
 
         <!--  later apply  -->
         <!-- <StyleInclude Source="avares://Semi.Avalonia/Themes/Index.axaml" /> -->
-        <!--<semi:SemiTheme Locale="zh-CN" />-->
-        <vbox-theme:SimpleTheme Locale="zh-CN" />
+        <semi:SemiTheme Locale="zh-CN" />
+        <vbox:SemiTheme Locale="zh-CN" />
         <!--<v-semi:SemiTheme Locale="zh-CN" />-->
     </Application.Styles>
 </Application>
