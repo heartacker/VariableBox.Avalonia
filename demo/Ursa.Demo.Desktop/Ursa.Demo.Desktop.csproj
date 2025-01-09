@@ -12,6 +12,8 @@
 
     <PropertyGroup>
         <ApplicationManifest>app.manifest</ApplicationManifest>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)'=='Release'">
         <PublishAot>True</PublishAot>
         <PublishTrimmed>True</PublishTrimmed>
     </PropertyGroup>
