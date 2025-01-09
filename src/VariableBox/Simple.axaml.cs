@@ -4,14 +4,14 @@ using Avalonia.Markup.Xaml;
 using Avalonia.Styling;
 using VariableBox.Themes.Locale;
 
-namespace VariableBox.Avalonia.Themes;
+namespace VariableBox.Themes;
 
 /// <summary>
 /// Notice: Don't set Locale if your app is in InvariantGlobalization mode.
 /// </summary>
 public class SimpleTheme: Styles
 {
-    private static readonly Lazy<Dictionary<CultureInfo, ResourceDictionary>> _localeToResource 
+    private static readonly Lazy<Dictionary<CultureInfo, ResourceDictionary>> _localeToResource
         = new Lazy<Dictionary<CultureInfo, ResourceDictionary>>(
         () => new Dictionary<CultureInfo, ResourceDictionary>
         {
