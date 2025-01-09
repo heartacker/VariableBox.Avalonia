@@ -92,7 +92,7 @@ To make Ursa controls show up in your application, you need to reference to a th
 
 **YOU do not need any other VariableBox package now**
 
-- `vbox:SemiThemes` is a theme package for Ursa inspired by Semi Design.
+- `vbox:SemiTheme` is a theme package for Ursa inspired by Semi Design.
    >you need to `add package Semi.Avalonia` frist
 
 - `vbox:SimpleTheme` is compatible with `<SimpleTheme/>`
