@@ -21,6 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Files", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		demo\Directory.Build.props = demo\Directory.Build.props
 		src\Package.props = src\Package.props
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VariableBox", "src\VariableBox\VariableBox.csproj", "{54BBCD4E-2802-4AE5-8788-FDBF97A4141C}"

@@ -25,6 +25,12 @@ VariableBox is a UI library for building cross-platform UIs with Avalonia UI.
 
 ![Demo](./assets/light_demo.png)
 
+## ChangeLog
+
+- 2025/1/9
+   1. Using a theme pack that is compatible with `Simple`, `Fluent`, and `SemiThemes`.
+
+
 ## Feature
 
 ### NumericalUpDown
@@ -66,7 +72,7 @@ You can now use Ursa controls in your Avalonia Application.
 ```xml
 <Window
     ...
-    xmlns:v="VariableBox"
+    xmlns:vbox="VariableBox"
     ...>
     <StackPanel Margin="20">
         <v:VariableBoxUInt Value="{Binding Value}" 
@@ -80,15 +86,15 @@ You can now use Ursa controls in your Avalonia Application.
 </Window>
 ```
 
-### VariableBox.Avalonia.Themes.Semi
+### VariableBox.Avalonia.Themes
 
 To make Ursa controls show up in your application, you need to reference to a theme package designed for VariableBox.
 
-- `VariableBox.Avalonia.Themes.Semi` is a theme package for Ursa inspired by Semi Design.
+- `vbox:SemiThemes` is a theme package for Ursa inspired by Semi Design.
    >you need to `add package Semi.Avalonia` frist
 
-- also `VariableBox.Avalonia.Themes.Semi` is compatible with `<SimpleTheme/>`
-- `VariableBox.Avalonia.Themes.Semi` is NOT compatible with `<FluentTheme/>`
+- `vbox:SimpleTheme` is compatible with `<SimpleTheme/>`
+- `vbox:FluentTheme` is compatible with `<FluentTheme/>`
 
 You can add it to your project by following steps.
 
@@ -96,26 +102,28 @@ You can add it to your project by following steps.
 
 ```bash
 dotnet add package Semi.Avalonia
-dotnet add package VariableBox.Avalonia.Themes.Semi
+dotnet add package VariableBox.Avalonia.Themes
 ```
 
 2. Include Styles in application:
 
 ```xml
 <Application...
-    xmlns:v-semi="using:VariableBox.Avalonia.Themes.Semi"
+    xmlns:vbox="VariableBox"
     ....>
 
     <Application.Styles>
         <!-- compatible theme -->
 
+        <!-- set this theme -->
+        <vbox:FluentTheme Locale="zh-CN"/>
+
         <!-- 1. SimpleTheme -->
         <SimpleTheme/>
+        <vbox:SimpleTheme Locale="zh-CN"/>
 
-        <!-- 2. Semi, recommand -->
-        <StyleInclude Source="avares://Semi.Avalonia/Themes/Index.axaml" />
-
-        <!-- set this theme -->
-        <v-semi:SemiTheme Locale="zh-CN"/>
+        <!-- if use semi -->        
+        <semi:SemiTheme Locale="zh-CN"/>
+        <vbox:SemiTheme Locale="zh-CN"/>
     </Application.Styles>
 ```
