@@ -29,6 +29,7 @@ VariableBox is a UI library for building cross-platform UIs with Avalonia UI.
 
 - 2025/1/9
    1. Using a theme pack that is compatible with `Simple`, `Fluent`, and `SemiThemes`.
+   2. Package Theme To the Control Package, You do not need another package anymore
 
 
 ## Feature
