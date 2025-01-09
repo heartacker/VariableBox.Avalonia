@@ -109,6 +109,7 @@
                                     BorderBrush="{DynamicResource ButtonSpinnerRepeatButtonBorderBrush}"
                                     BorderThickness="0"
                                     CornerRadius="{DynamicResource ButtonSpinnerButtonGroupCornerRadius}"
+                                    Foreground="{TemplateBinding Foreground}"
                                     IsVisible="{TemplateBinding IsShowReadButton}">
                                     <PathIcon Width="{DynamicResource ButtonSpinnerIncreaseButtonWidth}" Data="{DynamicResource ButtonSpinnerIncreaseButtonIcon}">
                                         <PathIcon.RenderTransform>
@@ -129,6 +130,7 @@
                                     BorderBrush="{DynamicResource ButtonSpinnerRepeatButtonBorderBrush}"
                                     BorderThickness="0"
                                     CornerRadius="{DynamicResource ButtonSpinnerButtonGroupCornerRadius}"
+                                    Foreground="{TemplateBinding Foreground}"
                                     IsVisible="{TemplateBinding IsShowWriteButton}">
                                     <PathIcon Width="{DynamicResource ButtonSpinnerIncreaseButtonWidth}" Data="{DynamicResource ButtonSpinnerDecreaseButtonIcon}">
                                         <!--  Data="{DynamicResource ButtonSpinnerWriteButtonGlyph}">  -->
