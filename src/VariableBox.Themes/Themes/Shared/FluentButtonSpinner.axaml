@@ -48,6 +48,8 @@
     <StreamGeometry x:Key="ButtonSpinnerIncreaseButtonIcon">M0,9 L10,0 20,9 19,10 10,2 1,10 z</StreamGeometry>
     <StreamGeometry x:Key="ButtonSpinnerDecreaseButtonIcon">M0,1 L10,10 20,1 19,0 10,8 1,0 z</StreamGeometry>
 
+    <x:Double x:Key="ButtonSpinnerIncreaseButtonWidth">11</x:Double>
+
     <ControlTheme x:Key="FluentButtonSpinnerRepeatButton" TargetType="RepeatButton">
         <Setter Property="MinWidth" Value="34" />
         <Setter Property="Template">
@@ -100,15 +102,20 @@
                         BorderThickness="{TemplateBinding BorderThickness}"
                         CornerRadius="{TemplateBinding CornerRadius}">
                         <DockPanel>
+
                             <StackPanel
                                 Name="PART_SpinnerPanel"
+                                Margin="1,0,0,0"
+                                VerticalAlignment="Center"
                                 DockPanel.Dock="Right"
                                 IsVisible="{TemplateBinding ShowButtonSpinner}"
                                 Orientation="Vertical"
                                 TabIndex="2">
+
                                 <RepeatButton
                                     Name="PART_IncreaseButton"
-                                    MinWidth="34"
+                                    Height="14"
+                                    MinWidth="20"
                                     VerticalAlignment="Stretch"
                                     VerticalContentAlignment="Center"
                                     Background="{TemplateBinding Background}"
@@ -119,14 +126,15 @@
                                     IsTabStop="{TemplateBinding IsTabStop}"
                                     Theme="{StaticResource FluentButtonSpinnerRepeatButton}">
                                     <PathIcon
-                                        Width="16"
+                                        Width="12"
                                         Height="8"
                                         Data="{StaticResource ButtonSpinnerIncreaseButtonIcon}" />
                                 </RepeatButton>
 
                                 <RepeatButton
                                     Name="PART_DecreaseButton"
-                                    MinWidth="34"
+                                    Height="14"
+                                    MinWidth="20"
                                     VerticalAlignment="Stretch"
                                     VerticalContentAlignment="Center"
                                     Background="{TemplateBinding Background}"
@@ -137,7 +145,7 @@
                                     IsTabStop="{TemplateBinding IsTabStop}"
                                     Theme="{StaticResource FluentButtonSpinnerRepeatButton}">
                                     <PathIcon
-                                        Width="16"
+                                        Width="12"
                                         Height="8"
                                         Data="{StaticResource ButtonSpinnerDecreaseButtonIcon}" />
                                 </RepeatButton>
@@ -145,8 +153,8 @@
 
                             <ContentPresenter
                                 Name="PART_ContentPresenter"
-                                Grid.Column="1"
-                                Padding="{TemplateBinding Padding}"
+                                Margin="{TemplateBinding Margin}"
+                                Padding="1"
                                 HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
                                 VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
                                 Content="{TemplateBinding Content}"
@@ -157,17 +165,6 @@
                 </DataValidationErrors>
             </ControlTemplate>
         </Setter>
-        <Style Selector="^:left">
-            <Style Selector="^ /template/ StackPanel#PART_SpinnerPanel">
-                <Setter Property="DockPanel.Dock" Value="Left" />
-            </Style>
-            <Style Selector="^ /template/ RepeatButton">
-                <Setter Property="BorderThickness" Value="{TemplateBinding BorderThickness, Converter={StaticResource ButtonSpinnerRightThickness}}" />
-            </Style>
-        </Style>
-        <Style Selector="^:error">
-            <Setter Property="BorderBrush" Value="{DynamicResource SystemErrorTextColor}" />
-        </Style>
     </ControlTheme>
 
 </ResourceDictionary>
