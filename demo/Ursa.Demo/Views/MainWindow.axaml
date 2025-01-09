@@ -29,6 +29,12 @@
                 OffContent="{StaticResource SemiIconSun}"
                 OnContent="{StaticResource SemiIconMoon}"
                 Theme="{DynamicResource IconBorderlessToggleSwitch}" />
+            <NumericUpDown />
+            <TextBox
+                VerticalAlignment="Center"
+                VerticalContentAlignment="Center"
+                InnerLeftContent="innertext"
+                Text="Center" />
         </StackPanel>
         <Pages:NumericUpDownDemo Grid.Row="1" />
     </Grid>

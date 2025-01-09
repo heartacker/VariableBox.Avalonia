@@ -11,13 +11,14 @@
         <!--<local:ViewLocator />-->
     </Application.DataTemplates>
     <Application.Styles>
-        <FluentTheme />
-        <!-- <SimpleTheme /> -->
 
-        <!--  later apply  -->
-        <!-- <StyleInclude Source="avares://Semi.Avalonia/Themes/Index.axaml" /> -->
-        <!-- <semi:SemiTheme Locale="zh-CN" /> -->
+        <!--<semi:SemiTheme Locale="zh-CN" />
+        <vbox:SemiTheme Locale="zh-CN" />-->
+
+        <FluentTheme />
         <vbox:FluentTheme Locale="zh-CN" />
-        <!--<v-semi:SemiTheme Locale="zh-CN" />-->
+
+        <!--<SimpleTheme />
+        <vbox:SimpleTheme Locale="zh-CN" />-->
     </Application.Styles>
 </Application>

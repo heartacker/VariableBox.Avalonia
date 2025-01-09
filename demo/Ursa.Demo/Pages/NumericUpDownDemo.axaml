@@ -20,7 +20,7 @@
         </Style>
     </UserControl.Styles>
 
-    <Grid ColumnDefinitions="400,auto,*" RowDefinitions="auto,*">
+    <Grid ColumnDefinitions="500,auto,*" RowDefinitions="auto,*">
 
         <Expander
             Margin="2"
