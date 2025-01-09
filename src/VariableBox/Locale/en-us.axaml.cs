@@ -1,6 +1,6 @@
 using Avalonia.Controls;
 
-namespace VariableBox.Avalonia.Themes.Locale;
+namespace VariableBox.Themes.Locale;
 
 public class en_us: ResourceDictionary
 {

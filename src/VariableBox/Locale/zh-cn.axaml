@@ -1,5 +1,5 @@
 ﻿<ResourceDictionary
-    x:Class="VariableBox.Avalonia.Themes.Locale.zh_cn"
+    x:Class="VariableBox.Themes.Locale.zh_cn"
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <!--  Add Resources Here  -->

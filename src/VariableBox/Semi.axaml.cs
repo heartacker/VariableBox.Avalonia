@@ -2,14 +2,14 @@ using System.Globalization;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using Avalonia.Styling;
-using VariableBox.Avalonia.Themes.Locale;
+using VariableBox.Themes.Locale;
 
-namespace VariableBox.Avalonia.Themes;
+namespace VariableBox.Themes;
 
 /// <summary>
 /// Notice: Don't set Locale if your app is in InvariantGlobalization mode.
 /// </summary>
-public class SimpleTheme: Styles
+public class SemiTheme: Styles
 {
     private static readonly Lazy<Dictionary<CultureInfo, ResourceDictionary>> _localeToResource 
         = new Lazy<Dictionary<CultureInfo, ResourceDictionary>>(
@@ -22,7 +22,7 @@ public class SimpleTheme: Styles
     private static readonly ResourceDictionary _defaultResource = new zh_cn();
 
     private readonly IServiceProvider? sp;
-    public SimpleTheme(IServiceProvider? provider = null)
+    public SemiTheme(IServiceProvider? provider = null)
     {
         sp = provider;
         AvaloniaXamlLoader.Load(provider, this);
