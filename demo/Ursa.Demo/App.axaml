@@ -12,11 +12,11 @@
     </Application.DataTemplates>
     <Application.Styles>
 
-        <!--<semi:SemiTheme Locale="zh-CN" />
-        <vbox:SemiTheme Locale="zh-CN" />-->
+        <semi:SemiTheme Locale="zh-CN" />
+        <vbox:SemiTheme Locale="zh-CN" />
 
-        <FluentTheme />
-        <vbox:FluentTheme Locale="zh-CN" />
+        <!--<FluentTheme />
+        <vbox:FluentTheme Locale="zh-CN" />-->
 
         <!--<SimpleTheme />
         <vbox:SimpleTheme Locale="zh-CN" />-->
