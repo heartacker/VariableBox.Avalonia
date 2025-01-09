@@ -39,6 +39,7 @@
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{TemplateBinding CornerRadius}"
                             ShowButtonSpinner="{TemplateBinding ShowButtonSpinner}">
                             <Panel Background="Transparent">
                                 <TextBox
@@ -92,20 +93,24 @@
                             CornerRadius="{DynamicResource ButtonSpinnerButtonGroupCornerRadius}"
                             IsVisible="{TemplateBinding IsReadWriteButtonShow}"
                             UseLayoutRounding="False">
-                            <Grid Background="Transparent" ColumnDefinitions="auto,auto">
+                            <Grid
+                                VerticalAlignment="Stretch"
+                                Background="Transparent"
+                                ColumnDefinitions="auto,auto">
                                 <RepeatButton
                                     Name="PART_RepeatRead"
                                     Grid.Column="0"
                                     Width="16"
                                     MinWidth="0"
                                     Padding="0,0,0,0"
+                                    VerticalAlignment="Stretch"
                                     HorizontalContentAlignment="Center"
                                     Background="{TemplateBinding Background}"
                                     BorderBrush="{DynamicResource ButtonSpinnerRepeatButtonBorderBrush}"
-                                    BorderThickness="{DynamicResource ButtonSpinnerButtonGroupBorderThickness}"
+                                    BorderThickness="0"
                                     CornerRadius="{DynamicResource ButtonSpinnerButtonGroupCornerRadius}"
                                     IsVisible="{TemplateBinding IsShowReadButton}">
-                                    <PathIcon Width="9" Data="{DynamicResource ButtonSpinnerIncreaseButtonIcon}">
+                                    <PathIcon Width="{DynamicResource ButtonSpinnerIncreaseButtonWidth}" Data="{DynamicResource ButtonSpinnerIncreaseButtonIcon}">
                                         <PathIcon.RenderTransform>
                                             <RotateTransform Angle="-90" />
                                         </PathIcon.RenderTransform>
@@ -118,13 +123,14 @@
                                     Width="16"
                                     MinWidth="0"
                                     Padding="0"
+                                    VerticalAlignment="Stretch"
                                     HorizontalContentAlignment="Center"
                                     Background="{TemplateBinding Background}"
                                     BorderBrush="{DynamicResource ButtonSpinnerRepeatButtonBorderBrush}"
-                                    BorderThickness="{DynamicResource ButtonSpinnerButtonGroupBorderThickness}"
+                                    BorderThickness="0"
                                     CornerRadius="{DynamicResource ButtonSpinnerButtonGroupCornerRadius}"
                                     IsVisible="{TemplateBinding IsShowWriteButton}">
-                                    <PathIcon Width="9" Data="{DynamicResource ButtonSpinnerDecreaseButtonIcon}">
+                                    <PathIcon Width="{DynamicResource ButtonSpinnerIncreaseButtonWidth}" Data="{DynamicResource ButtonSpinnerDecreaseButtonIcon}">
                                         <!--  Data="{DynamicResource ButtonSpinnerWriteButtonGlyph}">  -->
                                         <!--  Width="14" fluent  -->
                                         <PathIcon.RenderTransform>
