@@ -86,9 +86,11 @@ You can now use Ursa controls in your Avalonia Application.
 </Window>
 ```
 
-### VariableBox.Avalonia.Themes
+### VariableBox.Themes
 
 To make Ursa controls show up in your application, you need to reference to a theme package designed for VariableBox.
+
+**YOU do not need any other VariableBox package now**
 
 - `vbox:SemiThemes` is a theme package for Ursa inspired by Semi Design.
    >you need to `add package Semi.Avalonia` frist
@@ -102,7 +104,7 @@ You can add it to your project by following steps.
 
 ```bash
 dotnet add package Semi.Avalonia
-dotnet add package VariableBox.Avalonia.Themes
+dotnet add package VariableBox.Avalonia
 ```
 
 2. Include Styles in application:
