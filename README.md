@@ -75,7 +75,7 @@ You can now use Ursa controls in your Avalonia Application.
     xmlns:vbox="VariableBox"
     ...>
     <StackPanel Margin="20">
-        <v:VariableBoxUInt Value="{Binding Value}" 
+        <vbox:VariableBoxUInt Value="{Binding Value}" 
             FormatString="X8"
             HeaderContent="0x"
             ParsingNumberStyle="AllowHexSpecifier"
