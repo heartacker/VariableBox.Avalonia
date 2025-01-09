@@ -29,6 +29,9 @@
                 OffContent="{StaticResource SemiIconSun}"
                 OnContent="{StaticResource SemiIconMoon}"
                 Theme="{DynamicResource IconBorderlessToggleSwitch}" />
+            <Button Content="Fluent" Command="{Binding SwitchThemeCommand}" CommandParameter="Fluent" />
+            <Button Content="Simple" Command="{Binding SwitchThemeCommand}" CommandParameter="Simple" />
+            <Button Content="Semi" Command="{Binding SwitchThemeCommand}" CommandParameter="Semi" />
             <NumericUpDown />
             <TextBox
                 VerticalAlignment="Center"
