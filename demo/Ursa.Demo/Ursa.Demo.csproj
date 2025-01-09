@@ -40,7 +40,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\src\VariableBox.Themes.Semi\VariableBox.Themes.Semi.csproj" />
-        <ProjectReference Include="..\..\src\VariableBox.Themes\VariableBox.Themes.csproj" />
+      <ProjectReference Include="..\..\src\VariableBox\VariableBox.csproj" />
     </ItemGroup>
 </Project>
