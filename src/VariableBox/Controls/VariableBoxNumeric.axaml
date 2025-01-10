@@ -31,7 +31,7 @@
         <Setter Property="Template">
             <ControlTemplate TargetType="v:NumericUpDown">
                 <DataValidationErrors>
-                    <Grid ColumnDefinitions="*,auto">
+                    <Grid Background="Transparent" ColumnDefinitions="*,auto">
                         <ButtonSpinner
                             Name="PART_Spinner"
                             MinWidth="0"
@@ -63,6 +63,7 @@
                                     HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
                                     VerticalContentAlignment="Center"
                                     AcceptsReturn="False"
+                                    Background="Transparent"
                                     CornerRadius="{TemplateBinding CornerRadius}"
                                     DataValidationErrors.Errors="{ReflectionBinding $parent[v:NumericUpDown].(DataValidationErrors.Errors)}"
                                     FontSize="{TemplateBinding FontSize}"
