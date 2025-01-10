@@ -14,11 +14,9 @@ Wanna help
 [![GitHub release](https://img.shields.io/github/v/release/heartacker/VariableBox.Avalonia?style=for-the-badge)](https://github.com/heartacker/VariableBox.Avalonia/releases)
 [![Nuget](https://img.shields.io/nuget/v/VariableBox.Avalonia?style=for-the-badge)](https://www.nuget.org/packages/VariableBox.Avalonia)
 ![Nuget](https://img.shields.io/nuget/dt/VariableBox.Avalonia?style=for-the-badge)
-[![Nuget](https://img.shields.io/nuget/v/VariableBox.Avalonia.Themes.Semi?style=for-the-badge)](https://www.nuget.org/packages/VariableBox.Avalonia.Themes.Semi)
-![Nuget](https://img.shields.io/nuget/dt/VariableBox.Avalonia.Themes.Semi?style=for-the-badge)
 
 <p align="center">
-    <img src="./assets/light_demo.png" alt="drawing" width="150" />
+    <img src="./Logo.svg" alt="drawing" width="150" />
 </p>
 
 VariableBox is a UI library for building cross-platform UIs with Avalonia UI.
