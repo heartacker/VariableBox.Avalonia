@@ -6,6 +6,7 @@ namespace Ursa.Demo.Browser;
 public static class AvaloniaAppBuilderExtensions
 {
     private static string DefaultFontFamily => "avares://Ursa.Demo.Browser/Assets#Source Han Sans CN";
+    //private static string DefaultFontFamily => "Courier New";
 
     public static AppBuilder WithSourceHanSansCNFont(this AppBuilder builder) =>
         builder.With(new FontManagerOptions
