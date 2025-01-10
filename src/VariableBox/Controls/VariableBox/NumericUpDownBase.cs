@@ -204,10 +204,17 @@ public abstract class NumericUpDown : TemplatedControl/* , Control */ /*, IClear
         protected set => SetValue(IsEditingVisiableProperty, value && IsEnableEditingIndicator);
     }
 
+    public static readonly StyledProperty<bool> IsEditingProperty =
+    AvaloniaProperty.Register<NumericUpDown, bool>(nameof(IsEditing), false);
+
     /// <summary>
     /// 指示当前是否正在编辑，如果为true，则不允许用户点击 <see cref="OnSpin"/>  和 read <see cref="OnReadBefore"/>
     /// </summary>
-    public bool IsEditing { get; protected set; }
+    public bool IsEditing
+    {
+        get => GetValue(IsEditingProperty);
+        protected set => SetValue(IsEditingProperty, value);
+    }
 
     public static readonly StyledProperty<bool> IsEnableEditingIndicatorProperty =
         AvaloniaProperty.Register<NumericUpDown, bool>(nameof(IsEnableEditingIndicator), true, false, BindingMode.TwoWay);
@@ -732,6 +739,13 @@ public abstract class NumericUpDownBase<T> : NumericUpDown where T : struct, ICo
         get => this.GetValue(CommandParameterProperty);
         set => this.SetValue(CommandParameterProperty, value);
     }
+
+    #endregion
+
+    #region ClearCommand
+
+    public static readonly StyledProperty<ICommand?> ClearProperty =
+        AvaloniaProperty.Register<NumericUpDown, ICommand?>(nameof(Clear));
 
     #endregion
 

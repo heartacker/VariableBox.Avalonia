@@ -41,6 +41,17 @@
                             BorderThickness="{TemplateBinding BorderThickness}"
                             CornerRadius="{TemplateBinding CornerRadius}"
                             ShowButtonSpinner="{TemplateBinding ShowButtonSpinner}">
+                            <!--
+                            <ButtonSpinner.AllowSpin>
+                                <MultiBinding Converter="{x:Static BoolConverters.And}">
+                                    <Binding Path="IsAllowSpin" RelativeSource="{RelativeSource TemplatedParent}" />
+                                    <Binding
+                                        Converter="{x:Static BoolConverters.Not}"
+                                        Path="IsEditing"
+                                        RelativeSource="{RelativeSource TemplatedParent}" />
+                                </MultiBinding>
+                            </ButtonSpinner.AllowSpin>
+                            -->
                             <Panel Background="Transparent">
                                 <TextBox
                                     Name="PART_TextBox"
@@ -94,6 +105,8 @@
                             IsVisible="{TemplateBinding IsReadWriteButtonShow}"
                             UseLayoutRounding="False">
                             <Grid
+                                Margin="0,2,0,2"
+                                HorizontalAlignment="Stretch"
                                 VerticalAlignment="Stretch"
                                 Background="Transparent"
                                 ColumnDefinitions="auto,auto">
@@ -102,7 +115,6 @@
                                     Grid.Column="0"
                                     Width="16"
                                     MinWidth="0"
-                                    Padding="0,0,0,0"
                                     VerticalAlignment="Stretch"
                                     HorizontalContentAlignment="Center"
                                     Background="{TemplateBinding Background}"
@@ -123,7 +135,6 @@
                                     Grid.Column="1"
                                     Width="16"
                                     MinWidth="0"
-                                    Padding="0"
                                     VerticalAlignment="Stretch"
                                     HorizontalContentAlignment="Center"
                                     Background="{TemplateBinding Background}"
@@ -155,15 +166,29 @@
                 <Setter Property="IsVisible" Value="True" />
             </Style>
         </Style>
+
         <Style Selector="^[IsShowReadButton=false] /template/ RepeatButton#PART_RepeatWrite">
             <Setter Property="Margin" Value="0 0 0 0" />
         </Style>
 
+        <!--  IsEditingValid  -->
         <Style Selector="^[IsEditingValid=false] /template/ Label#PART_Id_IsEditing">
             <Setter Property="Foreground" Value="Red" />
         </Style>
         <Style Selector="^[IsEditingValid=true] /template/ Label#PART_Id_IsEditing">
             <Setter Property="Foreground" Value="Green" />
+        </Style>
+
+        <Style Selector="^[IsEditing=true] /template/ ButtonSpinner#PART_Spinner">
+            <Setter Property="AllowSpin" Value="False" />
+        </Style>
+
+        <Style Selector="^[IsEditing=true] /template/ RepeatButton#PART_RepeatRead">
+            <Setter Property="IsEnabled" Value="False" />
+        </Style>
+
+        <Style Selector="^[IsEditing=true] /template/ RepeatButton#PART_RepeatWrite">
+            <Setter Property="IsEnabled" Value="False" />
         </Style>
 
     </ControlTheme>
