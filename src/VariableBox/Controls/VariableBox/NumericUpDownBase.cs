@@ -18,6 +18,7 @@ namespace VariableBox.Controls;
 [TemplatePart(PART_DragPanel, typeof(Panel))]
 [TemplatePart(PART_RepeatRead, typeof(RepeatButton))]
 [TemplatePart(PART_RepeatWrite, typeof(RepeatButton))]
+[PseudoClasses(":editing", ":invalid")]
 public abstract class NumericUpDown : TemplatedControl/* , Control */ /*, IClearControl*/
 {
     public const string PART_Spinner = "PART_Spinner";
@@ -43,6 +44,12 @@ public abstract class NumericUpDown : TemplatedControl/* , Control */ /*, IClear
     protected internal bool _canDecrease = true;
 
 
+    private void UpdatePseudoClasses()
+    {
+        PseudoClasses.Set(":editing", IsEditing);
+        PseudoClasses.Set(":invalid", !IsEditingValid);
+    }
+
     public static readonly StyledProperty<bool> IsAllowDragProperty =
         AvaloniaProperty.Register<NumericUpDown, bool>(nameof(IsAllowDrag), defaultBindingMode: BindingMode.TwoWay);
 
@@ -62,7 +69,7 @@ public abstract class NumericUpDown : TemplatedControl/* , Control */ /*, IClear
     }
 
     public static readonly StyledProperty<HorizontalAlignment> HorizontalContentAlignmentProperty =
-       ContentControl.HorizontalContentAlignmentProperty.AddOwner<NumericUpDown>();
+        ContentControl.HorizontalContentAlignmentProperty.AddOwner<NumericUpDown>();
     public HorizontalAlignment HorizontalContentAlignment
     {
         get => GetValue(HorizontalContentAlignmentProperty);
@@ -205,7 +212,7 @@ public abstract class NumericUpDown : TemplatedControl/* , Control */ /*, IClear
     }
 
     public static readonly StyledProperty<bool> IsEditingProperty =
-    AvaloniaProperty.Register<NumericUpDown, bool>(nameof(IsEditing), false);
+        AvaloniaProperty.Register<NumericUpDown, bool>(nameof(IsEditing), false);
 
     /// <summary>
     /// 指示当前是否正在编辑，如果为true，则不允许用户点击 <see cref="OnSpin"/>  和 read <see cref="OnReadBefore"/>
@@ -370,6 +377,7 @@ public abstract class NumericUpDown : TemplatedControl/* , Control */ /*, IClear
 
         IsEditingVisiable = IsEditing = ed;
         IsEditingValid = edv;
+        UpdatePseudoClasses();
     }
 
     protected override void OnGotFocus(GotFocusEventArgs e)
