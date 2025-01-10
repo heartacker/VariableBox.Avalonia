@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Android.Content.PM;
 using Avalonia.Android;
+using VariableBox.Demo;
 
 namespace Ursa.Demo.Android;
 
