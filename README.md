@@ -108,24 +108,38 @@ dotnet add package VariableBox.Avalonia
 ```
 
 2. Include Styles in application:
-
+- FluentTheme
 ```xml
 <Application...
     xmlns:vbox="VariableBox"
     ....>
-
     <Application.Styles>
-        <!-- compatible theme -->
-
         <!-- set this theme -->
         <vbox:FluentTheme Locale="zh-CN"/>
+    </Application.Styles>
+```
 
-        <!-- 1. SimpleTheme -->
+
+- SimpleTheme
+```xml
+<Application...
+    xmlns:vbox="VariableBox"
+    ....>
+    <Application.Styles>
         <SimpleTheme/>
         <vbox:SimpleTheme Locale="zh-CN"/>
+    </Application.Styles>
+```
 
+- SemiTheme
+```xml
+<Application...
+    xmlns:vbox="VariableBox"
+    ....>
+    <Application.Styles>
         <!-- if use semi -->        
         <semi:SemiTheme Locale="zh-CN"/>
         <vbox:SemiTheme Locale="zh-CN"/>
     </Application.Styles>
 ```
+
