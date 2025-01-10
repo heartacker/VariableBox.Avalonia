@@ -18,11 +18,15 @@
             <Setter Property="HorizontalAlignment" Value="Left" />
             <Setter Property="HorizontalContentAlignment" Value="Left" />
         </Style>
+        <Style Selector=":is(Button)">
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+        </Style>
     </UserControl.Styles>
 
-    <Grid ColumnDefinitions="500,auto,*" RowDefinitions="auto,*">
+    <Grid ColumnDefinitions="350,auto,*" RowDefinitions="auto,*">
 
         <Expander
+            MinWidth="350"
             Margin="2"
             BorderBrush="AliceBlue"
             BorderThickness="2"

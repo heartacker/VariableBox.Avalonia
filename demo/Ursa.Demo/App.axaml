@@ -4,9 +4,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:VariableBox.Demo.Converters"
     xmlns:semi="https://irihi.tech/semi"
-    xmlns:v-semi="using:VariableBox.Avalonia.Themes.Semi"
     xmlns:vbox="VariableBox"
-    RequestedThemeVariant="Light">
+    RequestedThemeVariant="Default">
     <Application.DataTemplates>
         <!--<local:ViewLocator />-->
     </Application.DataTemplates>
