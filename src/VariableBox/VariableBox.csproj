@@ -10,7 +10,7 @@
         <Version>$(VariableBoxVersion)</Version>
         <Authors>heartacker</Authors>
         <PackageId>VariableBox.Avalonia</PackageId>
-        <PackageIcon>Logo.svg</PackageIcon>
+        <PackageIcon>Logo.png</PackageIcon>
         <PackageProjectUrl>https://github.com/heartacker/VariableBox.Avalonia</PackageProjectUrl>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
@@ -25,6 +25,10 @@
     </ItemGroup>
 
     <ItemGroup>
+        <None Include="..\..\Logo.png">
+          <Pack>True</Pack>
+          <PackagePath>\</PackagePath>
+        </None>
         <None Include="..\..\README.md">
           <Pack>True</Pack>
           <PackagePath>\</PackagePath>
