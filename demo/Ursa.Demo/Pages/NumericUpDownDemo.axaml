@@ -25,6 +25,9 @@
         <Style Selector="v|NumericUpDown:invalid">
             <Setter Property="Foreground" Value="red" />
         </Style>
+        <Style Selector="v|NumericUpDown:editing">
+            <Setter Property="Background" Value="Yellow" />
+        </Style>
     </UserControl.Styles>
 
     <Grid ColumnDefinitions="350,auto,*" RowDefinitions="auto,*">
