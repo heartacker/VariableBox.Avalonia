@@ -10,13 +10,11 @@
         <Version>$(VariableBoxVersion)</Version>
         <Authors>heartacker</Authors>
         <PackageId>VariableBox.Avalonia</PackageId>
-        <PackageIcon></PackageIcon>
+        <PackageIcon>Logo.svg</PackageIcon>
         <PackageProjectUrl>https://github.com/heartacker/VariableBox.Avalonia</PackageProjectUrl>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-        <Description>Numeric Updown GetSetBox
-            Items Updown GetSetBox
-            Enums Updown GetSetBox</Description>
+        <Description>Numeric Updown/Items Updown/Enums Updown</Description>
         <Copyright>MIT</Copyright>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <Platforms>AnyCPU;x64</Platforms>
@@ -27,7 +25,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="Controls\Panels\" />
         <None Include="..\..\README.md">
           <Pack>True</Pack>
           <PackagePath>\</PackagePath>
