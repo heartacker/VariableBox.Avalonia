@@ -105,7 +105,6 @@
                             IsVisible="{TemplateBinding IsReadWriteButtonShow}"
                             UseLayoutRounding="False">
                             <Grid
-                                Margin="0,2,0,2"
                                 HorizontalAlignment="Stretch"
                                 VerticalAlignment="Stretch"
                                 Background="Transparent"
@@ -115,6 +114,7 @@
                                     Grid.Column="0"
                                     Width="16"
                                     MinWidth="0"
+                                    Padding="0"
                                     VerticalAlignment="Stretch"
                                     HorizontalContentAlignment="Center"
                                     Background="{TemplateBinding Background}"
@@ -135,6 +135,7 @@
                                     Grid.Column="1"
                                     Width="16"
                                     MinWidth="0"
+                                    Padding="0"
                                     VerticalAlignment="Stretch"
                                     HorizontalContentAlignment="Center"
                                     Background="{TemplateBinding Background}"
