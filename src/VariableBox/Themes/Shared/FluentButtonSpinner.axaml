@@ -3,7 +3,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:converters="using:Avalonia.Controls.Converters"
     xmlns:sys="using:System"
-    x:ClassModifier="internal">
+    x:ClassModifier="internal"
+    >
     <Design.PreviewWith>
         <Border Padding="20">
             <StackPanel Spacing="20">
@@ -12,17 +13,20 @@
                 <ButtonSpinner
                     BorderBrush="Blue"
                     BorderThickness="2"
-                    Content="Right Border" />
+                    Content="Right Border"
+                    />
                 <ButtonSpinner
                     BorderBrush="Blue"
                     BorderThickness="2"
                     ButtonSpinnerLocation="Left"
-                    Content="Left Border" />
+                    Content="Left Border"
+                    />
                 <ButtonSpinner AllowSpin="False" Content="Right disabled" />
                 <ButtonSpinner
                     AllowSpin="False"
                     ButtonSpinnerLocation="Left"
-                    Content="Left disabled" />
+                    Content="Left disabled"
+                    />
                 <ButtonSpinner Content="Hide spinner" ShowButtonSpinner="False" />
                 <ButtonSpinner Content="Error">
                     <DataValidationErrors.Error>
@@ -40,11 +44,13 @@
     <converters:MarginMultiplierConverter
         x:Key="ButtonSpinnerLeftThickness"
         Indent="1"
-        Left="True" />
+        Left="True"
+        />
     <converters:MarginMultiplierConverter
         x:Key="ButtonSpinnerRightThickness"
         Indent="1"
-        Right="True" />
+        Right="True"
+        />
     <StreamGeometry x:Key="ButtonSpinnerIncreaseButtonIcon">M0,9 L10,0 20,9 19,10 10,2 1,10 z</StreamGeometry>
     <StreamGeometry x:Key="ButtonSpinnerDecreaseButtonIcon">M0,1 L10,10 20,1 19,0 10,8 1,0 z</StreamGeometry>
 
@@ -63,7 +69,8 @@
                     BorderBrush="{TemplateBinding BorderBrush}"
                     BorderThickness="{TemplateBinding BorderThickness}"
                     Content="{TemplateBinding Content}"
-                    ContentTemplate="{TemplateBinding ContentTemplate}" />
+                    ContentTemplate="{TemplateBinding ContentTemplate}"
+                    />
             </ControlTemplate>
         </Setter>
         <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
@@ -100,7 +107,8 @@
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
-                        CornerRadius="{TemplateBinding CornerRadius}">
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        >
                         <DockPanel>
 
                             <StackPanel
@@ -110,7 +118,8 @@
                                 DockPanel.Dock="Right"
                                 IsVisible="{TemplateBinding ShowButtonSpinner}"
                                 Orientation="Vertical"
-                                TabIndex="2">
+                                TabIndex="2"
+                                >
 
                                 <RepeatButton
                                     Name="PART_IncreaseButton"
@@ -124,11 +133,13 @@
                                                                       Converter={StaticResource ButtonSpinnerLeftThickness}}"
                                     Foreground="{TemplateBinding Foreground}"
                                     IsTabStop="{TemplateBinding IsTabStop}"
-                                    Theme="{StaticResource FluentButtonSpinnerRepeatButton}">
+                                    Theme="{StaticResource FluentButtonSpinnerRepeatButton}"
+                                    >
                                     <PathIcon
                                         Width="12"
                                         Height="8"
-                                        Data="{StaticResource ButtonSpinnerIncreaseButtonIcon}" />
+                                        Data="{StaticResource ButtonSpinnerIncreaseButtonIcon}"
+                                        />
                                 </RepeatButton>
 
                                 <RepeatButton
@@ -143,11 +154,13 @@
                                                                       Converter={StaticResource ButtonSpinnerLeftThickness}}"
                                     Foreground="{TemplateBinding Foreground}"
                                     IsTabStop="{TemplateBinding IsTabStop}"
-                                    Theme="{StaticResource FluentButtonSpinnerRepeatButton}">
+                                    Theme="{StaticResource FluentButtonSpinnerRepeatButton}"
+                                    >
                                     <PathIcon
                                         Width="12"
                                         Height="8"
-                                        Data="{StaticResource ButtonSpinnerDecreaseButtonIcon}" />
+                                        Data="{StaticResource ButtonSpinnerDecreaseButtonIcon}"
+                                        />
                                 </RepeatButton>
                             </StackPanel>
 
@@ -159,7 +172,8 @@
                                 VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
                                 Content="{TemplateBinding Content}"
                                 ContentTemplate="{TemplateBinding ContentTemplate}"
-                                TabIndex="1" />
+                                TabIndex="1"
+                                />
                         </DockPanel>
                     </Border>
                 </DataValidationErrors>

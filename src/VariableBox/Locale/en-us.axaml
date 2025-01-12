@@ -1,7 +1,8 @@
 ﻿<ResourceDictionary
     x:Class="VariableBox.Themes.Locale.en_us"
     xmlns="https://github.com/avaloniaui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    >
     <!--  Add Resources Here  -->
     <x:String x:Key="STRING_VARIABLEBOX_UP">Increase</x:String>
     <x:String x:Key="STRING_VARIABLEBOX_DOWN">Decrease</x:String>

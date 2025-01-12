@@ -10,7 +10,8 @@
     d:DesignWidth="800"
     x:CompileBindings="True"
     x:DataType="vm:NumericUpDownDemoViewModel"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    >
 
     <UserControl.Styles>
         <Style Selector=":is(v|NumericUpDown)">
@@ -34,11 +35,13 @@
             BorderBrush="AliceBlue"
             BorderThickness="2"
             Header="Demo"
-            IsExpanded="True">
+            IsExpanded="True"
+            >
             <StackPanel
                 Grid.ColumnSpan="1"
                 Margin="10"
-                HorizontalAlignment="Stretch">
+                HorizontalAlignment="Stretch"
+                >
                 <v:VariableBoxUInt
                     Name="numd"
                     Width="{Binding Width}"
@@ -64,29 +67,34 @@
                     ShowButtonSpinner="{Binding ShowButtonSpinner}"
                     Step="{Binding Step}"
                     Watermark="{Binding Watermark}"
-                    Value="{Binding Value}" />
+                    Value="{Binding Value}"
+                    />
                 <Button Content="ValueChange(Write)" />
                 <TextBox
                     Width="NaN"
                     HorizontalAlignment="Center"
                     IsReadOnly="true"
-                    Text="{Binding CommandUpdateText}" />
+                    Text="{Binding CommandUpdateText}"
+                    />
                 <TextBox
                     Width="NaN"
                     HorizontalAlignment="Center"
                     IsReadOnly="true"
-                    Text="{Binding ValueChangedUpdateText}" />
+                    Text="{Binding ValueChangedUpdateText}"
+                    />
                 <Button Content="Read" />
                 <TextBox
                     Width="NaN"
                     HorizontalAlignment="Center"
                     IsReadOnly="true"
-                    Text="{Binding ReadCommandUpdateText}" />
+                    Text="{Binding ReadCommandUpdateText}"
+                    />
                 <TextBox
                     Width="NaN"
                     HorizontalAlignment="Center"
                     IsReadOnly="true"
-                    Text="{Binding ReadRequestedUpdateText}" />
+                    Text="{Binding ReadRequestedUpdateText}"
+                    />
                 <Button Content="Demo" />
             </StackPanel>
 
@@ -95,7 +103,8 @@
             Grid.Row="1"
             Grid.Column="0"
             Margin="10"
-            HorizontalAlignment="Left">
+            HorizontalAlignment="Left"
+            >
             <StackPanel Grid.Row="1">
                 <v:VariableBoxInt
                     Name="input"
@@ -103,22 +112,26 @@
                     HeaderContent="Age"
                     Step="1"
                     Watermark="Input Value"
-                    Value="2" />
+                    Value="2"
+                    />
                 <v:VariableBoxDouble
                     Name="inputDouble"
                     Step="0.5"
-                    Value="3.1" />
+                    Value="3.1"
+                    />
                 <v:VariableBoxByte
                     Name="inputByte"
                     Step="1"
-                    Value="3" />
+                    Value="3"
+                    />
                 <v:VariableBoxInt
                     Name="Drag_Int"
                     HeaderContent="Drag"
                     IsAllowDrag="True"
                     Step="1"
                     Watermark="Input Value"
-                    Value="2" />
+                    Value="2"
+                    />
 
                 <!--  hex demo  -->
 
@@ -131,7 +144,8 @@
                     ParsingNumberStyle="HexNumber"
                     Step="1"
                     Watermark="Input Value"
-                    Value="2" />
+                    Value="2"
+                    />
 
                 <!--  =================we should use AllowHexSpecifier  -->
                 <v:VariableBoxUInt
@@ -144,7 +158,8 @@
                     ParsingNumberStyle="AllowHexSpecifier"
                     Step="1"
                     Watermark="AllowHexSpecifier"
-                    Value="2" />
+                    Value="2"
+                    />
 
                 <v:VariableBoxUInt
                     Name="Consolas_uint"
@@ -156,7 +171,8 @@
                     ParsingNumberStyle="AllowHexSpecifier"
                     Step="1"
                     Watermark="AllowHexSpecifier"
-                    Value="2" />
+                    Value="2"
+                    />
 
                 <!--<TextBlock Text="{Binding #Read_uint.Value, StringFormat='IsShowReadButton {0}, hex={0:X}'}" />-->
                 <v:VariableBoxUInt
@@ -170,7 +186,8 @@
                     ParsingNumberStyle="AllowHexSpecifier"
                     Step="1"
                     Watermark="AllowHexSpecifier"
-                    Value="2" />
+                    Value="2"
+                    />
 
                 <!--<TextBox Text="{Binding #Write_uint.Value, StringFormat='IsShowWriteButton {0}, hex={0:X}'}" />-->
                 <v:VariableBoxUInt
@@ -184,7 +201,8 @@
                     ParsingNumberStyle="AllowHexSpecifier"
                     Step="1"
                     Watermark="AllowHexSpecifier"
-                    Value="2" />
+                    Value="2"
+                    />
 
                 <!--<TextBox Text="{Binding #RW_uint.Value, StringFormat='R W Button {0}, hex={0:X}'}" />-->
                 <v:VariableBoxUInt
@@ -199,7 +217,8 @@
                     ParsingNumberStyle="AllowHexSpecifier"
                     Step="1"
                     Watermark="AllowHexSpecifier"
-                    Value="2" />
+                    Value="2"
+                    />
             </StackPanel>
         </Grid>
 
@@ -209,14 +228,16 @@
             Grid.Column="1"
             Margin="10"
             HorizontalAlignment="Left"
-            Orientation="Vertical">
+            Orientation="Vertical"
+            >
 
             <CheckBox Content="AutoWidth" IsChecked="{Binding AutoWidth}" />
             <v:VariableBoxDouble
                 HeaderContent="Width"
                 IsAllowDrag="True"
                 IsEnabled="{Binding !AutoWidth}"
-                Value="{Binding Width}" />
+                Value="{Binding Width}"
+                />
 
             <TextBox InnerLeftContent="FontFamily" Text="{Binding FontFamily}" />
 
@@ -228,7 +249,8 @@
             <TextBox
                 InnerLeftContent="HeaderContent"
                 InnerRightContent="obj"
-                Text="{Binding HeaderContent}" />
+                Text="{Binding HeaderContent}"
+                />
 
             <TextBox InnerLeftContent="Watermark" Text="{Binding Watermark}" />
 
@@ -236,7 +258,8 @@
                 MinWidth="100"
                 InnerLeftContent="FormatString"
                 MaxLength="100"
-                Text="{Binding FormatString}" />
+                Text="{Binding FormatString}"
+                />
 
             <Label Content="ParsingNumberStyle" />
             <ComboBox ItemsSource="{Binding Array_ParsingNumberStyle}" SelectedItem="{Binding ParsingNumberStyle}" />
@@ -247,7 +270,8 @@
                 IsAllowSpin="True"
                 IsEnabled="True"
                 IsReadOnly="False"
-                Value="{Binding Value, Mode=TwoWay}" />
+                Value="{Binding Value, Mode=TwoWay}"
+                />
 
             <v:VariableBoxUInt HeaderContent="Max" Value="{Binding Maximum}" />
 
@@ -257,7 +281,8 @@
             <Slider
                 Minimum="1"
                 ToolTip.Tip="{Binding Step}"
-                Value="{Binding Step}" />
+                Value="{Binding Step}"
+                />
 
             <CheckBox Content="IsEnable" IsChecked="{Binding IsEnable}" />
             <CheckBox Content="IsAllowSpin" IsChecked="{Binding IsAllowSpin}" />

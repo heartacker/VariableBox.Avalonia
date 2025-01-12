@@ -5,7 +5,8 @@
     xmlns:local="clr-namespace:VariableBox.Demo.Converters"
     xmlns:semi="https://irihi.tech/semi"
     xmlns:vbox="VariableBox"
-    RequestedThemeVariant="Default">
+    RequestedThemeVariant="Default"
+    >
     <Application.DataTemplates>
         <!--<local:ViewLocator />-->
     </Application.DataTemplates>
