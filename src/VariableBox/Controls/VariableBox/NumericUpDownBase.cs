@@ -1,4 +1,4 @@
-﻿using System.Globalization;
+using System.Globalization;
 using System.Windows.Input;
 using Avalonia;
 using Avalonia.Controls;
@@ -19,7 +19,7 @@ namespace VariableBox.Controls;
 [TemplatePart(PART_RepeatRead, typeof(RepeatButton))]
 [TemplatePart(PART_RepeatWrite, typeof(RepeatButton))]
 [PseudoClasses(":editing", ":invalid")]
-public abstract class NumericUpDown : TemplatedControl/* , Control */ /*, IClearControl*/
+public abstract class NumericUpDown : TemplatedControl /* , Control */ /*, IClearControl*/
 {
     public const string PART_Spinner = "PART_Spinner";
     public const string PART_TextBox = "PART_TextBox";
@@ -37,7 +37,6 @@ public abstract class NumericUpDown : TemplatedControl/* , Control */ /*, IClear
 
     private Point? _point;
     protected internal bool _updateFromTextInput;
-
 
     protected internal bool _canIncrease = true;
 
@@ -189,14 +188,7 @@ public abstract class NumericUpDown : TemplatedControl/* , Control */ /*, IClear
         set => SetValue(IsUpdateValueWhenLostFocusProperty, value);
     }
 
-    public static readonly StyledProperty<bool> IsEditingValidProperty =
-        AvaloniaProperty.Register<NumericUpDown, bool>(nameof(IsEditingValid), false);
-
-    public bool IsEditingValid
-    {
-        get => GetValue(IsEditingValidProperty);
-        protected set => SetValue(IsEditingValidProperty, value);
-    }
+        public bool IsEditingValid { get; protected set; }
 
     public static readonly StyledProperty<bool> IsEditingVisiableProperty =
         AvaloniaProperty.Register<NumericUpDown, bool>(nameof(IsEditingVisiable), false);
@@ -288,7 +280,7 @@ public abstract class NumericUpDown : TemplatedControl/* , Control */ /*, IClear
     {
         if (IsInitialized)
         {
-            SyncTextAndValue(false, null, true);//sync text update while OnFormatChange
+            SyncTextAndValue(false, null, true); // sync text update while OnFormatChange
         }
     }
 
@@ -405,7 +397,7 @@ public abstract class NumericUpDown : TemplatedControl/* , Control */ /*, IClear
         {
             this.OnKeyDown(e);
         }
-        //e.Handled = true;
+        // e.Handled = true;
     }
 
     protected override void OnKeyDown(KeyEventArgs e)
@@ -413,7 +405,7 @@ public abstract class NumericUpDown : TemplatedControl/* , Control */ /*, IClear
         // System.Diagnostics.Trace.WriteLine(e.Key);
         if (e.Key == Key.Escape)
         {
-            SyncTextAndValue(fromTextToValue: false, text: null, forceTextUpdate: true);// recover the value
+            SyncTextAndValue(fromTextToValue: false, text: null, forceTextUpdate: true); // recover the value
             if (IsAllowDrag && _dragPanel is not null)
             {
                 _dragPanel.IsVisible = true;
@@ -473,7 +465,8 @@ public abstract class NumericUpDown : TemplatedControl/* , Control */ /*, IClear
 
     protected override void OnTextInput(TextInputEventArgs e)
     {
-        if (IsReadOnly) return;
+        if (IsReadOnly)
+return;
         _textBox?.RaiseEvent(e);
     }
 
@@ -484,8 +477,10 @@ public abstract class NumericUpDown : TemplatedControl/* , Control */ /*, IClear
 
     private void OnDragPanelPointerMoved(object sender, PointerEventArgs e)
     {
-        if (!IsAllowDrag || IsReadOnly) return;
-        if (!e.GetCurrentPoint(this).Properties.IsLeftButtonPressed) return;
+        if (!IsAllowDrag || IsReadOnly)
+return;
+        if (!e.GetCurrentPoint(this).Properties.IsLeftButtonPressed)
+return;
         var point = e.GetPosition(this);
         var delta = point - _point;
         if (delta is null)
@@ -524,7 +519,7 @@ public abstract class NumericUpDown : TemplatedControl/* , Control */ /*, IClear
         if (IsAllowSpin && !IsReadOnly)
         {
             var spin = !e.UsingMouseWheel;
-            spin |= _textBox is { IsFocused: true };
+            spin |= _textBox is { IsFocused : true };
             if (spin)
             {
                 e.Handled = true;
@@ -570,7 +565,8 @@ public abstract class NumericUpDownBase<T> : NumericUpDown where T : struct, ICo
 {
     protected static string TrimString(string? text, NumberStyles numberStyles)
     {
-        if (text is null) return string.Empty;
+        if (text is null)
+return string.Empty;
         text = text.Trim();
         if (text.Contains("_")) // support _ like 0x1024_1024(hex), 10_24 (normal)
         {
@@ -639,7 +635,6 @@ public abstract class NumericUpDownBase<T> : NumericUpDown where T : struct, ICo
         {
             DataValidationErrors.SetError(this, error);
         }
-
     }
 
     public static readonly StyledProperty<T> StepProperty = AvaloniaProperty.Register<NumericUpDownBase<T>, T>(
@@ -786,7 +781,8 @@ public abstract class NumericUpDownBase<T> : NumericUpDown where T : struct, ICo
     /// <summary>
     /// Raised when the Read required, like Read Button Click.
     /// <br/>
-    /// [!!!] If you update the <see cref="Value"/> int the <see cref="ReadRequested"/>, <see cref="ValueChanged"/> Will not Raise
+    /// [!!!] If you update the <see cref="Value"/> int the <see cref="ReadRequested"/>, <see cref="ValueChanged"/> Will
+    /// not Raise
     /// </summary>
     public event EventHandler<RoutedEventArgs>? ReadRequested
     {
@@ -879,7 +875,8 @@ public abstract class NumericUpDownBase<T> : NumericUpDown where T : struct, ICo
             SyncTextAndValue(false, null, true);
             SetValidSpinDirection();
 
-            if (isReading) return;
+            if (isReading)
+                return;
 
             T? oldValue = args.GetOldValue<T?>();
             T? newValue = args.GetNewValue<T?>();
@@ -994,7 +991,6 @@ public abstract class NumericUpDownBase<T> : NumericUpDown where T : struct, ICo
         e.RoutedEvent = HeaderDoubleTapedEvent;
         RaiseHeaderDoubleTapedEventCommand(e);
     }
-
 
     private bool _isSyncingTextAndValue;
 
@@ -1137,7 +1133,7 @@ public abstract class NumericUpDownBase<T> : NumericUpDown where T : struct, ICo
 
     public override void Clear()
     {
-        //SetCurrentValue(ValueProperty, EmptyInputValue);
+        // SetCurrentValue(ValueProperty, EmptyInputValue);
         SyncTextAndValue(false, forceTextUpdate: true);
     }
 }

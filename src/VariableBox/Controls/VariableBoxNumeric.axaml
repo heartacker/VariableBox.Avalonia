@@ -1,4 +1,4 @@
-﻿<ResourceDictionary
+<ResourceDictionary
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:v="VariableBox">
@@ -173,22 +173,24 @@
         </Style>
 
         <!--  IsEditingValid  -->
-        <Style Selector="^[IsEditingValid=false] /template/ Label#PART_Id_IsEditing">
+        <Style Selector="^:invalid /template/ Label#PART_Id_IsEditing">
             <Setter Property="Foreground" Value="Red" />
         </Style>
+<!--
         <Style Selector="^[IsEditingValid=true] /template/ Label#PART_Id_IsEditing">
             <Setter Property="Foreground" Value="Green" />
         </Style>
+-->
 
-        <Style Selector="^[IsEditing=true] /template/ ButtonSpinner#PART_Spinner">
+        <Style Selector="^:editing /template/ ButtonSpinner#PART_Spinner">
             <Setter Property="AllowSpin" Value="False" />
         </Style>
 
-        <Style Selector="^[IsEditing=true] /template/ RepeatButton#PART_RepeatRead">
+        <Style Selector="^:editing /template/ RepeatButton#PART_RepeatRead">
             <Setter Property="IsEnabled" Value="False" />
         </Style>
 
-        <Style Selector="^[IsEditing=true] /template/ RepeatButton#PART_RepeatWrite">
+        <Style Selector="^:editing /template/ RepeatButton#PART_RepeatWrite">
             <Setter Property="IsEnabled" Value="False" />
         </Style>
 
