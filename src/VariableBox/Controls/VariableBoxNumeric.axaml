@@ -1,7 +1,8 @@
-<ResourceDictionary
+﻿<ResourceDictionary
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:v="VariableBox">
+    xmlns:v="VariableBox"
+    >
 
     <ControlTheme x:Key="InputClearButton" TargetType="Button">
         <Setter Property="Button.Foreground" Value="{DynamicResource TextBoxButtonDefaultForeground}" />
@@ -14,7 +15,8 @@
                         Width="16"
                         Height="16"
                         Data="{DynamicResource TextBoxClearButtonData}"
-                        Foreground="{TemplateBinding Foreground}" />
+                        Foreground="{TemplateBinding Foreground}"
+                        />
                 </ContentControl>
             </ControlTemplate>
         </Setter>
@@ -40,7 +42,8 @@
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
                             CornerRadius="{TemplateBinding CornerRadius}"
-                            ShowButtonSpinner="{TemplateBinding ShowButtonSpinner}">
+                            ShowButtonSpinner="{TemplateBinding ShowButtonSpinner}"
+                            >
                             <!--
                             <ButtonSpinner.AllowSpin>
                                 <MultiBinding Converter="{x:Static BoolConverters.And}">
@@ -67,14 +70,16 @@
                                     InnerLeftContent="{TemplateBinding HeaderContent}"
                                     TextWrapping="NoWrap"
                                     Theme="{DynamicResource NonErrorTextBox}"
-                                    Watermark="{TemplateBinding Watermark}" />
+                                    Watermark="{TemplateBinding Watermark}"
+                                    />
                                 <Panel
                                     Name="PART_DragPanel"
                                     HorizontalAlignment="Stretch"
                                     VerticalAlignment="Stretch"
                                     Background="Transparent"
                                     Cursor="SizeAll"
-                                    IsVisible="{TemplateBinding IsAllowDrag}" />
+                                    IsVisible="{TemplateBinding IsAllowDrag}"
+                                    />
                                 <Button
                                     Name="PART_ClearButton"
                                     Margin="0,0,8,0"
@@ -82,14 +87,17 @@
                                     Command="{Binding $parent[v:NumericUpDown].Clear}"
                                     Focusable="False"
                                     IsVisible="False"
-                                    Theme="{StaticResource InputClearButton}" />
+                                    Theme="{StaticResource InputClearButton}"
+                                    />
                                 <Label
                                     Name="PART_Id_IsEditing"
                                     Margin="2,1,2,0"
                                     Background="Transparent"
                                     Content="*"
+                                    Foreground="Green"
                                     IsHitTestVisible="False"
-                                    IsVisible="{TemplateBinding IsEditingVisiable}" />
+                                    />
+                                    <!-- IsVisible="{TemplateBinding IsEditingVisiable}" -->
                             </Panel>
                         </ButtonSpinner>
 
@@ -103,12 +111,14 @@
                             BorderThickness="{DynamicResource ButtonSpinnerButtonGroupBorderThickness}"
                             CornerRadius="{DynamicResource ButtonSpinnerButtonGroupCornerRadius}"
                             IsVisible="{TemplateBinding IsReadWriteButtonShow}"
-                            UseLayoutRounding="False">
+                            UseLayoutRounding="False"
+                            >
                             <Grid
                                 HorizontalAlignment="Stretch"
                                 VerticalAlignment="Stretch"
                                 Background="Transparent"
-                                ColumnDefinitions="auto,auto">
+                                ColumnDefinitions="auto,auto"
+                                >
                                 <RepeatButton
                                     Name="PART_RepeatRead"
                                     Grid.Column="0"
@@ -122,7 +132,8 @@
                                     BorderThickness="0"
                                     CornerRadius="{DynamicResource ButtonSpinnerButtonGroupCornerRadius}"
                                     Foreground="{TemplateBinding Foreground}"
-                                    IsVisible="{TemplateBinding IsShowReadButton}">
+                                    IsVisible="{TemplateBinding IsShowReadButton}"
+                                    >
                                     <PathIcon Width="{DynamicResource ButtonSpinnerIncreaseButtonWidth}" Data="{DynamicResource ButtonSpinnerIncreaseButtonIcon}">
                                         <PathIcon.RenderTransform>
                                             <RotateTransform Angle="-90" />
@@ -143,7 +154,8 @@
                                     BorderThickness="0"
                                     CornerRadius="{DynamicResource ButtonSpinnerButtonGroupCornerRadius}"
                                     Foreground="{TemplateBinding Foreground}"
-                                    IsVisible="{TemplateBinding IsShowWriteButton}">
+                                    IsVisible="{TemplateBinding IsShowWriteButton}"
+                                    >
                                     <PathIcon Width="{DynamicResource ButtonSpinnerIncreaseButtonWidth}" Data="{DynamicResource ButtonSpinnerDecreaseButtonIcon}">
                                         <!--  Data="{DynamicResource ButtonSpinnerWriteButtonGlyph}">  -->
                                         <!--  Width="14" fluent  -->
@@ -176,11 +188,14 @@
         <Style Selector="^:invalid /template/ Label#PART_Id_IsEditing">
             <Setter Property="Foreground" Value="Red" />
         </Style>
-<!--
+        <Style Selector="^:invalid /template/ Label#PART_Id_IsEditing">
+            <Setter Property="Foreground" Value="Red" />
+        </Style>
+        <!--
         <Style Selector="^[IsEditingValid=true] /template/ Label#PART_Id_IsEditing">
             <Setter Property="Foreground" Value="Green" />
         </Style>
--->
+        -->
 
         <Style Selector="^:editing /template/ ButtonSpinner#PART_Spinner">
             <Setter Property="AllowSpin" Value="False" />
