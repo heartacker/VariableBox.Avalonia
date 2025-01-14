@@ -208,6 +208,5 @@
         <Style Selector="^:editing /template/ RepeatButton#PART_RepeatWrite">
             <Setter Property="IsEnabled" Value="False" />
         </Style>
-
     </ControlTheme>
 </ResourceDictionary>

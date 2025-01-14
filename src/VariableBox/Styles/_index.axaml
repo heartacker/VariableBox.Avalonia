@@ -5,4 +5,13 @@
         </Border>
     </Design.PreviewWith>
     <!--  Add Styles Here  -->
+
+    <Style Selector=":is(TextBox) /template/ Grid > ContentPresenter">
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+    </Style>
+    <!--
+    <Style Selector=":is(TextBox)">
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+    </Style>
+    -->
 </Styles>
