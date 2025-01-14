@@ -1,4 +1,4 @@
-using System.Globalization;
+﻿using System.Globalization;
 using System.Windows.Input;
 using Avalonia;
 using Avalonia.Controls;
@@ -188,7 +188,7 @@ public abstract class NumericUpDown : TemplatedControl /* , Control */ /*, IClea
         set => SetValue(IsUpdateValueWhenLostFocusProperty, value);
     }
 
-        public bool IsEditingValid { get; protected set; }
+    public bool IsEditingValid { get; protected set; }
 
     public static readonly StyledProperty<bool> IsEditingVisiableProperty =
         AvaloniaProperty.Register<NumericUpDown, bool>(nameof(IsEditingVisiable), false);
@@ -466,7 +466,7 @@ public abstract class NumericUpDown : TemplatedControl /* , Control */ /*, IClea
     protected override void OnTextInput(TextInputEventArgs e)
     {
         if (IsReadOnly)
-return;
+            return;
         _textBox?.RaiseEvent(e);
     }
 
@@ -478,9 +478,9 @@ return;
     private void OnDragPanelPointerMoved(object sender, PointerEventArgs e)
     {
         if (!IsAllowDrag || IsReadOnly)
-return;
+            return;
         if (!e.GetCurrentPoint(this).Properties.IsLeftButtonPressed)
-return;
+            return;
         var point = e.GetPosition(this);
         var delta = point - _point;
         if (delta is null)
@@ -519,7 +519,7 @@ return;
         if (IsAllowSpin && !IsReadOnly)
         {
             var spin = !e.UsingMouseWheel;
-            spin |= _textBox is { IsFocused : true };
+            spin |= _textBox is { IsFocused: true };
             if (spin)
             {
                 e.Handled = true;
@@ -566,7 +566,7 @@ public abstract class NumericUpDownBase<T> : NumericUpDown where T : struct, ICo
     protected static string TrimString(string? text, NumberStyles numberStyles)
     {
         if (text is null)
-return string.Empty;
+            return string.Empty;
         text = text.Trim();
         if (text.Contains("_")) // support _ like 0x1024_1024(hex), 10_24 (normal)
         {
@@ -1090,7 +1090,7 @@ return string.Empty;
         if (string.IsNullOrWhiteSpace(text))
         {
             throw new InvalidDataException("Input string IsNullOrWhiteSpace.");
-        };
+        }
         if (TextConverter != null)
         {
             var valueFromText = TextConverter.Convert(text, typeof(T?), null, CultureInfo.CurrentCulture);
