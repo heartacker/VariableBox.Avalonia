@@ -96,8 +96,8 @@
                                     Content="*"
                                     Foreground="Green"
                                     IsHitTestVisible="False"
+                                    IsVisible="{TemplateBinding IsEditingVisiable}"
                                     />
-                                    <!-- IsVisible="{TemplateBinding IsEditingVisiable}" -->
                             </Panel>
                         </ButtonSpinner>
 
