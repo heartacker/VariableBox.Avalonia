@@ -197,17 +197,17 @@
             <Setter Property="Foreground" Value="Green" />
         </Style>
         -->
-
         <Style Selector="^:editing /template/ ButtonSpinner#PART_Spinner">
             <Setter Property="AllowSpin" Value="False" />
         </Style>
-
         <Style Selector="^:editing /template/ RepeatButton#PART_RepeatRead">
             <Setter Property="IsEnabled" Value="False" />
         </Style>
-
         <Style Selector="^:editing /template/ RepeatButton#PART_RepeatWrite">
             <Setter Property="IsEnabled" Value="False" />
+        </Style>
+        <Style Selector="^:editing /template/ TextBox#PART_TextBox">
+            <Setter Property="FontWeight" Value="Bold" />
         </Style>
     </ControlTheme>
 </ResourceDictionary>
