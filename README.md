@@ -60,7 +60,8 @@ VariableBox is a UI library for building cross-platform UIs with Avalonia UI.
 
 ### EnumerationUpDown
 
-- [ ] todo
+- [ ] compact mode
+- [ ] boarder
 
 ## How to use
 
