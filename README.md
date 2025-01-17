@@ -19,6 +19,12 @@ Wanna help
     <img src="./Logo.svg" alt="drawing" width="150" />
 </p>
 
+<p align="center">
+
+![Alt](https://repobeats.axiom.co/api/embed/171c28bf781fe3cd84e76f608c1c5bd9376ef5cf.svg "Repobeats analytics image")
+
+</p>
+
 VariableBox is a UI library for building cross-platform UIs with Avalonia UI.
 
 ![Demo](./assets/light_demo.png)
