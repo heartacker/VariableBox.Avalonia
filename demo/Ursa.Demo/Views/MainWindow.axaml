@@ -48,7 +48,13 @@
                 CommandParameter="Semi"
                 Content="Semi"
                 />
-            <NumericUpDown />
+            <NumericUpDown AllowSpin="False" Value="1" />
+            <NumericUpDown
+                Maximum="2"
+                Minimum="0"
+                Value="1"
+                />
+
             <TextBox
                 VerticalAlignment="Center"
                 VerticalContentAlignment="Center"
