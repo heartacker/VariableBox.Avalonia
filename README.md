@@ -50,16 +50,16 @@ VariableBox is a Avalonia Control for building cross-platform UIs with Avalonia 
 - drag support, you can use mouse to drag
 - mouse scroll support
 - shortcut and arrow key support
-  - `<kbd>`Esc`</kbd>` for cancel editing
-  - `<kbd>`Enter`</kbd>` for trigger
-  - `<kbd>`up`</kbd>` for increase
-  - `<kbd>`down`</kbd>` for decrease
-  - `<kbd>`alt+left`</kbd>` for read
-  - `<kbd>`alt+right`</kbd>`/`<kbd>`alt+enter`</kbd>`for trigger (force) write
+  - <kbd>Esc</kbd> for cancel editing
+  - <kbd>Enter</kbd> for trigger
+  - <kbd>up</kbd> for increase
+  - <kbd>down</kbd> for decrease
+  - <kbd>alt+left</kbd> for read
+  - <kbd>alt+right</kbd>/<kbd>alt+enter</kbd>for trigger (force) write
 - identify support
   - `*` for editing
-  - **red** `<font color=red>`*`</font>` for error input
-  - **green** `<font color=green>`*`</font>` for right input
+  - **red** <font color=red>*</font> for error input
+  - **green** <font color=green>*</font> for right input
 
 ### EnumerationUpDown
 
