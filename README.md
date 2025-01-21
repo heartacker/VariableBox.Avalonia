@@ -76,7 +76,7 @@ Add nuget package:
 dotnet add package VariableBox.Avalonia
 ```
 
-You can now use Ursa controls in your Avalonia Application.
+You can now use VariableBox controls in your Avalonia Application.
 
 ```xml
 <Window
