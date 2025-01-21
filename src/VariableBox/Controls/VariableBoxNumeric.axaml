@@ -1,4 +1,4 @@
-﻿<ResourceDictionary
+<ResourceDictionary
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:v="VariableBox"
@@ -25,12 +25,19 @@
         </Style>
     </ControlTheme>
 
-    <ControlTheme x:Key="{x:Type v:NumericUpDown}" TargetType="{x:Type v:NumericUpDown}">
-        <Setter Property="CornerRadius" Value="{DynamicResource NumericUpDownCornerRadius}" />
-        <Setter Property="MinHeight" Value="{DynamicResource NumericUpDownDefaultHeight}" />
+    <ControlTheme x:Key="{x:Type v:NumericUpDown}" TargetType="v:NumericUpDown">
+                <Setter Property="MinHeight" Value="{DynamicResource NumericUpDownDefaultHeight}" />
+<Setter Property="Margin" Value="1" />
+        <Setter Property="BorderBrush" Value="LightGray" />
         <Setter Property="Template">
-            <ControlTemplate TargetType="v:NumericUpDown">
-                <DataValidationErrors>
+            <ControlTemplate>
+                <!--  BorderBrush="LightGray"  -->
+                <Border
+                    Margin="{TemplateBinding Margin}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="1"
+                    CornerRadius="{DynamicResource ControlCornerRadius}"
+                    >
                     <Grid Background="Transparent" ColumnDefinitions="*,auto">
                         <ButtonSpinner
                             Name="PART_Spinner"
@@ -168,7 +175,7 @@
                             </Grid>
                         </Border>
                     </Grid>
-                </DataValidationErrors>
+                </Border>
             </ControlTemplate>
         </Setter>
 
