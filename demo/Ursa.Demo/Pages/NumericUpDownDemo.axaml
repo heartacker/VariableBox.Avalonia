@@ -25,6 +25,11 @@
         <Style Selector="v|NumericUpDown:invalid">
             <Setter Property="Foreground" Value="red" />
         </Style>
+        <!--
+        <Style Selector="v|NumericUpDown:editing">
+            <Setter Property="FontSize" Value="12" />
+        </Style>
+        -->
     </UserControl.Styles>
 
     <Grid ColumnDefinitions="350,auto,*" RowDefinitions="auto,*">

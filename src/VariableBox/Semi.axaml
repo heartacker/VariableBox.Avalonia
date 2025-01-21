@@ -10,7 +10,7 @@
                 <ResourceInclude x:Key="Light" Source="./Themes/Light/_index.axaml" />
             </ResourceDictionary.ThemeDictionaries>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceInclude Source="Themes/Shared/Simple_index.axaml" />
+                <ResourceInclude Source="Themes/Shared/Semi_index.axaml" />
                 <ResourceInclude Source="../Controls/_index.axaml" />
                 <ResourceInclude Source="Locale/zh-cn.axaml" />
             </ResourceDictionary.MergedDictionaries>

@@ -25,13 +25,20 @@
         </Style>
     </ControlTheme>
 
-    <ControlTheme x:Key="{x:Type v:NumericUpDown}" TargetType="{x:Type v:NumericUpDown}">
-        <Setter Property="CornerRadius" Value="{DynamicResource NumericUpDownCornerRadius}" />
+    <ControlTheme x:Key="{x:Type v:NumericUpDown}" TargetType="v:NumericUpDown">
         <Setter Property="MinHeight" Value="{DynamicResource NumericUpDownDefaultHeight}" />
+        <!-- <Setter Property="Margin" Value="0" /> -->
+        <Setter Property="BorderBrush" Value="LightGray" />
         <Setter Property="Template">
-            <ControlTemplate TargetType="v:NumericUpDown">
-                <DataValidationErrors>
-                    <Grid ColumnDefinitions="*,auto">
+            <ControlTemplate>
+                <!--  BorderBrush="LightGray"  -->
+                <Border
+                    Margin="{TemplateBinding Margin}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="1"
+                    CornerRadius="{DynamicResource ControlCornerRadius}"
+                    >
+                    <Grid Background="Transparent" ColumnDefinitions="*,auto">
                         <ButtonSpinner
                             Name="PART_Spinner"
                             MinWidth="0"
@@ -40,7 +47,7 @@
                             AllowSpin="{TemplateBinding IsAllowSpin}"
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}"
+                            BorderThickness="0"
                             CornerRadius="{TemplateBinding CornerRadius}"
                             ShowButtonSpinner="{TemplateBinding ShowButtonSpinner}"
                             >
@@ -63,6 +70,8 @@
                                     HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
                                     VerticalContentAlignment="Center"
                                     AcceptsReturn="False"
+                                    Background="Transparent"
+                                    BorderThickness="0"
                                     CornerRadius="{TemplateBinding CornerRadius}"
                                     DataValidationErrors.Errors="{ReflectionBinding $parent[v:NumericUpDown].(DataValidationErrors.Errors)}"
                                     FontSize="{TemplateBinding FontSize}"
@@ -80,6 +89,7 @@
                                     Cursor="SizeAll"
                                     IsVisible="{TemplateBinding IsAllowDrag}"
                                     />
+                                <!--
                                 <Button
                                     Name="PART_ClearButton"
                                     Margin="0,0,8,0"
@@ -89,6 +99,7 @@
                                     IsVisible="False"
                                     Theme="{StaticResource InputClearButton}"
                                     />
+                                -->
                                 <Label
                                     Name="PART_Id_IsEditing"
                                     Margin="2,1,2,0"
@@ -107,9 +118,6 @@
                             MinWidth="16"
                             Margin="1,0,0,0"
                             Background="Transparent"
-                            BorderBrush="{DynamicResource ButtonSpinnerRepeatButtonBorderBrush}"
-                            BorderThickness="{DynamicResource ButtonSpinnerButtonGroupBorderThickness}"
-                            CornerRadius="{DynamicResource ButtonSpinnerButtonGroupCornerRadius}"
                             IsVisible="{TemplateBinding IsReadWriteButtonShow}"
                             UseLayoutRounding="False"
                             >
@@ -167,7 +175,7 @@
                             </Grid>
                         </Border>
                     </Grid>
-                </DataValidationErrors>
+                </Border>
             </ControlTemplate>
         </Setter>
 
@@ -196,17 +204,17 @@
             <Setter Property="Foreground" Value="Green" />
         </Style>
         -->
-
         <Style Selector="^:editing /template/ ButtonSpinner#PART_Spinner">
             <Setter Property="AllowSpin" Value="False" />
         </Style>
-
         <Style Selector="^:editing /template/ RepeatButton#PART_RepeatRead">
             <Setter Property="IsEnabled" Value="False" />
         </Style>
-
         <Style Selector="^:editing /template/ RepeatButton#PART_RepeatWrite">
             <Setter Property="IsEnabled" Value="False" />
+        </Style>
+        <Style Selector="^:editing /template/ TextBox#PART_TextBox">
+            <Setter Property="FontWeight" Value="Bold" />
         </Style>
     </ControlTheme>
 </ResourceDictionary>
