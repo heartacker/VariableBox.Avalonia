@@ -6,5 +6,5 @@
     <CornerRadius x:Key="ButtonSpinnerButtonGroupCornerRadius">1</CornerRadius>
 
     <Thickness x:Key="TextControlBorderThemeThickness">1</Thickness>
-    <CornerRadius x:Key="ControlCornerRadius">1</CornerRadius>
+    <CornerRadius x:Key="ControlCornerRadius">3</CornerRadius>
 </ResourceDictionary>
