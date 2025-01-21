@@ -25,16 +25,19 @@ Wanna help
 
 </p>
 
-VariableBox is a UI library for building cross-platform UIs with Avalonia UI.
+VariableBox is a Avalonia Control for building cross-platform UIs with Avalonia UI.
 
 ![Demo](./assets/light_demo.png)
 
 ## ChangeLog
 
-- 2025/1/9
-   1. Using a theme pack that is compatible with `Simple`, `Fluent`, and `SemiThemes`.
-   2. Package Theme To the Control Package, You do not need another package anymore
+- 2025/1/21(v0.3.0)
+  1. Add an overall border to create a more unified visual effect.
+  2. other polish
 
+- 2025/1/9 (v0.2.1)
+  1. Using a theme pack that is compatible with `Simple`, `Fluent`, and `SemiThemes`.
+  2. Package Theme To the Control Package, You do not need another package anymore
 
 ## Feature
 
@@ -47,16 +50,16 @@ VariableBox is a UI library for building cross-platform UIs with Avalonia UI.
 - drag support, you can use mouse to drag
 - mouse scroll support
 - shortcut and arrow key support
-  - <kbd>Esc</kbd> for cancel editing
-  - <kbd>Enter</kbd> for trigger
-  - <kbd>up</kbd> for increase
-  - <kbd>down</kbd> for decrease
-  - <kbd>alt+left</kbd> for read
-  - <kbd>alt+right</kbd>/<kbd>alt+enter</kbd>for trigger (force) write
+  - `<kbd>`Esc`</kbd>` for cancel editing
+  - `<kbd>`Enter`</kbd>` for trigger
+  - `<kbd>`up`</kbd>` for increase
+  - `<kbd>`down`</kbd>` for decrease
+  - `<kbd>`alt+left`</kbd>` for read
+  - `<kbd>`alt+right`</kbd>`/`<kbd>`alt+enter`</kbd>`for trigger (force) write
 - identify support
   - `*` for editing
-  - **red** <font color=red>*</font> for error input
-  - **green** <font color=green>*</font> for right input
+  - **red** `<font color=red>`*`</font>` for error input
+  - **green** `<font color=green>`*`</font>` for right input
 
 ### EnumerationUpDown
 
@@ -99,8 +102,9 @@ To make VariableBox controls show up in your application, you need to reference 
 **YOU do not need any other VariableBox package now**
 
 - `vbox:SemiTheme` is a theme package for VariableBox inspired by Semi Design.
-   >you need to `add package Semi.Avalonia` frist
 
+  > you need to `add package Semi.Avalonia` frist
+  >
 - `vbox:SimpleTheme` is compatible with `<SimpleTheme/>`
 - `vbox:FluentTheme` is compatible with `<FluentTheme/>`
 
@@ -114,7 +118,9 @@ dotnet add package VariableBox.Avalonia
 ```
 
 2. Include Styles in application:
+
 - FluentTheme
+
 ```xml
 <Application...
     xmlns:vbox="VariableBox"
@@ -125,8 +131,8 @@ dotnet add package VariableBox.Avalonia
     </Application.Styles>
 ```
 
-
 - SimpleTheme
+
 ```xml
 <Application...
     xmlns:vbox="VariableBox"
@@ -138,12 +144,13 @@ dotnet add package VariableBox.Avalonia
 ```
 
 - SemiTheme
+
 ```xml
 <Application...
     xmlns:vbox="VariableBox"
     ....>
     <Application.Styles>
-        <!-- if use semi -->        
+        <!-- if use semi -->      
         <semi:SemiTheme Locale="zh-CN"/>
         <vbox:SemiTheme Locale="zh-CN"/>
     </Application.Styles>
