@@ -11,7 +11,10 @@ namespace VariableBox.Demo.ViewModels;
 public partial class NumericUpDownDemoViewModel : ObservableObject
 {
     private double _oldWidth = 200;
-    [ObservableProperty] private bool _AutoWidth  = false;
+    [ObservableProperty]
+    public partial string? UserName { get; set; } = "Heartacker";
+
+    [ObservableProperty] private bool _AutoWidth = false;
     [ObservableProperty] private double _Width = 200;//Double.NaN;
     [ObservableProperty] private uint _Value;
     [ObservableProperty] private string _FontFamily = "Consolas";

@@ -39,7 +39,7 @@
             Margin="2"
             BorderBrush="AliceBlue"
             BorderThickness="2"
-            Header="Demo"
+            Header="{Binding UserName}"
             IsExpanded="True"
             >
             <StackPanel
