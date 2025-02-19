@@ -1,0 +1,33 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+  </Configurations>
+  <Folder Name="/Demo/">
+    <Project Path="demo/Ursa.Demo.Android/Ursa.Demo.Android.csproj">
+      <Platform Solution="*|x64" Project="x64" />
+      <Deploy Solution="*|x64" />
+    </Project>
+    <Project Path="demo/Ursa.Demo.Browser/Ursa.Demo.Browser.csproj">
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+    <Project Path="demo/Ursa.Demo.iOS/Ursa.Demo.iOS.csproj">
+      <Platform Solution="*|x64" Project="x64" />
+      <Deploy Solution="*|x64" />
+    </Project>
+    <Project Path="demo/Ursa.Demo/Ursa.Demo.csproj">
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+  </Folder>
+  <Folder Name="/Solution Files/">
+    <File Path="demo/Directory.Build.props" />
+    <File Path="README.md" />
+    <File Path="src/Package.props" />
+  </Folder>
+  <Project Path="demo/Ursa.Demo.Desktop/Ursa.Demo.Desktop.csproj">
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
+  <Project Path="src/VariableBox/VariableBox.csproj">
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
+</Solution>
