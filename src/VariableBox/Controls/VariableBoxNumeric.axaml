@@ -1,4 +1,4 @@
-﻿<ResourceDictionary
+<ResourceDictionary
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:v="VariableBox"
@@ -36,6 +36,7 @@
                     Margin="{TemplateBinding Margin}"
                     BorderBrush="{TemplateBinding BorderBrush}"
                     BorderThickness="1"
+                    Background="{TemplateBinding Background}"
                     CornerRadius="{DynamicResource ControlCornerRadius}"
                     >
                     <Grid Background="Transparent" ColumnDefinitions="*,auto">
