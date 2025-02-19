@@ -1,0 +1,37 @@
+﻿<Styles xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Design.PreviewWith>
+        <Border Padding="20">
+            <!--  Add Controls for Previewer Here  -->
+        </Border>
+    </Design.PreviewWith>
+
+    <Style Selector=":is(ButtonSpinner)">
+        <Setter Property="Background" Value="Transparent" />
+        <!-- <Setter Property="Background" Value="Green" /> -->
+
+        <Style Selector="^ /template/ :is(Grid)">
+            <Setter Property="Background" Value="Transparent" />
+        </Style>
+
+        <Style Selector="^ /template/ :is(Border)">
+            <Setter Property="Background" Value="Transparent" />
+        </Style>
+
+        <Style Selector="^ /template/ :is(RepeatButton)">
+            <!-- <Setter Property="Foreground" Value="{DynamicResource RepeatButtonForeground}" /> -->
+            <!-- <Setter Property="Background" Value="{DynamicResource RepeatButtonBackground}" /> -->
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="MinWidth" Value="20" />
+            <!--  第二个样式：作用于 ButtonSpinner 内部的 ContentPresenter  -->
+            <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="Opacity" Value="0.5" />
+            </Style>
+        </Style>
+    </Style>
+    <!--
+    <Style Selector="NumericUpDown /template/ DataValidationErrors">
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+    -->
+</Styles>

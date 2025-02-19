@@ -31,6 +31,10 @@ VariableBox is a Avalonia Control for building cross-platform UIs with Avalonia 
 
 ## ChangeLog
 
+- 2025/02/19(v0.4.0)
+  1. fix the style of buttonspinner and the disabled style
+     1. fluent,semi and simple is all supported
+
 - 2025/1/21(v0.3.0)
   1. Add an overall border to create a more unified visual effect.
   2. other polish

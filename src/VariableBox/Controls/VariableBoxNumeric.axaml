@@ -36,6 +36,7 @@
                     Margin="{TemplateBinding Margin}"
                     BorderBrush="{TemplateBinding BorderBrush}"
                     BorderThickness="1"
+                    Background="{TemplateBinding Background}"
                     CornerRadius="{DynamicResource ControlCornerRadius}"
                     >
                     <Grid Background="Transparent" ColumnDefinitions="*,auto">
@@ -45,7 +46,7 @@
                             HorizontalContentAlignment="Stretch"
                             VerticalContentAlignment="Stretch"
                             AllowSpin="{TemplateBinding IsAllowSpin}"
-                            Background="{TemplateBinding Background}"
+                            Background="Transparent"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="0"
                             CornerRadius="{TemplateBinding CornerRadius}"
@@ -135,7 +136,7 @@
                                     Padding="0"
                                     VerticalAlignment="Stretch"
                                     HorizontalContentAlignment="Center"
-                                    Background="{TemplateBinding Background}"
+                                    Background="Transparent"
                                     BorderBrush="{DynamicResource ButtonSpinnerRepeatButtonBorderBrush}"
                                     BorderThickness="0"
                                     CornerRadius="{DynamicResource ButtonSpinnerButtonGroupCornerRadius}"
@@ -157,7 +158,7 @@
                                     Padding="0"
                                     VerticalAlignment="Stretch"
                                     HorizontalContentAlignment="Center"
-                                    Background="{TemplateBinding Background}"
+                                    Background="Transparent"
                                     BorderBrush="{DynamicResource ButtonSpinnerRepeatButtonBorderBrush}"
                                     BorderThickness="0"
                                     CornerRadius="{DynamicResource ButtonSpinnerButtonGroupCornerRadius}"
@@ -179,6 +180,12 @@
             </ControlTemplate>
         </Setter>
 
+        <Style Selector="^ /template/ RepeatButton">
+            <Style Selector="^:disabled /template/ ContentPresenter">
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="Opacity" Value="0.5" />
+            </Style>
+        </Style>
         <Style Selector="^.clearButton, ^.ClearButton">
             <Style Selector="^[IsReadOnly=False]:focus /template/ Button#PART_ClearButton">
                 <Setter Property="IsVisible" Value="True" />
