@@ -56,8 +56,11 @@
 
     <x:Double x:Key="ButtonSpinnerIncreaseButtonWidth">11</x:Double>
 
+    <!-- <ControlTheme x:Key="{x:Type RepeatButton}" TargetType="RepeatButton"> -->
     <ControlTheme x:Key="FluentButtonSpinnerRepeatButton" TargetType="RepeatButton">
         <Setter Property="MinWidth" Value="34" />
+        <!--
+
         <Setter Property="Template">
             <ControlTemplate>
                 <ContentPresenter
@@ -73,6 +76,9 @@
                     />
             </ControlTemplate>
         </Setter>
+
+        -->
+        <!--
         <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
             <Setter Property="Background" Value="{DynamicResource RepeatButtonBackgroundPointerOver}" />
         </Style>
@@ -80,15 +86,15 @@
         <Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
             <Setter Property="Background" Value="{DynamicResource RepeatButtonBackgroundPressed}" />
         </Style>
+        -->
 
         <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
-            <Setter Property="Background" Value="{DynamicResource RepeatButtonBackgroundDisabled}" />
-            <Setter Property="Foreground" Value="{DynamicResource RepeatButtonForegroundDisabled}" />
+            <Setter Property="Opacity" Value="0.5" />
         </Style>
     </ControlTheme>
 
     <ControlTheme x:Key="{x:Type ButtonSpinner}" TargetType="ButtonSpinner">
-        <Setter Property="Foreground" Value="{DynamicResource TextControlForeground}" />
+        <Setter Property="Foreground" Value="{DynamicResource RepeatButtonForeground}" />
         <Setter Property="Padding" Value="10, 0" />
         <Setter Property="Background" Value="{DynamicResource TextControlBackground}" />
         <Setter Property="BorderBrush" Value="{DynamicResource TextControlBorderBrush}" />
