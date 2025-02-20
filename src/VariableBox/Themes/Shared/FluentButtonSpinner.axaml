@@ -5,41 +5,6 @@
     xmlns:sys="using:System"
     x:ClassModifier="internal"
     >
-    <Design.PreviewWith>
-        <Border Padding="20">
-            <StackPanel Spacing="20">
-                <ButtonSpinner Content="Right spinner" />
-                <ButtonSpinner ButtonSpinnerLocation="Left" Content="Left spinner" />
-                <ButtonSpinner
-                    BorderBrush="Blue"
-                    BorderThickness="2"
-                    Content="Right Border"
-                    />
-                <ButtonSpinner
-                    BorderBrush="Blue"
-                    BorderThickness="2"
-                    ButtonSpinnerLocation="Left"
-                    Content="Left Border"
-                    />
-                <ButtonSpinner AllowSpin="False" Content="Right disabled" />
-                <ButtonSpinner
-                    AllowSpin="False"
-                    ButtonSpinnerLocation="Left"
-                    Content="Left disabled"
-                    />
-                <ButtonSpinner Content="Hide spinner" ShowButtonSpinner="False" />
-                <ButtonSpinner Content="Error">
-                    <DataValidationErrors.Error>
-                        <sys:Exception>
-                            <x:Arguments>
-                                <x:String>Error</x:String>
-                            </x:Arguments>
-                        </sys:Exception>
-                    </DataValidationErrors.Error>
-                </ButtonSpinner>
-            </StackPanel>
-        </Border>
-    </Design.PreviewWith>
 
     <converters:MarginMultiplierConverter
         x:Key="ButtonSpinnerLeftThickness"
