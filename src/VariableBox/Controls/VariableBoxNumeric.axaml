@@ -33,10 +33,11 @@
             <ControlTemplate>
                 <!--  BorderBrush="LightGray"  -->
                 <Border
+                    Name="PART_Border"
                     Margin="{TemplateBinding Margin}"
+                    Background="{TemplateBinding Background}"
                     BorderBrush="{TemplateBinding BorderBrush}"
                     BorderThickness="1"
-                    Background="{TemplateBinding Background}"
                     CornerRadius="{DynamicResource ControlCornerRadius}"
                     >
                     <Grid Background="Transparent" ColumnDefinitions="*,auto">
@@ -101,7 +102,7 @@
                                     Theme="{StaticResource InputClearButton}"
                                     />
                                 -->
-                                <Label
+                                <!-- <Label
                                     Name="PART_Id_IsEditing"
                                     Margin="2,1,2,0"
                                     Background="Transparent"
@@ -109,7 +110,7 @@
                                     Foreground="Green"
                                     IsHitTestVisible="False"
                                     IsVisible="{TemplateBinding IsEditingVisiable}"
-                                    />
+                                    />-->
                             </Panel>
                         </ButtonSpinner>
 
@@ -185,7 +186,7 @@
                 <Setter Property="Background" Value="Transparent" />
                 <Setter Property="Opacity" Value="0.5" />
             </Style>
-        </Style> -->
+        </Style>-->
         <Style Selector="^.clearButton, ^.ClearButton">
             <Style Selector="^[IsReadOnly=False]:focus /template/ Button#PART_ClearButton">
                 <Setter Property="IsVisible" Value="True" />
@@ -200,12 +201,17 @@
         </Style>
 
         <!--  IsEditingValid  -->
-        <Style Selector="^:invalid /template/ Label#PART_Id_IsEditing">
-            <Setter Property="Foreground" Value="Red" />
+        <!--
+        <Style Selector="^:editing">
+            <Style Selector="^ /template/ TextBox#PART_TextBox">
+                <Setter Property="Foreground" Value="Green" />
+            </Style>
+            <Style Selector="^:invalid /template/ TextBox#PART_TextBox">
+                <Setter Property="Foreground" Value="Red" />
+            </Style>
         </Style>
-        <Style Selector="^:invalid /template/ Label#PART_Id_IsEditing">
-            <Setter Property="Foreground" Value="Red" />
-        </Style>
+         -->
+
         <!--
         <Style Selector="^[IsEditingValid=true] /template/ Label#PART_Id_IsEditing">
             <Setter Property="Foreground" Value="Green" />

@@ -34,6 +34,12 @@ VariableBox is a Avalonia Control for building cross-platform UIs with Avalonia 
 
 ## ChangeLog
 
+- 2025/02/21(v0.5.0)
+  1. remote property `IsEnableEditingIndicator` indicator
+  2. please use the  `PseudoClasses`
+     1. `:editing` for editing
+     2. `:invalid` for invalid input
+
 - 2025/02/19(v0.4.0)
   1. fix the style of buttonspinner and the disabled style
      1. fluent,semi and simple is all supported
@@ -101,6 +107,38 @@ You can now use VariableBox controls in your Avalonia Application.
     </StackPanel>
 </Window>
 ```
+
+### PseudoClasses
+
+- `:editing` for editing
+- `:invalid` for invalid input
+
+e.g.:
+
+<div style="display: flex;">
+  <div style="flex: 50%; padding: 2px;">
+  
+
+```xml
+<Style Selector="vbox|NumericUpDown:editing">
+  <Style Selector="^ /template/ TextBox#PART_TextBox">
+      <Setter Property="Foreground" Value="Green" />
+  </Style>
+  <Style Selector="^:invalid /template/ TextBox#PART_TextBox">
+      <Setter Property="Foreground" Value="Red" />
+  </Style>
+</Style>
+```
+
+  </div>
+
+  <div style="flex: 20%; padding: 2px;">
+
+![pseudoclass](assets/pseudoclass.png)
+
+  </div>
+</div>
+
 
 ### VariableBox.Themes
 

@@ -190,6 +190,7 @@ public abstract class NumericUpDown : TemplatedControl /* , Control */ /*, IClea
 
     public bool IsEditingValid { get; protected set; }
 
+#if false
     public static readonly StyledProperty<bool> IsEditingVisiableProperty =
         AvaloniaProperty.Register<NumericUpDown, bool>(nameof(IsEditingVisiable), false);
 
@@ -202,6 +203,7 @@ public abstract class NumericUpDown : TemplatedControl /* , Control */ /*, IClea
         get => GetValue(IsEditingVisiableProperty);
         protected set => SetValue(IsEditingVisiableProperty, value && IsEnableEditingIndicator);
     }
+#endif
 
     public static readonly StyledProperty<bool> IsEditingProperty =
         AvaloniaProperty.Register<NumericUpDown, bool>(nameof(IsEditing), false);
@@ -237,12 +239,13 @@ public abstract class NumericUpDown : TemplatedControl /* , Control */ /*, IClea
         IsShowReadButtonProperty.Changed.AddClassHandler<NumericUpDown, bool>((o, e) => o.OnReadWriteShowChange(e));
         IsShowWriteButtonProperty.Changed.AddClassHandler<NumericUpDown, bool>((o, e) => o.OnReadWriteShowChange(e));
 
-        IsEnableEditingIndicatorProperty.Changed.AddClassHandler<NumericUpDown, bool>((o, e) => o.OnIsEnableEditingIndicatorChanged(e));
+        // IsEnableEditingIndicatorProperty.Changed.AddClassHandler<NumericUpDown, bool>((o, e) => o.OnIsEnableEditingIndicatorChanged(e));
     }
 
     private void OnIsEnableEditingIndicatorChanged(AvaloniaPropertyChangedEventArgs<bool> e)
     {
-        IsEditingVisiable = IsEditing && IsEnableEditingIndicator;
+        // IsEditingVisiable =
+        // IsEditing && IsEnableEditingIndicator;
     }
 
     private void OnReadWriteShowChange(AvaloniaPropertyChangedEventArgs<bool> e)
@@ -367,7 +370,8 @@ public abstract class NumericUpDown : TemplatedControl /* , Control */ /*, IClea
     {
         CheckContextIsChangedAndValid((sender as TextBox).Text, ref ed, ref edv);
 
-        IsEditingVisiable = IsEditing = ed;
+        // IsEditingVisiable =
+        IsEditing = ed;
         IsEditingValid = edv;
         UpdatePseudoClasses();
     }
