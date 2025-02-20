@@ -1,0 +1,127 @@
+<UserControl
+    x:Class="VariableBox.Demo.Pages.ManyVariableBox"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:v="VariableBox"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d"
+    >
+    <StackPanel>
+        <v:VariableBoxInt
+            Name="input"
+            Classes="ClearButton"
+            HeaderContent="Age"
+            Step="1"
+            Watermark="Input Value"
+            Value="2"
+            />
+        <v:VariableBoxDouble
+            Name="inputDouble"
+            Step="0.5"
+            Value="3.1"
+            />
+        <v:VariableBoxByte
+            Name="inputByte"
+            Step="1"
+            Value="3"
+            />
+        <v:VariableBoxInt
+            Name="Drag_Int"
+            HeaderContent="Drag"
+            IsAllowDrag="True"
+            Step="1"
+            Watermark="Input Value"
+            Value="2"
+            />
+
+        <!--  hex demo  -->
+
+        <!--  =================this is error usage  -->
+        <v:VariableBoxUInt
+            Name="uint_HexNumber"
+            FormatString="{}{0:X8}"
+            HeaderContent="HexNumber"
+            IsAllowDrag="False"
+            ParsingNumberStyle="HexNumber"
+            Step="1"
+            Watermark="Input Value"
+            Value="2"
+            />
+
+        <!--  =================we should use AllowHexSpecifier  -->
+        <v:VariableBoxUInt
+            Name="uint_AllowHexSpecifier"
+            HorizontalContentAlignment="Right"
+            FontFamily="Consolas"
+            FormatString="{}{0:X8}"
+            HeaderContent="AllowHexSpecifier"
+            IsAllowDrag="False"
+            ParsingNumberStyle="AllowHexSpecifier"
+            Step="1"
+            Watermark="AllowHexSpecifier"
+            Value="2"
+            />
+
+        <v:VariableBoxUInt
+            Name="Consolas_uint"
+            HorizontalContentAlignment="Right"
+            FontFamily="Consolas"
+            FormatString="X8"
+            HeaderContent="0x"
+            IsAllowDrag="False"
+            ParsingNumberStyle="AllowHexSpecifier"
+            Step="1"
+            Watermark="AllowHexSpecifier"
+            Value="2"
+            />
+
+        <!--<TextBlock Text="{Binding #Read_uint.Value, StringFormat='IsShowReadButton {0}, hex={0:X}'}" />-->
+        <v:VariableBoxUInt
+            Name="Read_uint"
+            HorizontalContentAlignment="Right"
+            FontFamily="Consolas"
+            FormatString="X8"
+            HeaderContent="0x"
+            IsAllowDrag="False"
+            IsShowReadButton="True"
+            ParsingNumberStyle="AllowHexSpecifier"
+            Step="1"
+            Watermark="AllowHexSpecifier"
+            Value="2"
+            />
+
+        <!--<TextBox Text="{Binding #Write_uint.Value, StringFormat='IsShowWriteButton {0}, hex={0:X}'}" />-->
+        <v:VariableBoxUInt
+            Name="Write_uint"
+            HorizontalContentAlignment="Right"
+            FontFamily="Consolas"
+            FormatString="X8"
+            HeaderContent="0x"
+            IsAllowDrag="False"
+            IsShowWriteButton="True"
+            ParsingNumberStyle="AllowHexSpecifier"
+            Step="1"
+            Watermark="AllowHexSpecifier"
+            Value="2"
+            />
+
+        <!--<TextBox Text="{Binding #RW_uint.Value, StringFormat='R W Button {0}, hex={0:X}'}" />-->
+        <v:VariableBoxUInt
+            Name="RW_uint"
+            HorizontalContentAlignment="Right"
+            FontFamily="Consolas"
+            FormatString="X8"
+            HeaderContent="0x"
+            IsAllowDrag="False"
+            IsShowReadButton="True"
+            IsShowWriteButton="True"
+            ParsingNumberStyle="AllowHexSpecifier"
+            Step="1"
+            Watermark="AllowHexSpecifier"
+            Value="2"
+            />
+    </StackPanel>
+</UserControl>
