@@ -1,0 +1,29 @@
+﻿<Styles
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vbox="VariableBox"
+    >
+    <Design.PreviewWith>
+        <Border Padding="20">
+            <!--  Add Controls for Previewer Here  -->
+        </Border>
+    </Design.PreviewWith>
+
+    <Style Selector=":is(vbox|NumericUpDown)">
+        <Style x:SetterTargetType="ButtonSpinner" Selector="^ /template/ #PART_Spinner">
+            <Setter Property="Theme" Value="{StaticResource FluentButtonSpinner}" />
+            <Style Selector="^ /template/ :is(RepeatButton)">
+                <Setter Property="Background" Value="Transparent" />
+                <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
+                    <Setter Property="Background" Value="Transparent" />
+                    <Setter Property="Opacity" Value="0.1" />
+                </Style>
+            </Style>
+        </Style>
+    </Style>
+    <!--
+    <Style Selector="NumericUpDown /template/ DataValidationErrors">
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+    -->
+</Styles>

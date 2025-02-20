@@ -58,7 +58,8 @@
         </Style>
     </ControlTheme>
 
-    <ControlTheme x:Key="{x:Type ButtonSpinner}" TargetType="ButtonSpinner">
+    <!-- <ControlTheme x:Key="{x:Type ButtonSpinner}" TargetType="ButtonSpinner"> -->
+    <ControlTheme x:Key="FluentButtonSpinner" TargetType="ButtonSpinner">
         <Setter Property="Foreground" Value="{DynamicResource RepeatButtonForeground}" />
         <Setter Property="Padding" Value="10, 0" />
         <Setter Property="Background" Value="{DynamicResource TextControlBackground}" />
@@ -104,8 +105,8 @@
                                                                       Converter={StaticResource ButtonSpinnerLeftThickness}}"
                                     Foreground="{TemplateBinding Foreground}"
                                     IsTabStop="{TemplateBinding IsTabStop}"
-                                    Theme="{StaticResource FluentButtonSpinnerRepeatButton}"
                                     >
+                                    <!-- Theme="{StaticResource FluentButtonSpinnerRepeatButton}" -->
                                     <PathIcon
                                         Width="12"
                                         Height="8"
@@ -125,8 +126,8 @@
                                                                       Converter={StaticResource ButtonSpinnerLeftThickness}}"
                                     Foreground="{TemplateBinding Foreground}"
                                     IsTabStop="{TemplateBinding IsTabStop}"
-                                    Theme="{StaticResource FluentButtonSpinnerRepeatButton}"
                                     >
+                                    <!-- Theme="{StaticResource FluentButtonSpinnerRepeatButton}" -->
                                     <PathIcon
                                         Width="12"
                                         Height="8"

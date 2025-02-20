@@ -23,5 +23,6 @@
 
     <!-- 添加各种修改用户空间的style -->
     <StyleInclude Source="../Styles/_index.axaml" />
+    <StyleInclude Source="../Styles/FluentButtonSpinner.axaml" />
     <!--  Add Styles Here  -->
 </Styles>
