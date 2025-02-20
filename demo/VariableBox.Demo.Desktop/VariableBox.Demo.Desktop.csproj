@@ -25,6 +25,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Ursa.Demo\Ursa.Demo.csproj" />
+        <ProjectReference Include="..\VariableBox.Demo\VariableBox.Demo.csproj" />
     </ItemGroup>
 </Project>
