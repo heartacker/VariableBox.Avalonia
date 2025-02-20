@@ -187,14 +187,14 @@
                 <Setter Property="Opacity" Value="0.5" />
             </Style>
         </Style>-->
-        <Style Selector="^.clearButton, ^.ClearButton">
+        <!--<Style Selector="^.clearButton, ^.ClearButton">
             <Style Selector="^[IsReadOnly=False]:focus /template/ Button#PART_ClearButton">
                 <Setter Property="IsVisible" Value="True" />
             </Style>
             <Style Selector="^[IsReadOnly=False]:pointerover /template/ Button#PART_ClearButton">
                 <Setter Property="IsVisible" Value="True" />
             </Style>
-        </Style>
+        </Style>-->
 
         <Style Selector="^[IsShowReadButton=false] /template/ RepeatButton#PART_RepeatWrite">
             <Setter Property="Margin" Value="0 0 0 0" />
@@ -210,7 +210,7 @@
                 <Setter Property="Foreground" Value="Red" />
             </Style>
         </Style>
-         -->
+        -->
 
         <!--
         <Style Selector="^[IsEditingValid=true] /template/ Label#PART_Id_IsEditing">
@@ -226,8 +226,8 @@
         <Style Selector="^:editing /template/ RepeatButton#PART_RepeatWrite">
             <Setter Property="IsEnabled" Value="False" />
         </Style>
-        <Style Selector="^:editing /template/ TextBox#PART_TextBox">
+        <!--<Style Selector="^:editing /template/ TextBox#PART_TextBox">
             <Setter Property="FontWeight" Value="Bold" />
-        </Style>
+        </Style>-->
     </ControlTheme>
 </ResourceDictionary>
