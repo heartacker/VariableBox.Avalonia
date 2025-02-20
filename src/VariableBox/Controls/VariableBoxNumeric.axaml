@@ -180,12 +180,12 @@
             </ControlTemplate>
         </Setter>
 
-        <Style Selector="^ /template/ RepeatButton">
+        <!-- <Style Selector="^ /template/ RepeatButton">
             <Style Selector="^:disabled /template/ ContentPresenter">
                 <Setter Property="Background" Value="Transparent" />
                 <Setter Property="Opacity" Value="0.5" />
             </Style>
-        </Style>
+        </Style> -->
         <Style Selector="^.clearButton, ^.ClearButton">
             <Style Selector="^[IsReadOnly=False]:focus /template/ Button#PART_ClearButton">
                 <Setter Property="IsVisible" Value="True" />
