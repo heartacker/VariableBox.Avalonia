@@ -15,9 +15,6 @@
       <Platform Solution="*|x64" Project="x64" />
       <Deploy />
     </Project>
-    <Project Path="demo/VariableBox.Demo/VariableBox.Demo.csproj">
-      <Platform Solution="*|x64" Project="x64" />
-    </Project>
   </Folder>
   <Folder Name="/Solution Files/">
     <File Path="demo/Directory.Build.props" />
@@ -25,6 +22,9 @@
     <File Path="src/Package.props" />
   </Folder>
   <Project Path="demo/VariableBox.Demo.Desktop/VariableBox.Demo.Desktop.csproj">
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
+  <Project Path="demo/VariableBox.Demo/VariableBox.Demo.csproj">
     <Platform Solution="*|x64" Project="x64" />
   </Project>
   <Project Path="src/VariableBox/VariableBox.csproj">
