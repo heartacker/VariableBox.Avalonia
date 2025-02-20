@@ -27,7 +27,10 @@ Wanna help
 
 VariableBox is a Avalonia Control for building cross-platform UIs with Avalonia UI.
 
-![Demo](./assets/light_demo.png)
+| Theme | Fluent                           | Semi                           |
+| ----- | -------------------------------- | ------------------------------ |
+| Dark  | ![df](./assets/dark-fluent.png)  | ![ds](./assets/dark-semi.png)  |
+| Light | ![lf](./assets/light-fluent.png) | ![ls](./assets/light-semi.png) |
 
 ## ChangeLog
 

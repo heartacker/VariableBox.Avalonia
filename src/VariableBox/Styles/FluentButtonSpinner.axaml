@@ -9,6 +9,27 @@
         </Border>
     </Design.PreviewWith>
 
+    <!-- <Style Selector="NumericUpDown /template/ ButtonSpinner#PART_Spinner">
+        <Setter Property="Background" Value="Transparent" />
+        <Style Selector="^ /template/ :is(RepeatButton)">
+            <Setter Property="Background" Value="Transparent" />
+            <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="Opacity" Value="0.4" />
+            </Style>
+        </Style>
+    </Style> -->
+
+    <Style Selector="ButtonSpinner">
+        <Style Selector="^ /template/ :is(RepeatButton)">
+            <Setter Property="Background" Value="Transparent" />
+            <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="Opacity" Value="0.4" />
+            </Style>
+        </Style>
+    </Style>
+
     <Style Selector=":is(vbox|NumericUpDown)">
         <Style x:SetterTargetType="ButtonSpinner" Selector="^ /template/ #PART_Spinner">
             <Setter Property="Theme" Value="{StaticResource FluentButtonSpinner}" />
@@ -16,14 +37,9 @@
                 <Setter Property="Background" Value="Transparent" />
                 <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
                     <Setter Property="Background" Value="Transparent" />
-                    <Setter Property="Opacity" Value="0.5" />
+                    <Setter Property="Opacity" Value="0.4" />
                 </Style>
             </Style>
         </Style>
     </Style>
-    <!--
-    <Style Selector="NumericUpDown /template/ DataValidationErrors">
-        <Setter Property="Background" Value="Transparent" />
-    </Style>
-    -->
 </Styles>
