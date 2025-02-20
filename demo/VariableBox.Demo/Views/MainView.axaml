@@ -2,6 +2,7 @@
     x:Class="VariableBox.Demo.Views.MainView"
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Pages="clr-namespace:VariableBox.Demo.Pages"
     xmlns:converters="clr-namespace:VariableBox.Demo.Converters"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -31,7 +32,15 @@
                 Padding="8,4"
                 VerticalAlignment="Stretch"
                 Theme="{DynamicResource CardBorder}"
-                />
+                >
+                <StackPanel Orientation="Horizontal">
+                    <Pages:ManyVariableBox />
+                    <Pages:ManyVariableBox />
+                    <Pages:ManyVariableBox />
+                    <Pages:ManyVariableBox />
+                    <Pages:ManyVariableBox />
+                </StackPanel>
+            </Border>
         </Grid>
     </Panel>
 </UserControl>
