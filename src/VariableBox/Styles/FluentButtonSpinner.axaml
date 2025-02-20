@@ -16,7 +16,7 @@
                 <Setter Property="Background" Value="Transparent" />
                 <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
                     <Setter Property="Background" Value="Transparent" />
-                    <Setter Property="Opacity" Value="0.1" />
+                    <Setter Property="Opacity" Value="0.5" />
                 </Style>
             </Style>
         </Style>
