@@ -51,7 +51,7 @@ public partial class NumericUpDownDemoViewModel : ObservableObject
 
     [ObservableProperty] private bool _IsShowReadButton = true;
     [ObservableProperty] private bool _IsShowWriteButton = true;
-    [ObservableProperty] private bool _IsEnableEditingIndicator = true;
+    // [ObservableProperty] private bool _IsEnableEditingIndicator = true;
 
 
     uint v = 0;

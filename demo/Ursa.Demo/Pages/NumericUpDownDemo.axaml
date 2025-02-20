@@ -25,11 +25,19 @@
         <Style Selector="v|NumericUpDown:invalid">
             <Setter Property="Foreground" Value="red" />
         </Style>
-        <!--
+
         <Style Selector="v|NumericUpDown:editing">
-            <Setter Property="FontSize" Value="12" />
+            <Setter Property="FontSize" Value="15" />
         </Style>
-        -->
+
+        <Style Selector="v|NumericUpDown:editing">
+            <Style Selector="^ /template/ TextBox#PART_TextBox">
+                <Setter Property="Foreground" Value="Green" />
+            </Style>
+            <Style Selector="^:invalid /template/ TextBox#PART_TextBox">
+                <Setter Property="Foreground" Value="Red" />
+            </Style>
+        </Style>
     </UserControl.Styles>
 
     <Grid ColumnDefinitions="350,auto,*" RowDefinitions="auto,*">
@@ -47,6 +55,7 @@
                 Margin="10"
                 HorizontalAlignment="Stretch"
                 >
+                <!--  IsEnableEditingIndicator="{Binding IsEnableEditingIndicator}"  -->
                 <v:VariableBoxUInt
                     Name="numd"
                     Width="{Binding Width}"
@@ -59,7 +68,6 @@
                     HeaderDoubleTaped="Numd_HeaderDoubleTaped"
                     IsAllowDrag="{Binding IsAllowDrag}"
                     IsAllowSpin="{Binding IsAllowSpin}"
-                    IsEnableEditingIndicator="{Binding IsEnableEditingIndicator}"
                     IsEnabled="{Binding IsEnable}"
                     IsReadOnly="{Binding IsReadOnly}"
                     IsShowReadButton="{Binding IsShowReadButton}"
@@ -296,7 +304,7 @@
 
             <CheckBox Content="IsReadOnly" IsChecked="{Binding IsReadOnly}" />
             <CheckBox Content="IsUpdateValueWhenLostFocus" IsChecked="{Binding IsUpdateValueWhenLostFocus}" />
-            <CheckBox Content="IsEnableEditingIndicator" IsChecked="{Binding IsEnableEditingIndicator}" />
+            <!-- <CheckBox Content="IsEnableEditingIndicator" IsChecked="{Binding IsEnableEditingIndicator}" /> -->
             <CheckBox Content="IsShowReadButton" IsChecked="{Binding IsShowReadButton}" />
             <CheckBox Content="IsShowWriteButton" IsChecked="{Binding IsShowWriteButton}" />
 
