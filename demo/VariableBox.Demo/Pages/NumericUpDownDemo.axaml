@@ -82,33 +82,79 @@
                     Watermark="{Binding Watermark}"
                     Value="{Binding Value}"
                     />
-                <Button Content="ValueChange(Write)" />
-                <TextBox
-                    Width="NaN"
-                    HorizontalAlignment="Center"
-                    IsReadOnly="true"
-                    Text="{Binding CommandUpdateText}"
+                <v:VariableBoxUInt
+                    Name="numd2"
+                    Width="{Binding Width}"
+                    HorizontalAlignment="{Binding HorizontalAlignment}"
+                    HorizontalContentAlignment="{Binding HorizontalContentAlignment}"
+                    Command="{Binding TrythisCommand}"
+                    FontFamily="{Binding FontFamily, Mode=OneWay}"
+                    FormatString="{Binding FormatString}"
+                    HeaderContent="{Binding HeaderContent}"
+                    HeaderDoubleTaped="Numd_HeaderDoubleTaped"
+                    IsAllowDrag="{Binding IsAllowDrag}"
+                    IsAllowSpin="{Binding IsAllowSpin}"
+                    IsEnabled="{Binding IsEnable}"
+                    IsReadOnly="{Binding IsReadOnly}"
+                    IsShowReadButton="{Binding IsShowReadButton}"
+                    IsShowWriteButton="{Binding IsShowWriteButton}"
+                    IsUpdateValueWhenLostFocus="{Binding IsUpdateValueWhenLostFocus}"
+                    Maximum="{Binding Maximum}"
+                    Minimum="{Binding Minimum}"
+                    ParsingNumberStyle="{Binding ParsingNumberStyle}"
+                    ReadCommand="{Binding TrythisReadCommand}"
+                    ShowButtonSpinner="{Binding ShowButtonSpinner}"
+                    Step="{Binding Step}"
+                    Watermark="{Binding Watermark}"
+                    Value="{Binding Value}"
                     />
-                <TextBox
-                    Width="NaN"
-                    HorizontalAlignment="Center"
-                    IsReadOnly="true"
-                    Text="{Binding ValueChangedUpdateText}"
-                    />
-                <Button Content="Read" />
-                <TextBox
-                    Width="NaN"
-                    HorizontalAlignment="Center"
-                    IsReadOnly="true"
-                    Text="{Binding ReadCommandUpdateText}"
-                    />
-                <TextBox
-                    Width="NaN"
-                    HorizontalAlignment="Center"
-                    IsReadOnly="true"
-                    Text="{Binding ReadRequestedUpdateText}"
-                    />
-                <Button Content="Demo" />
+                <Border
+                    Margin="2"
+                    Padding="10"
+                    BorderBrush="Green"
+                    BorderThickness="1"
+                    CornerRadius="2"
+                    >
+                    <StackPanel>
+                        <Label Content="ValueChange(Write)" />
+                        <TextBox
+                            Width="NaN"
+                            HorizontalAlignment="Center"
+                            IsReadOnly="true"
+                            Text="{Binding CommandUpdateText}"
+                            />
+                        <TextBox
+                            Width="NaN"
+                            HorizontalAlignment="Center"
+                            IsReadOnly="true"
+                            Text="{Binding ValueChangedUpdateText}"
+                            />
+                    </StackPanel>
+                </Border>
+
+                <Border
+                    Margin="2"
+                    Padding="10"
+                    BorderBrush="Red"
+                    BorderThickness="1"
+                    CornerRadius="2"
+                    >
+                    <StackPanel>
+                        <Label Content="Read" />
+                        <TextBox
+                            Width="NaN"
+                            HorizontalAlignment="Center"
+                            IsReadOnly="true"
+                            Text="{Binding ReadCommandUpdateText}"
+                            />
+                        <TextBox
+                            Width="NaN"
+                            HorizontalAlignment="Center"
+                            IsReadOnly="true"
+                            Text="{Binding ReadRequestedUpdateText}"
+                            />
+                    </StackPanel>
+                </Border>
             </StackPanel>
 
         </Expander>
