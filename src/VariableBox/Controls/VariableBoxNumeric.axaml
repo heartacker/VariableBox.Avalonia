@@ -51,6 +51,7 @@
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="0"
                             CornerRadius="{TemplateBinding CornerRadius}"
+                            Focusable="False"
                             ShowButtonSpinner="{TemplateBinding ShowButtonSpinner}"
                             >
                             <!--
