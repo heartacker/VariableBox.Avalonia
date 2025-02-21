@@ -1,4 +1,4 @@
-﻿using System.Globalization;
+using System.Globalization;
 using System.Windows.Input;
 using Avalonia;
 using Avalonia.Controls;
@@ -298,6 +298,7 @@ public abstract class NumericUpDown : TemplatedControl /* , Control */ /*, IClea
 
         _spinner = e.NameScope.Find<ButtonSpinner>(PART_Spinner);
         Spinner.SpinEvent.AddHandler(OnSpin, _spinner);
+        Spinner.GotFocusEvent.AddHandler(OnSpinWholeGotFocus, _spinner);
 
         _textBox = e.NameScope.Find<TextBox>(PART_TextBox);
         TextBox.IsReadOnlyProperty.SetValue(IsReadOnly, _textBox);
@@ -318,6 +319,11 @@ public abstract class NumericUpDown : TemplatedControl /* , Control */ /*, IClea
         PointerReleasedEvent.AddHandler(OnDragPanelPointerReleased, _dragPanel);
 
         OnApplyTemplateReadWrite(e);
+    }
+
+    private void OnSpinWholeGotFocus(object sender, GotFocusEventArgs e)
+    {
+        //_textBox?.Focus();
     }
 
     protected void OnApplyTemplateReadWrite(TemplateAppliedEventArgs e)
@@ -396,12 +402,15 @@ public abstract class NumericUpDown : TemplatedControl /* , Control */ /*, IClea
 
     private void OnTextBoxKeyDown(object? sender, KeyEventArgs e)
     {
-        // System.Diagnostics.Trace.WriteLine(e.Key);
-        if (e.Key == Key.Left || e.Key == Key.Right || e.Key == Key.Up || e.Key == Key.Down)
+        System.Diagnostics.Trace.WriteLine(e.Key);
+        if (e.Key == Key.Left || e.Key == Key.Right ||
+            e.Key == Key.Up || e.Key == Key.Down ||
+            e.Key == Key.Enter
+            )
         {
             this.OnKeyDown(e);
+            //e.Handled = true;
         }
-        // e.Handled = true;
     }
 
     protected override void OnKeyDown(KeyEventArgs e)
@@ -415,7 +424,7 @@ public abstract class NumericUpDown : TemplatedControl /* , Control */ /*, IClea
                 _dragPanel.IsVisible = true;
                 // _dragPanel.Focus();
                 _textBox?.ClearSelection();
-                _spinner?.Focus();
+                //_spinner?.Focus();
             }
         }
         if (e.Key == Key.Enter || (e.Key == Key.Right && e.KeyModifiers == KeyModifiers.Alt))
@@ -426,7 +435,10 @@ public abstract class NumericUpDown : TemplatedControl /* , Control */ /*, IClea
                 // if value changed, fire a changed,
                 // if value not changed but text is changed, SyncTextAndValue without trigger
                 var commitSuccess = CommitInput(true);
-                e.Handled = !commitSuccess;
+                OnTextBoxTextChanged(_textBox, null);
+                e.Handled = commitSuccess;
+                _textBox?.ClearSelection();
+                //_spinner?.Focus();
             }
             // if value changed, trigger had been fired above,
             // if value not changed, fire a changed anyway
@@ -547,9 +559,10 @@ public abstract class NumericUpDown : TemplatedControl /* , Control */ /*, IClea
 
     protected abstract void Decrease();
 
+    // 在 text 变化后，回车写入
     protected virtual bool CommitInput(bool forceTextUpdate = false)
     {
-        return SyncTextAndValue(true, _textBox?.Text, forceTextUpdate);
+        return SyncTextAndValue(fromTextToValue: true, _textBox?.Text, forceTextUpdate);
     }
 
     /// <summary>
