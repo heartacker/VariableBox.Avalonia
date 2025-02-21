@@ -70,7 +70,7 @@
         <Setter Property="MinWidth" Value="{DynamicResource TextControlThemeMinWidth}" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
-        <Setter Property="Focusable" Value="True" />
+        <Setter Property="Focusable" Value="False" />
         <Setter Property="Template">
             <ControlTemplate>
                 <DataValidationErrors>
