@@ -184,12 +184,11 @@
             </ControlTemplate>
         </Setter>
 
-        <!-- <Style Selector="^ /template/ RepeatButton">
-            <Style Selector="^:disabled /template/ ContentPresenter">
-                <Setter Property="Background" Value="Transparent" />
-                <Setter Property="Opacity" Value="0.5" />
+        <Style Selector="^ /template/ ButtonSpinner#PART_Spinner">
+            <Style Selector="^ /template/ :is(RepeatButton)">
+                <Setter Property="Focusable" Value="False" />
             </Style>
-        </Style>-->
+        </Style>
         <!--<Style Selector="^.clearButton, ^.ClearButton">
             <Style Selector="^[IsReadOnly=False]:focus /template/ Button#PART_ClearButton">
                 <Setter Property="IsVisible" Value="True" />

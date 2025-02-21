@@ -6,23 +6,23 @@
     <Styles.Resources>
         <ResourceDictionary>
             <ResourceDictionary.ThemeDictionaries>
-                <!-- 共用变量 -->
+                <!--  共用变量  -->
                 <ResourceInclude x:Key="Dark" Source="./Themes/Dark/_index.axaml" />
                 <ResourceInclude x:Key="Light" Source="./Themes/Light/_index.axaml" />
             </ResourceDictionary.ThemeDictionaries>
             <ResourceDictionary.MergedDictionaries>
-                <!-- 这个主题特有的 -->
+                <!--  这个主题特有的  -->
                 <ResourceInclude Source="Themes/Shared/Fluent_index.axaml" />
-                <!-- 然后添加那些空间 -->
+                <!--  然后添加那些空间  -->
                 <ResourceInclude Source="../Controls/_index.axaml" />
-                <!-- 语言包  -->
+                <!--  语言包  -->
                 <ResourceInclude Source="Locale/zh-cn.axaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Styles.Resources>
 
-    <!-- 添加各种修改用户空间的style -->
-    <StyleInclude Source="../Styles/_index.axaml" />
+    <!--  添加各种修改用户空间的style  -->
     <StyleInclude Source="../Styles/FluentButtonSpinner.axaml" />
+    <StyleInclude Source="../Styles/_index.axaml" />
     <!--  Add Styles Here  -->
 </Styles>
