@@ -34,7 +34,13 @@ VariableBox is a Avalonia Control for building cross-platform UIs with Avalonia 
 
 ## ChangeLog
 
-- 2025/02/21(v0.5.0)
+- 2025/02/21(v0.6.0)
+  1. unify the `tab` key focus behavior, only the text box and read write button can be focused
+  2. fix the enter key trigger behavior bug
+  3. styly polish, uniform the style of the button spinner and the disabled style
+  4. demo update
+
+- 2025/02/20(v0.5.0)
   1. remote property `IsEnableEditingIndicator` indicator
   2. please use the  `PseudoClasses`
      1. `:editing` for editing
