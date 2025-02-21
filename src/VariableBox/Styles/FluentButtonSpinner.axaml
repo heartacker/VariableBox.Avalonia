@@ -9,7 +9,10 @@
         </Border>
     </Design.PreviewWith>
 
-    <!-- <Style Selector="NumericUpDown /template/ ButtonSpinner#PART_Spinner">
+    <!--  让 NumericUpDown spinner 分割更加统一，更加符合 Fluent 风格  -->
+    <!--  这里注释掉是希望可以下面的样式已经覆盖  -->
+    <!--
+        <Style Selector="NumericUpDown /template/ ButtonSpinner#PART_Spinner">
         <Setter Property="Background" Value="Transparent" />
         <Style Selector="^ /template/ :is(RepeatButton)">
             <Setter Property="Background" Value="Transparent" />
@@ -18,8 +21,10 @@
                 <Setter Property="Opacity" Value="0.4" />
             </Style>
         </Style>
-    </Style> -->
+    </Style>
+    -->
 
+    <!--  让 ButtonSpinner 的背景透明，更加符合 Fluent 风格  -->
     <Style Selector="ButtonSpinner">
         <Style Selector="^ /template/ :is(RepeatButton)">
             <Setter Property="Background" Value="Transparent" />
@@ -30,6 +35,7 @@
         </Style>
     </Style>
 
+    <!--  // 更换 spinner 的主题，避免与其他控件的样式冲突，并设置样式  -->
     <Style Selector=":is(vbox|NumericUpDown)">
         <Style x:SetterTargetType="ButtonSpinner" Selector="^ /template/ #PART_Spinner">
             <Setter Property="Theme" Value="{StaticResource FluentButtonSpinner}" />
