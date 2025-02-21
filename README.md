@@ -16,7 +16,7 @@ Wanna help
 ![Nuget](https://img.shields.io/nuget/dt/VariableBox.Avalonia?style=for-the-badge)
 
 <p align="center">
-    <img src="./Logo.svg" alt="drawing" width="150" />
+    <img src="Logo.svg" alt="drawing" width="150" />
 </p>
 
 <p align="center">
@@ -27,10 +27,10 @@ Wanna help
 
 VariableBox is a Avalonia Control for building cross-platform UIs with Avalonia UI.
 
-| Theme | Fluent                           | Semi                           |
-| ----- | -------------------------------- | ------------------------------ |
-| Dark  | ![df](./assets/dark-fluent.png)  | ![ds](./assets/dark-semi.png)  |
-| Light | ![lf](./assets/light-fluent.png) | ![ls](./assets/light-semi.png) |
+| Theme | Fluent                                                                                      | Semi                                                                                      |
+| ----- | ------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| Dark  | ![df](https://github.com/heartacker/VariableBox.Avalonia/blob/main/assets/dark-fluent.png)  | ![ds](https://github.com/heartacker/VariableBox.Avalonia/blob/main/assets/dark-semi.png)  |
+| Light | ![lf](https://github.com/heartacker/VariableBox.Avalonia/blob/main/assets/light-fluent.png) | ![ls](https://github.com/heartacker/VariableBox.Avalonia/blob/main/assets/light-semi.png) |
 
 ## ChangeLog
 
