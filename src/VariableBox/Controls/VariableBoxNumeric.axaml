@@ -140,6 +140,7 @@
                                     Background="Transparent"
                                     BorderBrush="{DynamicResource ButtonSpinnerRepeatButtonBorderBrush}"
                                     BorderThickness="0"
+                                    Classes="RWButton"
                                     CornerRadius="{DynamicResource ButtonSpinnerButtonGroupCornerRadius}"
                                     Foreground="{TemplateBinding Foreground}"
                                     IsVisible="{TemplateBinding IsShowReadButton}"
@@ -162,6 +163,7 @@
                                     Background="Transparent"
                                     BorderBrush="{DynamicResource ButtonSpinnerRepeatButtonBorderBrush}"
                                     BorderThickness="0"
+                                    Classes="RWButton"
                                     CornerRadius="{DynamicResource ButtonSpinnerButtonGroupCornerRadius}"
                                     Foreground="{TemplateBinding Foreground}"
                                     IsVisible="{TemplateBinding IsShowWriteButton}"
@@ -217,13 +219,12 @@
             <Setter Property="Foreground" Value="Green" />
         </Style>
         -->
+
         <Style Selector="^:editing /template/ ButtonSpinner#PART_Spinner">
             <Setter Property="AllowSpin" Value="False" />
         </Style>
-        <Style Selector="^:editing /template/ RepeatButton#PART_RepeatRead">
-            <Setter Property="IsEnabled" Value="False" />
-        </Style>
-        <Style Selector="^:editing /template/ RepeatButton#PART_RepeatWrite">
+
+        <Style Selector="^:editing /template/ RepeatButton.RWButton">
             <Setter Property="IsEnabled" Value="False" />
         </Style>
         <!--<Style Selector="^:editing /template/ TextBox#PART_TextBox">
