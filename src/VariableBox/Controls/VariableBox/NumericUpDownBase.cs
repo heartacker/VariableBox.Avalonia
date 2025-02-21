@@ -368,7 +368,7 @@ public abstract class NumericUpDown : TemplatedControl /* , Control */ /*, IClea
 
     private void OnTextBoxTextChanged(object? sender, TextChangedEventArgs e)
     {
-        CheckContextIsChangedAndValid((sender as TextBox).Text, ref ed, ref edv);
+        CheckContextIsChangedAndValid((sender as TextBox)?.Text, ref ed, ref edv);
 
         // IsEditingVisiable =
         IsEditing = ed;
