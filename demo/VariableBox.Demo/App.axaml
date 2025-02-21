@@ -16,9 +16,21 @@
         <vbox:FluentTheme Locale="zh-CN" />
 
         <!-- <semi:SemiTheme Locale="zh-CN" />
-        <vbox:SemiTheme Locale="zh-CN" /> -->
+        <vbox:SemiTheme Locale="zh-CN" />-->
 
-        <!--<SimpleTheme />
+        <!-- <SimpleTheme />
         <vbox:SimpleTheme Locale="zh-CN" />-->
+
+        <Style Selector="vbox|NumericUpDown">
+            <Setter Property="FontFamily" Value="Sarasa Mono SC" />
+        </Style>
+        <Style Selector="vbox|NumericUpDown:editing">
+            <Style Selector="^ /template/ TextBox#PART_TextBox">
+                <Setter Property="Foreground" Value="Green" />
+            </Style>
+            <Style Selector="^:invalid /template/ TextBox#PART_TextBox">
+                <Setter Property="Foreground" Value="Red" />
+            </Style>
+        </Style>
     </Application.Styles>
 </Application>
