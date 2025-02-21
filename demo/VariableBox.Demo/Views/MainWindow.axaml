@@ -102,7 +102,7 @@
             <TabItem Header="Property">
                 <Pages:NumericUpDownDemo />
             </TabItem>
-            <TabItem Header="Porfermance">
+            <TabItem Header="Performance ">
                 <views:MainView />
             </TabItem>
         </TabControl>
