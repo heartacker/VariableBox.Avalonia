@@ -18,6 +18,5 @@
     </Styles.Resources>
 
     <StyleInclude Source="../Styles/_index.axaml" />
-    <StyleInclude Source="../Styles/SemiButtonSpinner.axaml" />
     <!--  Add Styles Here  -->
 </Styles>

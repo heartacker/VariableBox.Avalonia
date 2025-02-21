@@ -6,6 +6,8 @@
     </Design.PreviewWith>
     <!--  Add Styles Here  -->
 
+    <StyleInclude Source="ButtonSpinner.axaml" />
+
     <Style Selector=":is(TextBox) /template/ Grid > ContentPresenter">
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Margin" Value="2,0,0,0" />
