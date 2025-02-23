@@ -2,7 +2,7 @@
 
 <p align="center">
 
-Wanna help
+Want to help
 
 > 欢迎任何人士帮忙支持并让这个简单控件变得更好，我们需要你们。
 
@@ -25,7 +25,7 @@ Wanna help
 
 </p>
 
-VariableBox is a Avalonia Control for building cross-platform UIs with Avalonia UI.
+VariableBox is an Avalonia Control for building cross-platform UIs with Avalonia UI.
 
 | Theme | Fluent                                                                                      | Semi                                                                                      |
 | ----- | ------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
@@ -37,7 +37,7 @@ VariableBox is a Avalonia Control for building cross-platform UIs with Avalonia 
 - 2025/02/21(v0.6.0)
   1. unify the `tab` key focus behavior, only the text box and read write button can be focused
   2. fix the enter key trigger behavior bug
-  3. styly polish, uniform the style of the button spinner and the disabled style
+  3. style polish, uniform the style of the button spinner and the disabled style
   4. demo update
 
 - 2025/02/20(v0.5.0)
@@ -154,7 +154,7 @@ To make VariableBox controls show up in your application, you need to reference 
 
 - `vbox:SemiTheme` is a theme package for VariableBox inspired by Semi Design.
 
-  > you need to `add package Semi.Avalonia` frist
+  > you need to `add package Semi.Avalonia` first
   >
 - `vbox:SimpleTheme` is compatible with `<SimpleTheme/>`
 - `vbox:FluentTheme` is compatible with `<FluentTheme/>`
