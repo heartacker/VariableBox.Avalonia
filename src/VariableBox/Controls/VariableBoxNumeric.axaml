@@ -5,34 +5,73 @@
     xmlns:v="VariableBox"
     >
     <Design.PreviewWith>
-        <Border BorderThickness="10">
-            <StackPanel Margin="10" Spacing="1">
-                <NumericUpDown Value="10" />
-                <v:VariableBoxInt Value="1" />
-                <v:VariableBoxLong Background="Bisque" Value="10" />
-                <v:VariableBoxByte Value="0" />
-                <v:VariableBoxSByte Value="-128" />
-                <v:VariableBoxShort Value="-32768" />
-                <v:VariableBoxUShort Value="65535" />
-                <v:VariableBoxInt
-                    FormatString="{}{0:x8}"
-                    HeaderContent="Disable:"
-                    IsEnabled="False"
-                    ParsingNumberStyle="HexNumber"
-                    Value="0"
-                    />
-                <v:VariableBoxFloat Background="Yellow" Value="0.1" />
-                <v:VariableBoxDouble
-                    Foreground="Blue"
-                    HeaderContent="fore:"
-                    Value="1e-9"
-                    />
-                <v:VariableBoxDecimal
-                    BorderBrush="red"
-                    HeaderContent="bbrush:"
-                    Value="10"
-                    />
-            </StackPanel>
+        <Border Width="400" BorderThickness="10">
+            <Grid ColumnDefinitions="*,*">
+                <ThemeVariantScope Grid.Column="0" RequestedThemeVariant="Light">
+                    <StackPanel Margin="10" Spacing="1">
+                        <NumericUpDown Value="10" />
+                        <v:VariableBoxInt Value="1" />
+                        <v:VariableBoxLong Background="Bisque" Value="10" />
+                        <v:VariableBoxByte Value="0" />
+                        <v:VariableBoxSByte Value="-128" />
+                        <v:VariableBoxShort Value="-32768" />
+                        <v:VariableBoxUShort Value="65535" />
+                        <v:VariableBoxInt
+                            FormatString="{}{0:x8}"
+                            HeaderContent="Disable:"
+                            IsEnabled="False"
+                            ParsingNumberStyle="HexNumber"
+                            Value="0"
+                            />
+                        <v:VariableBoxFloat Background="Yellow" Value="0.1" />
+                        <v:VariableBoxDouble
+                            Foreground="Blue"
+                            HeaderContent="fore:"
+                            Value="1e-9"
+                            />
+                        <v:VariableBoxDecimal
+                            BorderBrush="red"
+                            HeaderContent="bbrush:"
+                            Value="10"
+                            />
+                    </StackPanel>
+
+                </ThemeVariantScope>
+                <ThemeVariantScope Grid.Column="1" RequestedThemeVariant="Dark">
+                    <StackPanel
+                        Grid.Column="1"
+                        Margin="10"
+                        Spacing="1"
+                        >
+                        <NumericUpDown Value="10" />
+                        <v:VariableBoxInt Value="1" />
+                        <v:VariableBoxLong Background="Bisque" Value="10" />
+                        <v:VariableBoxByte Value="0" />
+                        <v:VariableBoxSByte Value="-128" />
+                        <v:VariableBoxShort Value="-32768" />
+                        <v:VariableBoxUShort Value="65535" />
+                        <v:VariableBoxInt
+                            FormatString="{}{0:x8}"
+                            HeaderContent="Disable:"
+                            IsEnabled="False"
+                            ParsingNumberStyle="HexNumber"
+                            Value="0"
+                            />
+                        <v:VariableBoxFloat Background="Yellow" Value="0.1" />
+                        <v:VariableBoxDouble
+                            Foreground="Blue"
+                            HeaderContent="fore:"
+                            Value="1e-9"
+                            />
+                        <v:VariableBoxDecimal
+                            BorderBrush="red"
+                            HeaderContent="bbrush:"
+                            Value="10"
+                            />
+                    </StackPanel>
+                </ThemeVariantScope>
+            </Grid>
+
         </Border>
     </Design.PreviewWith>
     <ControlTheme x:Key="InputClearButton" TargetType="Button">

@@ -3,8 +3,14 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:converters="using:Avalonia.Controls.Converters"
     xmlns:sys="using:System"
+    xmlns:vbox="VariableBox"
     x:ClassModifier="internal"
     >
+    <Design.PreviewWith>
+        <Border BorderThickness="10">
+            <vbox:VariableBoxInt Value="10" />
+        </Border>
+    </Design.PreviewWith>
 
     <converters:MarginMultiplierConverter
         x:Key="ButtonSpinnerLeftThickness"
