@@ -27,8 +27,8 @@
 
     <ControlTheme x:Key="{x:Type v:NumericUpDown}" TargetType="v:NumericUpDown">
         <Setter Property="MinHeight" Value="{DynamicResource NumericUpDownDefaultHeight}" />
-        <Setter Property="Margin" Value="0" />
-        <Setter Property="BorderBrush" Value="LightGray" />
+        <!-- <Setter Property="Margin" Value="0" /> -->
+        <Setter Property="BorderBrush" Value="{DynamicResource TextControlBorderBrush}" />
         <Setter Property="Template">
             <ControlTemplate>
                 <!--  BorderBrush="LightGray"  -->
