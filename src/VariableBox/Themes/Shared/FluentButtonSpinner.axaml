@@ -7,9 +7,28 @@
     x:ClassModifier="internal"
     >
     <Design.PreviewWith>
-        <Border BorderThickness="10">
-            <vbox:VariableBoxInt Value="10" />
-        </Border>
+        <StackPanel>
+            <Border Background="White" BorderThickness="10">
+                <ThemeVariantScope RequestedThemeVariant="Light">
+                    <StackPanel>
+                        <ButtonSpinner Content="10" />
+                        <ButtonSpinner Content="10" />
+                        <vbox:VariableBoxInt Value="10" />
+                    </StackPanel>
+                </ThemeVariantScope>
+            </Border>
+
+            <Border Background="Black" BorderThickness="10">
+                <ThemeVariantScope RequestedThemeVariant="Dark">
+                    <StackPanel>
+                        <ButtonSpinner Content="10" />
+                        <ButtonSpinner Content="10" />
+                        <vbox:VariableBoxInt Value="10" />
+                    </StackPanel>
+                </ThemeVariantScope>
+            </Border>
+        </StackPanel>
+
     </Design.PreviewWith>
 
     <converters:MarginMultiplierConverter
@@ -96,7 +115,7 @@
                                     Foreground="{TemplateBinding Foreground}"
                                     IsTabStop="{TemplateBinding IsTabStop}"
                                     >
-                                    <!-- Theme="{StaticResource FluentButtonSpinnerRepeatButton}" -->
+                                    <!--  Theme="{StaticResource FluentButtonSpinnerRepeatButton}"  -->
                                     <PathIcon
                                         Width="12"
                                         Height="8"
@@ -117,7 +136,7 @@
                                     Foreground="{TemplateBinding Foreground}"
                                     IsTabStop="{TemplateBinding IsTabStop}"
                                     >
-                                    <!-- Theme="{StaticResource FluentButtonSpinnerRepeatButton}" -->
+                                    <!--  Theme="{StaticResource FluentButtonSpinnerRepeatButton}"  -->
                                     <PathIcon
                                         Width="12"
                                         Height="8"
