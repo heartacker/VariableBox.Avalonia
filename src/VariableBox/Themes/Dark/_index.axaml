@@ -2,7 +2,6 @@
     <!--  Add Resources Here  -->
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary>
-            <SolidColorBrush x:Key="VboxNumericUpDownBorderBrush" Color="DimGray" />
         </ResourceDictionary>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
