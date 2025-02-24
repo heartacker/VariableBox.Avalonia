@@ -7,4 +7,6 @@
 
     <Thickness x:Key="TextControlBorderThemeThickness">1</Thickness>
     <CornerRadius x:Key="ControlCornerRadius">1</CornerRadius>
+
+    <StaticResource x:Key="VboxNumericUpDownBorderBrush" ResourceKey="ThemeBorderMidBrush" />
 </ResourceDictionary>
