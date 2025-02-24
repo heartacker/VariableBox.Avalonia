@@ -24,12 +24,25 @@
         <Style Selector="vbox|NumericUpDown">
             <Setter Property="FontFamily" Value="Sarasa Mono SC" />
         </Style>
+
+        <Style Selector="vbox|NumericUpDown:pointerover">
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
         <Style Selector="vbox|NumericUpDown:editing">
+            <Setter Property="BorderBrush" Value="Green" />
             <Style Selector="^ /template/ TextBox#PART_TextBox">
-                <Setter Property="Foreground" Value="Green" />
+                <!-- <Setter Property="Foreground" Value="Green" /> -->
+                <Setter Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform ScaleX="1.1" ScaleY="1.1" />
+                    </Setter.Value>
+                </Setter>
             </Style>
-            <Style Selector="^:invalid /template/ TextBox#PART_TextBox">
-                <Setter Property="Foreground" Value="Red" />
+            <Style Selector="^:invalid">
+                <Setter Property="BorderBrush" Value="Red" />
+                <Style Selector="^ /template/ TextBox#PART_TextBox">
+                    <Setter Property="Foreground" Value="Red" />
+                </Style>
             </Style>
         </Style>
     </Application.Styles>
