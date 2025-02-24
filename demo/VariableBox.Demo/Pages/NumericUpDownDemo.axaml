@@ -26,14 +26,18 @@
             <Setter Property="Foreground" Value="red" />
         </Style>
 
+        <!--
         <Style Selector="v|NumericUpDown:editing">
             <Setter Property="FontSize" Value="15" />
         </Style>
+        -->
 
         <Style Selector="v|NumericUpDown:editing">
+            <!--
             <Style Selector="^ /template/ TextBox#PART_TextBox">
                 <Setter Property="Foreground" Value="Green" />
             </Style>
+            -->
             <Style Selector="^:invalid /template/ TextBox#PART_TextBox">
                 <Setter Property="Foreground" Value="Red" />
             </Style>
@@ -117,7 +121,7 @@
                             Watermark="{Binding Watermark}"
                             Value="{Binding Value}"
                             />
-                        <NumericUpDown Width="{Binding Width}" Value="10" />
+                        <NumericUpDown Width="{Binding Width}" Value="{Binding Value}" />
 
                     </StackPanel>
                 </Border>
