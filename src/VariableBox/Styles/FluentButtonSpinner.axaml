@@ -6,6 +6,13 @@
     <Design.PreviewWith>
         <Border Padding="20">
             <!--  Add Controls for Previewer Here  -->
+            <StackPanel Orientation="Vertical">
+                <ButtonSpinner Content="aa" />
+                <ButtonSpinner Background="Aqua" Content="aa" />
+                <NumericUpDown Value="10" />
+                <vbox:VariableBoxInt Value="10" />
+                <vbox:VariableBoxInt Background="Aqua" Value="10" />
+            </StackPanel>
         </Border>
     </Design.PreviewWith>
 

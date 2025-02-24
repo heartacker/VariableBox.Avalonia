@@ -6,6 +6,10 @@
     <Design.PreviewWith>
         <Border Padding="20">
             <!--  Add Controls for Previewer Here  -->
+            <StackPanel Orientation="Vertical">
+                <ButtonSpinner Content="aa" />
+                <ButtonSpinner Background="Blue" Content="aa" />
+            </StackPanel>
         </Border>
     </Design.PreviewWith>
 
