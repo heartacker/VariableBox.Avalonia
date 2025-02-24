@@ -55,11 +55,17 @@
 
     <!--  // 更换 spinner 的主题，避免与其他控件的样式冲突，并设置样式  -->
     <Style Selector=":is(vbox|NumericUpDown)">
+
         <!-- <Style x:SetterTargetType="ButtonSpinner" Selector="^ /template/ #PART_Spinner"> -->
         <Style Selector="^ /template/ ButtonSpinner#PART_Spinner">
+            <Style Selector="^:disabled /template/ StackPanel#PART_SpinnerPanel">
+                <Setter Property="Background" Value="Transparent" />
+            </Style>
+
             <Style Selector="^ /template/ :is(RepeatButton)">
                 <Setter Property="Focusable" Value="False" />
             </Style>
         </Style>
+
     </Style>
 </Styles>
