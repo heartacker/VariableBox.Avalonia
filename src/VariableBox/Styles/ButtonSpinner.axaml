@@ -4,11 +4,21 @@
     xmlns:vbox="VariableBox"
     >
     <Design.PreviewWith>
-        <Border Padding="20">
-            <!--  Add Controls for Previewer Here  -->
-            <StackPanel Orientation="Vertical">
-                <ButtonSpinner Content="aa" />
-                <ButtonSpinner Background="Blue" Content="aa" />
+        <Border Padding="20" Background="Gray">
+            <StackPanel Spacing="10">
+                <!--  Add Controls for Previewer Here  -->
+                <ThemeVariantScope RequestedThemeVariant="Light">
+                    <StackPanel Background="White" Orientation="Vertical">
+                        <ButtonSpinner Content="aa" />
+                        <ButtonSpinner Background="LightBlue" Content="aa" />
+                    </StackPanel>
+                </ThemeVariantScope>
+                <ThemeVariantScope RequestedThemeVariant="Dark">
+                    <StackPanel Background="Black" Orientation="Vertical">
+                        <ButtonSpinner Content="aa" />
+                        <ButtonSpinner Background="Blue" Content="aa" />
+                    </StackPanel>
+                </ThemeVariantScope>
             </StackPanel>
         </Border>
     </Design.PreviewWith>
