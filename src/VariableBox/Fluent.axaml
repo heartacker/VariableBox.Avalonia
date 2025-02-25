@@ -31,11 +31,6 @@
 
     <Styles.Resources>
         <ResourceDictionary>
-            <ResourceDictionary.ThemeDictionaries>
-                <!--  共用变量  -->
-                <ResourceInclude x:Key="Dark" Source="./Themes/Dark/_index.axaml" />
-                <ResourceInclude x:Key="Light" Source="./Themes/Light/_index.axaml" />
-            </ResourceDictionary.ThemeDictionaries>
             <ResourceDictionary.MergedDictionaries>
                 <!--  这个主题特有的  -->
                 <ResourceInclude Source="Themes/Shared/Fluent_index.axaml" />

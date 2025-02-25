@@ -1,6 +1,13 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <!--  Add Resources Here  -->
+
+    <ResourceDictionary.ThemeDictionaries>
+        <!--  共用变量  -->
+        <ResourceInclude x:Key="Dark" Source="../Dark/_index.axaml" />
+        <ResourceInclude x:Key="Light" Source="../Light/_index.axaml" />
+    </ResourceDictionary.ThemeDictionaries>
+
     <ResourceDictionary.MergedDictionaries>
+        <!--  Add Resources Here  -->
         <ResourceInclude Source="FluentButtonSpinner.axaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
