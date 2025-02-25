@@ -8,63 +8,77 @@
         <Border Width="400" BorderThickness="10">
             <Grid ColumnDefinitions="*,*">
                 <ThemeVariantScope Grid.Column="0" RequestedThemeVariant="Light">
-                    <StackPanel Margin="10" Spacing="1">
-                        <NumericUpDown Value="10" />
-                        <vbox:VariableBoxInt Value="1" />
-                        <vbox:VariableBoxLong Background="Bisque" Value="10" />
-                        <vbox:VariableBoxByte Value="0" />
-                        <vbox:VariableBoxSByte Value="-128" />
-                        <vbox:VariableBoxShort Value="-32768" />
-                        <vbox:VariableBoxUShort Value="65535" />
-                        <vbox:VariableBoxInt
-                            FormatString="{}{0:x8}"
-                            HeaderContent="Disable:"
-                            IsEnabled="False"
-                            ParsingNumberStyle="HexNumber"
-                            Value="0"
-                            />
-                        <vbox:VariableBoxFloat Background="Yellow" Value="0.1" />
-                        <vbox:VariableBoxDouble
-                            Foreground="Blue"
-                            HeaderContent="fore:"
-                            Value="1e-9"
-                            />
-                        <vbox:VariableBoxDecimal
-                            BorderBrush="red"
-                            HeaderContent="bbrush:"
-                            Value="10"
-                            />
-                    </StackPanel>
+                    <Border
+                        Margin="5"
+                        Padding="10"
+                        BorderBrush="Black"
+                        BorderThickness="1"
+                        >
+                        <StackPanel Margin="10" Spacing="1">
+                            <NumericUpDown Value="10" />
+                            <vbox:VariableBoxInt Value="1" />
+                            <vbox:VariableBoxLong Background="Bisque" Value="10" />
+                            <vbox:VariableBoxByte Value="0" />
+                            <vbox:VariableBoxSByte Value="-128" />
+                            <vbox:VariableBoxShort Value="-32768" />
+                            <vbox:VariableBoxUShort Value="65535" />
+                            <vbox:VariableBoxInt
+                                FormatString="{}{0:x8}"
+                                HeaderContent="Disable:"
+                                IsEnabled="False"
+                                ParsingNumberStyle="HexNumber"
+                                Value="0"
+                                />
+                            <vbox:VariableBoxFloat Background="Yellow" Value="0.1" />
+                            <vbox:VariableBoxDouble
+                                Foreground="Blue"
+                                HeaderContent="fore:"
+                                Value="1e-9"
+                                />
+                            <vbox:VariableBoxDecimal
+                                BorderBrush="red"
+                                HeaderContent="bbrush:"
+                                Value="10"
+                                />
+                        </StackPanel>
+                    </Border>
 
                 </ThemeVariantScope>
                 <ThemeVariantScope Grid.Column="1" RequestedThemeVariant="Dark">
-                    <StackPanel Margin="10" Spacing="1">
-                        <NumericUpDown Value="10" />
-                        <vbox:VariableBoxInt Value="1" />
-                        <vbox:VariableBoxLong Background="Bisque" Value="10" />
-                        <vbox:VariableBoxByte Value="0" />
-                        <vbox:VariableBoxSByte Value="-128" />
-                        <vbox:VariableBoxShort Value="-32768" />
-                        <vbox:VariableBoxUShort Value="65535" />
-                        <vbox:VariableBoxInt
-                            FormatString="{}{0:x8}"
-                            HeaderContent="Disable:"
-                            IsEnabled="False"
-                            ParsingNumberStyle="HexNumber"
-                            Value="0"
-                            />
-                        <vbox:VariableBoxFloat Background="Yellow" Value="0.1" />
-                        <vbox:VariableBoxDouble
-                            Foreground="Blue"
-                            HeaderContent="fore:"
-                            Value="1e-9"
-                            />
-                        <vbox:VariableBoxDecimal
-                            BorderBrush="red"
-                            HeaderContent="brush:"
-                            Value="10"
-                            />
-                    </StackPanel>
+                    <Border
+                        Margin="5"
+                        Padding="10"
+                        Background="Black"
+                        >
+                        <StackPanel Margin="0" Spacing="2">
+                            <NumericUpDown Value="10" />
+                            <vbox:VariableBoxInt Value="1" />
+                            <vbox:VariableBoxLong Background="Bisque" Value="10" />
+                            <vbox:VariableBoxByte Value="0" />
+                            <vbox:VariableBoxSByte Value="-128" />
+                            <vbox:VariableBoxShort Value="-32768" />
+                            <vbox:VariableBoxUShort Value="65535" />
+                            <vbox:VariableBoxInt
+                                FormatString="{}{0:x8}"
+                                HeaderContent="Disable:"
+                                IsEnabled="False"
+                                ParsingNumberStyle="HexNumber"
+                                Value="0"
+                                />
+                            <vbox:VariableBoxFloat Background="Yellow" Value="0.1" />
+                            <vbox:VariableBoxDouble
+                                Foreground="Blue"
+                                HeaderContent="fore:"
+                                Value="1e-9"
+                                />
+                            <vbox:VariableBoxDecimal
+                                BorderBrush="red"
+                                HeaderContent="brush:"
+                                Value="10"
+                                />
+                        </StackPanel>
+                    </Border>
+
                 </ThemeVariantScope>
             </Grid>
 
