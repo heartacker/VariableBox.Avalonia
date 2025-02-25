@@ -12,7 +12,7 @@
                 <ThemeVariantScope RequestedThemeVariant="Light">
                     <StackPanel>
                         <ButtonSpinner Content="10" />
-                        <ButtonSpinner Content="10" />
+                        <ButtonSpinner Content="10" Theme="{DynamicResource FluentButtonSpinner}" />
                         <vbox:VariableBoxInt Value="10" />
                     </StackPanel>
                 </ThemeVariantScope>
@@ -22,7 +22,7 @@
                 <ThemeVariantScope RequestedThemeVariant="Dark">
                     <StackPanel>
                         <ButtonSpinner Content="10" />
-                        <ButtonSpinner Content="10" />
+                        <ButtonSpinner Content="10" Theme="{DynamicResource FluentButtonSpinner}" />
                         <vbox:VariableBoxInt Value="10" />
                     </StackPanel>
                 </ThemeVariantScope>
@@ -110,8 +110,7 @@
                                     VerticalContentAlignment="Center"
                                     Background="{TemplateBinding Background}"
                                     BorderBrush="{TemplateBinding BorderBrush}"
-                                    BorderThickness="{TemplateBinding BorderThickness,
-                                                                      Converter={StaticResource ButtonSpinnerLeftThickness}}"
+                                    BorderThickness="0"
                                     Foreground="{TemplateBinding Foreground}"
                                     IsTabStop="{TemplateBinding IsTabStop}"
                                     >
@@ -131,8 +130,7 @@
                                     VerticalContentAlignment="Center"
                                     Background="{TemplateBinding Background}"
                                     BorderBrush="{TemplateBinding BorderBrush}"
-                                    BorderThickness="{TemplateBinding BorderThickness,
-                                                                      Converter={StaticResource ButtonSpinnerLeftThickness}}"
+                                    BorderThickness="0"
                                     Foreground="{TemplateBinding Foreground}"
                                     IsTabStop="{TemplateBinding IsTabStop}"
                                     >
