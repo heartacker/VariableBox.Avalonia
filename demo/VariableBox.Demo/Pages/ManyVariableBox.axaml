@@ -5,134 +5,113 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:v="VariableBox"
-    d:DesignHeight="450"
-    d:DesignWidth="800"
+    d:DesignHeight="500"
+    d:DesignWidth="400"
     mc:Ignorable="d"
     >
-    <UserControl.Styles>
-        <Style Selector=":is(ButtonSpinner)">
-            <Setter Property="Theme" Value="{DynamicResource FluentButtonSpinner}" />
-        </Style>
-    </UserControl.Styles>
 
-    <StackPanel Margin="5">
-        <Label Content="use FluentButtonSpinner" />
-        <NumericUpDown Value="2" />
-        <NumericUpDown Value="2" />
-        <v:VariableBoxInt
-            Name="input"
-            Classes="ClearButton"
-            HeaderContent="NoReadWriteButton"
-            Step="1"
-            IsShowReadButton="False"
-            IsShowWriteButton="False"
-            Watermark="Input Value"
-            Value="2"
-            />
-        <v:VariableBoxDouble
-            Name="inputDouble"
-            Step="0.5"
-            Value="3.1"
-            />
-        <v:VariableBoxByte
-            Name="inputByte"
-            Step="1"
-            Value="3"
-            />
-        <v:VariableBoxInt
-            Name="Drag_Int"
-            HeaderContent="Drag"
-            IsAllowDrag="True"
-            Step="1"
-            Watermark="Input Value"
-            Value="2"
-            />
+    <Border
+        Margin="2"
+        BorderBrush="{DynamicResource TextControlBorderBrush}"
+        BorderThickness="1"
+        >
 
-        <!--  hex demo  -->
+        <StackPanel Width="250" Margin="5">
+            <NumericUpDown Value="0" />
+            <HyperlinkButton Content="Compact:" NavigateUri="https://docs.avaloniaui.net/zh-Hans/docs/basics/user-interface/styling/themes/fluent#%E6%9B%B4%E6%94%B9%E4%B8%BB%E9%A2%98%E5%AF%86%E5%BA%A6" />
+            <NumericUpDown
+                FormatString="0"
+                InnerLeftContent="Compact"
+                Value="1"
+                >
+                <NumericUpDown.Styles>
+                    <FluentTheme DensityStyle="Compact" />
+                </NumericUpDown.Styles>
+            </NumericUpDown>
 
-        <!--  =================this is error usage  -->
-        <v:VariableBoxUInt
-            Name="uint_HexNumber"
-            FormatString="{}{0:X8}"
-            HeaderContent="HexNumber"
-            IsAllowDrag="False"
-            ParsingNumberStyle="HexNumber"
-            Step="1"
-            Watermark="Input Value"
-            Value="2"
-            />
+            <HyperlinkButton Content="FluentButtonSpinner:" NavigateUri="https://github.com/heartacker/VariableBox.Avalonia/blob/main/src/VariableBox/Themes/Shared/FluentButtonSpinner.axaml#L71" />
+            <NumericUpDown InnerLeftContent="Theme" Value="2">
+                <NumericUpDown.Styles>
+                    <Style Selector=":is(ButtonSpinner)">
+                        <Setter Property="Theme" Value="{DynamicResource FluentButtonSpinner}" />
+                    </Style>
+                </NumericUpDown.Styles>
+            </NumericUpDown>
+            <NumericUpDown InnerLeftContent="Compact+Theme" Value="3">
+                <NumericUpDown.Styles>
+                    <FluentTheme DensityStyle="Compact" />
+                    <Style Selector=":is(ButtonSpinner)">
+                        <Setter Property="Theme" Value="{DynamicResource FluentButtonSpinner}" />
+                    </Style>
+                </NumericUpDown.Styles>
+            </NumericUpDown>
 
-        <!--  =================we should use AllowHexSpecifier  -->
-        <v:VariableBoxUInt
-            Name="uint_AllowHexSpecifier"
-            HorizontalContentAlignment="Right"
-            FontFamily="Consolas"
-            FormatString="{}{0:X8}"
-            HeaderContent="AllowHexSpecifier"
-            IsAllowDrag="False"
-            ParsingNumberStyle="AllowHexSpecifier"
-            Step="1"
-            Watermark="AllowHexSpecifier"
-            Value="2"
-            />
+            <HyperlinkButton Content="VariableBox:" NavigateUri="https://github.com/heartacker/VariableBox.Avalonia" />
+            <!--  =================we should use AllowHexSpecifier  -->
+            <v:VariableBoxUInt
+                Name="uint_AllowHexSpecifier"
+                HorizontalContentAlignment="Right"
+                FontFamily="Consolas"
+                FormatString="{}{0:X3}"
+                HeaderContent="AllowHexSpecifier"
+                IsAllowDrag="False"
+                ParsingNumberStyle="AllowHexSpecifier"
+                Step="1"
+                Watermark="AllowHexSpecifier"
+                Value="2"
+                />
 
-        <v:VariableBoxUInt
-            Name="Consolas_uint"
-            HorizontalContentAlignment="Right"
-            FontFamily="Consolas"
-            FormatString="X8"
-            HeaderContent="0x"
-            IsAllowDrag="False"
-            ParsingNumberStyle="AllowHexSpecifier"
-            Step="1"
-            Watermark="AllowHexSpecifier"
-            Value="2"
-            />
+            <v:VariableBoxInt
+                Name="input"
+                Classes="ClearButton"
+                HeaderContent="No.R.W:"
+                IsShowReadButton="False"
+                IsShowWriteButton="False"
+                Step="1"
+                Watermark="Input Value"
+                Value="4"
+                />
+            <v:VariableBoxUInt
+                Name="NoSpnnner"
+                HorizontalContentAlignment="Right"
+                FontFamily="Consolas"
+                FormatString="X8"
+                HeaderContent="No.Spin:0x"
+                IsAllowDrag="False"
+                ParsingNumberStyle="AllowHexSpecifier"
+                ShowButtonSpinner="False"
+                Step="1"
+                Watermark="AllowHexSpecifier"
+                Value="2"
+                />
+            <v:VariableBoxDouble
+                Name="inputDouble"
+                HeaderContent="Double:"
+                Step="0.5"
+                Value="3.1"
+                />
+            <v:VariableBoxInt
+                Name="Drag_Int"
+                HeaderContent="Dragable:"
+                IsAllowDrag="True"
+                Step="1"
+                Watermark="Input Value"
+                Value="2"
+                />
 
-        <!--<TextBlock Text="{Binding #Read_uint.Value, StringFormat='IsShowReadButton {0}, hex={0:X}'}" />-->
-        <v:VariableBoxUInt
-            Name="Read_uint"
-            HorizontalContentAlignment="Right"
-            FontFamily="Consolas"
-            FormatString="X8"
-            HeaderContent="0x"
-            IsAllowDrag="False"
-            IsShowReadButton="True"
-            ParsingNumberStyle="AllowHexSpecifier"
-            Step="1"
-            Watermark="AllowHexSpecifier"
-            Value="2"
-            />
+            <!--  hex demo  -->
 
-        <!--<TextBox Text="{Binding #Write_uint.Value, StringFormat='IsShowWriteButton {0}, hex={0:X}'}" />-->
-        <v:VariableBoxUInt
-            Name="Write_uint"
-            HorizontalContentAlignment="Right"
-            FontFamily="Consolas"
-            FormatString="X8"
-            HeaderContent="0x"
-            IsAllowDrag="False"
-            IsShowWriteButton="True"
-            ParsingNumberStyle="AllowHexSpecifier"
-            Step="1"
-            Watermark="AllowHexSpecifier"
-            Value="2"
-            />
-
-        <!--<TextBox Text="{Binding #RW_uint.Value, StringFormat='R W Button {0}, hex={0:X}'}" />-->
-        <v:VariableBoxUInt
-            Name="RW_uint"
-            HorizontalContentAlignment="Right"
-            FontFamily="Consolas"
-            FormatString="X8"
-            HeaderContent="0x"
-            IsAllowDrag="False"
-            IsShowReadButton="True"
-            IsShowWriteButton="True"
-            ParsingNumberStyle="AllowHexSpecifier"
-            Step="1"
-            Watermark="AllowHexSpecifier"
-            Value="2"
-            />
-    </StackPanel>
+            <!--  =================this is error usage  -->
+            <v:VariableBoxUInt
+                Name="uint_HexNumber"
+                FormatString="{}{0:X8}"
+                HeaderContent="HexNumber(error):"
+                IsAllowDrag="False"
+                ParsingNumberStyle="HexNumber"
+                Step="1"
+                Watermark="Input Value"
+                Value="2"
+                />
+        </StackPanel>
+    </Border>
 </UserControl>
