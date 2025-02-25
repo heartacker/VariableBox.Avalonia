@@ -2,7 +2,7 @@
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:sys="using:System"
-    xmlns:v="VariableBox"
+    xmlns:vbox="VariableBox"
     >
     <Design.PreviewWith>
         <Border Width="400" BorderThickness="10">
@@ -10,26 +10,26 @@
                 <ThemeVariantScope Grid.Column="0" RequestedThemeVariant="Light">
                     <StackPanel Margin="10" Spacing="1">
                         <NumericUpDown Value="10" />
-                        <v:VariableBoxInt Value="1" />
-                        <v:VariableBoxLong Background="Bisque" Value="10" />
-                        <v:VariableBoxByte Value="0" />
-                        <v:VariableBoxSByte Value="-128" />
-                        <v:VariableBoxShort Value="-32768" />
-                        <v:VariableBoxUShort Value="65535" />
-                        <v:VariableBoxInt
+                        <vbox:VariableBoxInt Value="1" />
+                        <vbox:VariableBoxLong Background="Bisque" Value="10" />
+                        <vbox:VariableBoxByte Value="0" />
+                        <vbox:VariableBoxSByte Value="-128" />
+                        <vbox:VariableBoxShort Value="-32768" />
+                        <vbox:VariableBoxUShort Value="65535" />
+                        <vbox:VariableBoxInt
                             FormatString="{}{0:x8}"
                             HeaderContent="Disable:"
                             IsEnabled="False"
                             ParsingNumberStyle="HexNumber"
                             Value="0"
                             />
-                        <v:VariableBoxFloat Background="Yellow" Value="0.1" />
-                        <v:VariableBoxDouble
+                        <vbox:VariableBoxFloat Background="Yellow" Value="0.1" />
+                        <vbox:VariableBoxDouble
                             Foreground="Blue"
                             HeaderContent="fore:"
                             Value="1e-9"
                             />
-                        <v:VariableBoxDecimal
+                        <vbox:VariableBoxDecimal
                             BorderBrush="red"
                             HeaderContent="bbrush:"
                             Value="10"
@@ -38,34 +38,30 @@
 
                 </ThemeVariantScope>
                 <ThemeVariantScope Grid.Column="1" RequestedThemeVariant="Dark">
-                    <StackPanel
-                        Grid.Column="1"
-                        Margin="10"
-                        Spacing="1"
-                        >
+                    <StackPanel Margin="10" Spacing="1">
                         <NumericUpDown Value="10" />
-                        <v:VariableBoxInt Value="1" />
-                        <v:VariableBoxLong Background="Bisque" Value="10" />
-                        <v:VariableBoxByte Value="0" />
-                        <v:VariableBoxSByte Value="-128" />
-                        <v:VariableBoxShort Value="-32768" />
-                        <v:VariableBoxUShort Value="65535" />
-                        <v:VariableBoxInt
+                        <vbox:VariableBoxInt Value="1" />
+                        <vbox:VariableBoxLong Background="Bisque" Value="10" />
+                        <vbox:VariableBoxByte Value="0" />
+                        <vbox:VariableBoxSByte Value="-128" />
+                        <vbox:VariableBoxShort Value="-32768" />
+                        <vbox:VariableBoxUShort Value="65535" />
+                        <vbox:VariableBoxInt
                             FormatString="{}{0:x8}"
                             HeaderContent="Disable:"
                             IsEnabled="False"
                             ParsingNumberStyle="HexNumber"
                             Value="0"
                             />
-                        <v:VariableBoxFloat Background="Yellow" Value="0.1" />
-                        <v:VariableBoxDouble
+                        <vbox:VariableBoxFloat Background="Yellow" Value="0.1" />
+                        <vbox:VariableBoxDouble
                             Foreground="Blue"
                             HeaderContent="fore:"
                             Value="1e-9"
                             />
-                        <v:VariableBoxDecimal
+                        <vbox:VariableBoxDecimal
                             BorderBrush="red"
-                            HeaderContent="bbrush:"
+                            HeaderContent="brush:"
                             Value="10"
                             />
                     </StackPanel>
@@ -95,7 +91,7 @@
         </Style>
     </ControlTheme>
 
-    <ControlTheme x:Key="{x:Type v:NumericUpDown}" TargetType="v:NumericUpDown">
+    <ControlTheme x:Key="{x:Type vbox:NumericUpDown}" TargetType="vbox:NumericUpDown">
         <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
         <Setter Property="MinHeight" Value="{DynamicResource NumericUpDownDefaultHeight}" />
         <!-- <Setter Property="Margin" Value="0" /> -->
@@ -147,7 +143,7 @@
                                     Background="Transparent"
                                     BorderThickness="0"
                                     CornerRadius="{TemplateBinding CornerRadius}"
-                                    DataValidationErrors.Errors="{ReflectionBinding $parent[v:NumericUpDown].(DataValidationErrors.Errors)}"
+                                    DataValidationErrors.Errors="{ReflectionBinding $parent[vbox:NumericUpDown].(DataValidationErrors.Errors)}"
                                     FontSize="{TemplateBinding FontSize}"
                                     Foreground="{TemplateBinding Foreground}"
                                     InnerLeftContent="{TemplateBinding HeaderContent}"
@@ -168,7 +164,7 @@
                                     Name="PART_ClearButton"
                                     Margin="0,0,8,0"
                                     HorizontalAlignment="Right"
-                                    Command="{Binding $parent[v:NumericUpDown].Clear}"
+                                    Command="{Binding $parent[vbox:NumericUpDown].Clear}"
                                     Focusable="False"
                                     IsVisible="False"
                                     Theme="{StaticResource InputClearButton}"
@@ -181,7 +177,7 @@
                                     Content="*"
                                     Foreground="Green"
                                     IsHitTestVisible="False"
-                                    IsVisible="{TemplateBinding IsEditingVisiable}"
+                                    IsVisible="{TemplateBinding IsEditingVisable}"
                                     />-->
                             </Panel>
                         </ButtonSpinner>
@@ -210,7 +206,6 @@
                                     VerticalAlignment="Stretch"
                                     HorizontalContentAlignment="Center"
                                     Background="Transparent"
-                                    BorderBrush="{DynamicResource ButtonSpinnerRepeatButtonBorderBrush}"
                                     BorderThickness="0"
                                     Classes="RWButton"
                                     CornerRadius="{DynamicResource ButtonSpinnerButtonGroupCornerRadius}"
@@ -233,7 +228,6 @@
                                     VerticalAlignment="Stretch"
                                     HorizontalContentAlignment="Center"
                                     Background="Transparent"
-                                    BorderBrush="{DynamicResource ButtonSpinnerRepeatButtonBorderBrush}"
                                     BorderThickness="0"
                                     Classes="RWButton"
                                     CornerRadius="{DynamicResource ButtonSpinnerButtonGroupCornerRadius}"
@@ -298,6 +292,13 @@
         <Style Selector="^:editing /template/ RepeatButton.RWButton">
             <Setter Property="IsEnabled" Value="False" />
         </Style>
+        <!--
+        <Style Selector="^ /template/ RepeatButton.RWButton">
+            <Style Selector=":focus">
+                <Setter Property="BorderThickness" Value="1" />
+            </Style>
+        </Style>
+        -->
         <!--<Style Selector="^:editing /template/ TextBox#PART_TextBox">
             <Setter Property="FontWeight" Value="Bold" />
         </Style>-->
