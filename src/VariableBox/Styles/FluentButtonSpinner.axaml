@@ -45,7 +45,7 @@
     <!--  // 更换 spinner 的主题，避免与其他控件的样式冲突，并设置样式  -->
     <Style Selector=":is(vbox|NumericUpDown)">
         <Style Selector="^ /template/ ButtonSpinner#PART_Spinner">
-            <Setter Property="Theme" Value="{StaticResource FluentButtonSpinner}" />
+            <Setter Property="Theme" Value="{DynamicResource FluentButtonSpinner}" />
             <!--
             <Style Selector="^ /template/ :is(RepeatButton)">
                 <Setter Property="Focusable" Value="False" />
