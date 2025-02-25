@@ -4,8 +4,22 @@
     xmlns:vbox="VariableBox"
     >
     <Design.PreviewWith>
-        <Border Padding="20">
-            <!--  Add Controls for Previewer Here  -->
+        <Border Padding="20" Background="Gray">
+            <StackPanel Spacing="10">
+                <!--  Add Controls for Previewer Here  -->
+                <ThemeVariantScope RequestedThemeVariant="Light">
+                    <StackPanel Background="White" Orientation="Vertical">
+                        <ButtonSpinner Content="aa" />
+                        <ButtonSpinner Background="LightBlue" Content="aa" />
+                    </StackPanel>
+                </ThemeVariantScope>
+                <ThemeVariantScope RequestedThemeVariant="Dark">
+                    <StackPanel Background="Black" Orientation="Vertical">
+                        <ButtonSpinner Content="aa" />
+                        <ButtonSpinner Background="Blue" Content="aa" />
+                    </StackPanel>
+                </ThemeVariantScope>
+            </StackPanel>
         </Border>
     </Design.PreviewWith>
 
@@ -41,10 +55,17 @@
 
     <!--  // 更换 spinner 的主题，避免与其他控件的样式冲突，并设置样式  -->
     <Style Selector=":is(vbox|NumericUpDown)">
-        <Style x:SetterTargetType="ButtonSpinner" Selector="^ /template/ #PART_Spinner">
+
+        <!-- <Style x:SetterTargetType="ButtonSpinner" Selector="^ /template/ #PART_Spinner"> -->
+        <Style Selector="^ /template/ ButtonSpinner#PART_Spinner">
+            <Style Selector="^:disabled /template/ StackPanel#PART_SpinnerPanel">
+                <Setter Property="Background" Value="Transparent" />
+            </Style>
+
             <Style Selector="^ /template/ :is(RepeatButton)">
                 <Setter Property="Focusable" Value="False" />
             </Style>
         </Style>
+
     </Style>
 </Styles>

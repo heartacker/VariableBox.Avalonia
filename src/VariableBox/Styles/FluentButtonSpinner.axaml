@@ -6,6 +6,13 @@
     <Design.PreviewWith>
         <Border Padding="20">
             <!--  Add Controls for Previewer Here  -->
+            <StackPanel Orientation="Vertical">
+                <ButtonSpinner Content="aa" />
+                <ButtonSpinner Background="Aqua" Content="aa" />
+                <NumericUpDown Value="10" />
+                <vbox:VariableBoxInt Value="10" />
+                <vbox:VariableBoxInt Background="Aqua" Value="10" />
+            </StackPanel>
         </Border>
     </Design.PreviewWith>
 
@@ -37,8 +44,8 @@
 
     <!--  // 更换 spinner 的主题，避免与其他控件的样式冲突，并设置样式  -->
     <Style Selector=":is(vbox|NumericUpDown)">
-        <Style x:SetterTargetType="ButtonSpinner" Selector="^ /template/ #PART_Spinner">
-            <Setter Property="Theme" Value="{StaticResource FluentButtonSpinner}" />
+        <Style Selector="^ /template/ ButtonSpinner#PART_Spinner">
+            <Setter Property="Theme" Value="{DynamicResource FluentButtonSpinner}" />
             <!--
             <Style Selector="^ /template/ :is(RepeatButton)">
                 <Setter Property="Focusable" Value="False" />

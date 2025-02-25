@@ -33,13 +33,58 @@
                 VerticalAlignment="Stretch"
                 Theme="{DynamicResource CardBorder}"
                 >
-                <StackPanel Orientation="Horizontal">
-                    <Pages:ManyVariableBox />
-                    <Pages:ManyVariableBox />
-                    <Pages:ManyVariableBox />
-                    <Pages:ManyVariableBox />
-                    <Pages:ManyVariableBox />
-                </StackPanel>
+                <!-- <ScrollViewer AllowAutoHide="False"> -->
+                    <WrapPanel Orientation="Vertical">
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                        <Pages:ManyVariableBox />
+                    </WrapPanel>
+                <!-- </ScrollViewer> -->
             </Border>
         </Grid>
     </Panel>

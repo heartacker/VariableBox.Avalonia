@@ -9,12 +9,23 @@
     d:DesignWidth="800"
     mc:Ignorable="d"
     >
-    <StackPanel>
+    <UserControl.Styles>
+        <Style Selector=":is(ButtonSpinner)">
+            <Setter Property="Theme" Value="{DynamicResource FluentButtonSpinner}" />
+        </Style>
+    </UserControl.Styles>
+
+    <StackPanel Margin="5">
+        <Label Content="use FluentButtonSpinner" />
+        <NumericUpDown Value="2" />
+        <NumericUpDown Value="2" />
         <v:VariableBoxInt
             Name="input"
             Classes="ClearButton"
-            HeaderContent="Age"
+            HeaderContent="NoReadWriteButton"
             Step="1"
+            IsShowReadButton="False"
+            IsShowWriteButton="False"
             Watermark="Input Value"
             Value="2"
             />

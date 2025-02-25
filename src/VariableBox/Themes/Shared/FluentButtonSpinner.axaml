@@ -3,8 +3,33 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:converters="using:Avalonia.Controls.Converters"
     xmlns:sys="using:System"
+    xmlns:vbox="VariableBox"
     x:ClassModifier="internal"
     >
+    <Design.PreviewWith>
+        <StackPanel>
+            <Border Background="White" BorderThickness="10">
+                <ThemeVariantScope RequestedThemeVariant="Light">
+                    <StackPanel>
+                        <ButtonSpinner Content="10" />
+                        <ButtonSpinner Content="10" Theme="{DynamicResource FluentButtonSpinner}" />
+                        <vbox:VariableBoxInt Value="10" />
+                    </StackPanel>
+                </ThemeVariantScope>
+            </Border>
+
+            <Border Background="Black" BorderThickness="10">
+                <ThemeVariantScope RequestedThemeVariant="Dark">
+                    <StackPanel>
+                        <ButtonSpinner Content="10" />
+                        <ButtonSpinner Content="10" Theme="{DynamicResource FluentButtonSpinner}" />
+                        <vbox:VariableBoxInt Value="10" />
+                    </StackPanel>
+                </ThemeVariantScope>
+            </Border>
+        </StackPanel>
+
+    </Design.PreviewWith>
 
     <converters:MarginMultiplierConverter
         x:Key="ButtonSpinnerLeftThickness"
@@ -20,6 +45,9 @@
     <StreamGeometry x:Key="ButtonSpinnerDecreaseButtonIcon">M0,1 L10,10 20,1 19,0 10,8 1,0 z</StreamGeometry>
 
     <x:Double x:Key="ButtonSpinnerIncreaseButtonWidth">11</x:Double>
+    <!-- <StaticResource x:Key="VboxNumericUpDownBorderBrush" ResourceKey="TextControlBorderBrush" /> -->
+    <SolidColorBrush x:Key="VboxNumericUpDownBorderBrush" Color="{DynamicResource SystemBaseMediumColor}" />
+
 
     <!-- <ControlTheme x:Key="{x:Type RepeatButton}" TargetType="RepeatButton"> -->
     <ControlTheme x:Key="FluentButtonSpinnerRepeatButton" TargetType="RepeatButton">
@@ -82,12 +110,11 @@
                                     VerticalContentAlignment="Center"
                                     Background="{TemplateBinding Background}"
                                     BorderBrush="{TemplateBinding BorderBrush}"
-                                    BorderThickness="{TemplateBinding BorderThickness,
-                                                                      Converter={StaticResource ButtonSpinnerLeftThickness}}"
+                                    BorderThickness="0"
                                     Foreground="{TemplateBinding Foreground}"
                                     IsTabStop="{TemplateBinding IsTabStop}"
                                     >
-                                    <!-- Theme="{StaticResource FluentButtonSpinnerRepeatButton}" -->
+                                    <!--  Theme="{StaticResource FluentButtonSpinnerRepeatButton}"  -->
                                     <PathIcon
                                         Width="12"
                                         Height="8"
@@ -103,12 +130,11 @@
                                     VerticalContentAlignment="Center"
                                     Background="{TemplateBinding Background}"
                                     BorderBrush="{TemplateBinding BorderBrush}"
-                                    BorderThickness="{TemplateBinding BorderThickness,
-                                                                      Converter={StaticResource ButtonSpinnerLeftThickness}}"
+                                    BorderThickness="0"
                                     Foreground="{TemplateBinding Foreground}"
                                     IsTabStop="{TemplateBinding IsTabStop}"
                                     >
-                                    <!-- Theme="{StaticResource FluentButtonSpinnerRepeatButton}" -->
+                                    <!--  Theme="{StaticResource FluentButtonSpinnerRepeatButton}"  -->
                                     <PathIcon
                                         Width="12"
                                         Height="8"

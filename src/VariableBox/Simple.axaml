@@ -2,7 +2,33 @@
     x:Class="VariableBox.Themes.SimpleTheme"
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vbox="VariableBox"
     >
+    <Design.PreviewWith>
+        <StackPanel>
+            <Border Background="White" BorderThickness="10">
+                <ThemeVariantScope RequestedThemeVariant="Light">
+                    <StackPanel>
+                        <ButtonSpinner Content="10" />
+                        <ButtonSpinner Content="10" />
+                        <vbox:VariableBoxInt Value="10" />
+                    </StackPanel>
+                </ThemeVariantScope>
+            </Border>
+
+            <Border Background="Black" BorderThickness="10">
+                <ThemeVariantScope RequestedThemeVariant="Dark">
+                    <StackPanel>
+                        <ButtonSpinner Content="10" />
+                        <ButtonSpinner Content="10" />
+                        <vbox:VariableBoxInt Value="10" />
+                    </StackPanel>
+                </ThemeVariantScope>
+            </Border>
+        </StackPanel>
+
+    </Design.PreviewWith>
+
     <Styles.Resources>
         <ResourceDictionary>
             <ResourceDictionary.ThemeDictionaries>
