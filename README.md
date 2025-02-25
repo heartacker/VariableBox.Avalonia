@@ -33,6 +33,11 @@ VariableBox is an Avalonia Control for building cross-platform UIs with Avalonia
 | Light | ![lf](https://github.com/heartacker/VariableBox.Avalonia/blob/main/assets/light-fluent.png) | ![ls](https://github.com/heartacker/VariableBox.Avalonia/blob/main/assets/light-semi.png) |
 
 ## ChangeLog
+- 2025/02/25(0.7.0)
+  - Mass UI Polish
+  - Uniform the UI for each App Theme
+  - An new Spinner Theme for FluentTheme
+    - you can change the `NumericUpDown` Theme just like `VariableBox`
 
 - 2025/02/21(v0.6.0)
   1. unify the `tab` key focus behavior, only the text box and read write button can be focused
@@ -152,19 +157,18 @@ To make VariableBox controls show up in your application, you need to reference 
 
 **YOU do not need any other VariableBox package now**
 
+- `vbox:FluentTheme` is compatible with `<FluentTheme/>`
 - `vbox:SemiTheme` is a theme package for VariableBox inspired by Semi Design.
 
   > you need to `add package Semi.Avalonia` first
   >
 - `vbox:SimpleTheme` is compatible with `<SimpleTheme/>`
-- `vbox:FluentTheme` is compatible with `<FluentTheme/>`
 
 You can add it to your project by following steps.
 
 1. Add nuget package:
 
 ```bash
-dotnet add package Semi.Avalonia
 dotnet add package VariableBox.Avalonia
 ```
 
@@ -196,6 +200,10 @@ dotnet add package VariableBox.Avalonia
 
 - SemiTheme
 
+```bash
+dotnet add package Semi.Avalonia
+```
+
 ```xml
 <Application...
     xmlns:vbox="VariableBox"
@@ -205,4 +213,37 @@ dotnet add package VariableBox.Avalonia
         <semi:SemiTheme Locale="zh-CN"/>
         <vbox:SemiTheme Locale="zh-CN"/>
     </Application.Styles>
+```
+
+#### Additional Theme for Fluent ButtonSpinner
+
+for `FluentTheme` user, you can changed the `ButtonSpinner` just like `VariableBox`
+
+![FluentButtonSpinner](./assets/FluentButtonSpinner.png)
+
+for example:
+
+1. `ButtonSpinner`
+
+```xml
+<ButtonSpinner Content="10" Theme="{DynamicResource FluentButtonSpinner}" />
+```
+
+2. Sys `NumericUpDown`
+
+```xml
+<NumericUpDown InnerLeftContent="Theme" Value="2">
+  <NumericUpDown.Styles>
+    <Style Selector=":is(ButtonSpinner)">
+        <Setter Property="Theme" Value="{DynamicResource FluentButtonSpinner}" />
+    </Style>
+  </NumericUpDown.Styles>
+</NumericUpDown>
+
+```
+
+```xml
+<Style Selector="NumericUpDown /template/ :is(ButtonSpinner)">
+    <Setter Property="Theme" Value="{DynamicResource FluentButtonSpinner}" />
+</Style>
 ```
