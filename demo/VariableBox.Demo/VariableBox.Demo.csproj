@@ -8,40 +8,40 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <AvaloniaResource Include="Assets\**" />
+        <AvaloniaResource Include="Assets\**"/>
     </ItemGroup>
 
     <ItemGroup>
-        <TrimmerRootDescriptor Include="Roots.xml" />
+        <TrimmerRootDescriptor Include="Roots.xml"/>
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Avalonia" Version="$(AvaloniaVersion)" />
-        <!--Condition
-        below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
-        <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="$(AvaloniaVersion)" />
-        <PackageReference Include="Avalonia.Themes.Fluent" Version="$(AvaloniaVersion)" />
-        <PackageReference Include="Avalonia.Themes.Simple" Version="$(AvaloniaVersion)" />
-        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
-        <PackageReference Include="Semi.Avalonia" Version="$(SemiAvaloniaVersion)" />
-        <PackageReference Include="Irihi.Ursa" Version="1.9.0" />
-        <PackageReference Include="Irihi.Ursa.Themes.Semi" Version="1.8.1" />
+        <PackageReference Include="Avalonia" Version="$(AvaloniaVersion)"/>
+        <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+        <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="$(AvaloniaVersion)"/>
+        <PackageReference Include="Avalonia.Themes.Fluent" Version="$(AvaloniaVersion)"/>
+        <PackageReference Include="Avalonia.Themes.Simple" Version="$(AvaloniaVersion)"/>
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0"/>
+        <PackageReference Include="Semi.Avalonia" Version="$(SemiAvaloniaVersion)"/>
+        <PackageReference Include="Irihi.Ursa" Version="1.9.0"/>
+        <PackageReference Include="Irihi.Ursa.Themes.Semi" Version="1.9.0"/>
+        <!-- <PackageReference Include="AtomUI" Version="0.0.1-build-20241009" />-->
     </ItemGroup>
     <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
-        <DefineConstants>$(DefineConstants);ENABLE_XAML_HOT_RELOAD1</DefineConstants>
+        <DefineConstants>$(DefineConstants);ENABLE_XAML_HOT_RELOAD</DefineConstants>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Condition="$(DefineConstants.Contains(ENABLE_XAML_HOT_RELOAD))" Include="Avalonia.Markup.Xaml.Loader" Version="$(AvaloniaVersion)" />
-        <PackageReference Condition="$(DefineConstants.Contains(ENABLE_XAML_HOT_RELOAD))" Include="HotAvalonia" Version="2.1.0" />
-        <PackageReference Include="HotAvalonia.Extensions" Version="2.1.0" PrivateAssets="All" />
+        <PackageReference Condition="$(DefineConstants.Contains(ENABLE_XAML_HOT_RELOAD))" Include="Avalonia.Markup.Xaml.Loader" Version="$(AvaloniaVersion)"/>
+        <PackageReference Condition="$(DefineConstants.Contains(ENABLE_XAML_HOT_RELOAD))" Include="HotAvalonia" Version="2.1.0"/>
+        <PackageReference Include="HotAvalonia.Extensions" Version="2.1.0" PrivateAssets="All"/>
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="Models\" />
+        <Folder Include="Models\"/>
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\src\VariableBox\VariableBox.csproj" />
+        <ProjectReference Include="..\..\src\VariableBox\VariableBox.csproj"/>
     </ItemGroup>
 </Project>
