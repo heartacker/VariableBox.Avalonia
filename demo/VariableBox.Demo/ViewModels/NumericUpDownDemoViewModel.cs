@@ -54,7 +54,7 @@ public partial class NumericUpDownDemoViewModel : ObservableObject
     // [ObservableProperty] private bool _IsEnableEditingIndicator = true;
 
 
-    uint v = 0;
+    // uint v = 0;
     [RelayCommand]
     // void Trythis()
     // void Trythis(object v)
