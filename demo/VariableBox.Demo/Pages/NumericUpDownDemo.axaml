@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:u="https://irihi.tech/ursa"
     xmlns:v="VariableBox"
     xmlns:vm="using:VariableBox.Demo.ViewModels"
     d:DesignHeight="450"
@@ -51,9 +52,14 @@
             Margin="2"
             BorderBrush="AliceBlue"
             BorderThickness="2"
-            Header="{Binding UserName}"
             IsExpanded="True"
             >
+            <!--  Header="{Binding UserName}"  -->
+            <Expander.HeaderTemplate>
+                <DataTemplate>
+                    <u:Marquee Content="Welcome to use Variabox" />
+                </DataTemplate>
+            </Expander.HeaderTemplate>
             <StackPanel
                 Grid.ColumnSpan="1"
                 Margin="10"
