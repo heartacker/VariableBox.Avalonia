@@ -3,16 +3,16 @@
         <OutputType>Exe</OutputType>
         <TargetFramework>net9.0-browser</TargetFramework>
         <Platforms>AnyCPU;x64</Platforms>
-        <StartupObject>Avalonia.DesignerSupport.Remote.RemoteDesignerEntryPoint</StartupObject>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <Nullable>enable</Nullable>
+        <!-- <StartupObject>Avalonia.DesignerSupport.Remote.RemoteDesignerEntryPoint</StartupObject>-->
     </PropertyGroup>
     <PropertyGroup Label="Avalonia">
-      <AvaloniaUseCompiledBindingsByDefault>True</AvaloniaUseCompiledBindingsByDefault>
+        <AvaloniaUseCompiledBindingsByDefault>True</AvaloniaUseCompiledBindingsByDefault>
     </PropertyGroup>
 
     <ItemGroup>
-        <!--
-        <TrimmerRootDescriptor Include="Roots.xml"/>
-        -->
+        <TrimmerRootDescriptor Include="Roots.xml" />
         <AvaloniaResource Include="Assets\**" />
     </ItemGroup>
 
