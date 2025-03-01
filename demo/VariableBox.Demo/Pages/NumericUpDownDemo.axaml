@@ -62,7 +62,7 @@
                 <Border
                     Margin="2"
                     Padding="10"
-                    BorderBrush="Yellow"
+                    BorderBrush="Gray"
                     BorderThickness="1"
                     CornerRadius="2"
                     >
@@ -128,7 +128,7 @@
                 <Border
                     Margin="2"
                     Padding="10"
-                    BorderBrush="Green"
+                    BorderBrush="LightGray"
                     BorderThickness="1"
                     CornerRadius="2"
                     >
@@ -152,7 +152,7 @@
                 <Border
                     Margin="2"
                     Padding="10"
-                    BorderBrush="Red"
+                    BorderBrush="DarkGray"
                     BorderThickness="1"
                     CornerRadius="2"
                     >
