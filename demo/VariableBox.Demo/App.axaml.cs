@@ -4,6 +4,7 @@ using Avalonia.Markup.Xaml;
 using HotAvalonia;
 using VariableBox.Demo.ViewModels;
 using VariableBox.Demo.Views;
+using VariableBox.Demo.Pages;
 
 namespace VariableBox.Demo;
 

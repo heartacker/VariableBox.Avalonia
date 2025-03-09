@@ -1,5 +1,5 @@
 ﻿<UserControl
-    x:Class="VariableBox.Demo.Views.MainView"
+    x:Class="VariableBox.Demo.Pages.MainView"
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:Pages="clr-namespace:VariableBox.Demo.Pages"

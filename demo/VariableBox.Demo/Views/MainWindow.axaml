@@ -13,7 +13,6 @@
     d:DesignWidth="800"
     x:CompileBindings="True"
     x:DataType="vm:MainWindowViewModel"
-    Icon="/Assets/logo.ico"
     mc:Ignorable="d"
     >
     <Design.DataContext>
@@ -103,7 +102,7 @@
                 <Pages:NumericUpDownDemo />
             </TabItem>
             <TabItem Header="Performance ">
-                <views:MainView />
+                <Pages:MainView />
             </TabItem>
         </TabControl>
     </Grid>
