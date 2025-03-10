@@ -26,7 +26,7 @@
         <u-semi:SemiTheme Locale="zh-CN" />
 
         <Style Selector="vbox|NumericUpDown">
-            <Setter Property="FontFamily" Value="Sarasa Mono SC" />
+            <!-- <Setter Property="FontFamily" Value="Sarasa Mono SC" /> -->
         </Style>
 
         <Style Selector="vbox|NumericUpDown:pointerover">
