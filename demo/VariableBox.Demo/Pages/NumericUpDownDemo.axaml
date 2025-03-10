@@ -124,7 +124,10 @@
                             Watermark="{Binding Watermark}"
                             Value="{Binding Value}"
                             />
-                        <NumericUpDown Width="{Binding Width}" Value="{Binding Value}" />
+                        <NumericUpDown
+                            Width="{Binding Width}"
+                            Value="{Binding Value}"
+                            />
 
                     </StackPanel>
                 </Border>
