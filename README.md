@@ -33,6 +33,12 @@ VariableBox is an Avalonia Control for building cross-platform UIs with Avalonia
 | Light | ![lf](https://github.com/heartacker/VariableBox.Avalonia/blob/main/assets/light-fluent.png) | ![ls](https://github.com/heartacker/VariableBox.Avalonia/blob/main/assets/light-semi.png) |
 
 ## ChangeLog
+- 2025/03/10(0.8.0)
+  - unify the semi NumericalBox and VariableBox
+  - Use MonoSpace etc. font by default
+  - Update readme for event and command
+  - Update demo for event and command
+
 - 2025/02/25(0.7.0)
   - Mass UI Polish
   - Uniform the UI for each App Theme
