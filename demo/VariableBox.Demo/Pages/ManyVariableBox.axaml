@@ -6,8 +6,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:u="https://irihi.tech/ursa"
     xmlns:v="VariableBox"
+    xmlns:vm="using:VariableBox.Demo.ViewModels"
     d:DesignHeight="500"
     d:DesignWidth="400"
+    x:DataType="vm:ManyVariableBoxViewModel"
     mc:Ignorable="d"
     >
 
@@ -53,14 +55,16 @@
             <v:VariableBoxUInt
                 Name="uint_AllowHexSpecifier"
                 HorizontalContentAlignment="Right"
+                Command="{Binding SendCommand}"
                 FontFamily="Consolas"
                 FormatString="{}{0:X3}"
                 HeaderContent="AllowHexSpecifier"
                 IsAllowDrag="False"
                 ParsingNumberStyle="AllowHexSpecifier"
+                ReadCommand="{Binding ReadCommand}"
                 Step="1"
                 Watermark="AllowHexSpecifier"
-                Value="2"
+                Value="{Binding ValueHex}"
                 />
 
             <v:VariableBoxInt

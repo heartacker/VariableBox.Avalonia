@@ -22,4 +22,11 @@ public partial class ManyVariableBoxViewModel : ObservableRecipient
         // Send a message from some other module
         WeakReferenceMessenger.Default.Send(new UIntValueChangedMessage(ValueHex));
     }
+
+    [RelayCommand]
+    public void Read()
+    {
+        // Send a message from some other module
+        // WeakReferenceMessenger.Default.Send(new UIntValueChangedMessage(ValueHex));
+    }
 }
