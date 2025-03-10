@@ -45,6 +45,6 @@
     <!--  // 更换 spinner 的主题，避免与其他控件的样式冲突，并设置样式  -->
     <Style Selector="NumericUpDown">
         <Setter Property="BorderBrush" Value="{DynamicResource VboxNumericUpDownBorderBrush}" />
-        <!-- <Setter Property="BorderThickness" Value="1" /> -->
+        <Setter Property="BorderThickness" Value="1" />
     </Style>
 </Styles>
