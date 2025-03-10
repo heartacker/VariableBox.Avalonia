@@ -9,8 +9,22 @@ using VariableBox.Controls;
 
 namespace VariableBox.Demo.ViewModels;
 
-public partial class NumericUpDownDemoViewModel : ObservableRecipient, IRecipient<UIntValueChangedMessage>
+public partial class NumericUpDownDemoViewModel : ObservableObject, IRecipient<UIntValueChangedMessage>
 {
+
+    public NumericUpDownDemoViewModel()
+    {
+        Array_HorizontalContentAlignment = Enum.GetValues(typeof(HorizontalAlignment));
+        Array_HorizontalAlignment = Enum.GetValues(typeof(HorizontalAlignment));
+        Array_ParsingNumberStyle = Enum.GetValues(typeof(NumberStyles));
+        // VariableBoxUInt numericUIntUpDown;
+        // TextBox textBox;
+        WeakReferenceMessenger.Default.Register<UIntValueChangedMessage>(this); // 需要注册自己
+
+        // 或者使用 ObservableRecipient, 并激活自己
+        // IsActive = true;
+    }
+
     private double _oldWidth = 200;
     [ObservableProperty]
     public partial string? UserName { get; set; } = "Heartacker";
@@ -71,16 +85,6 @@ public partial class NumericUpDownDemoViewModel : ObservableRecipient, IRecipien
     void TrythisRead(uint v)
     {
         ReadCommandUpdateText = $"ReadCommand, Parameter={v}";
-    }
-
-    public NumericUpDownDemoViewModel()
-    {
-        Array_HorizontalContentAlignment = Enum.GetValues(typeof(HorizontalAlignment));
-        Array_HorizontalAlignment = Enum.GetValues(typeof(HorizontalAlignment));
-        Array_ParsingNumberStyle = Enum.GetValues(typeof(NumberStyles));
-        // VariableBoxUInt numericUIntUpDown;
-        // TextBox textBox;
-        IsActive = true;
     }
 
     partial void OnAutoWidthChanged(bool value)
