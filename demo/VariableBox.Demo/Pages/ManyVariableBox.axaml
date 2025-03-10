@@ -80,7 +80,7 @@
             <v:VariableBoxUInt
                 Name="NoSpnnner"
                 HorizontalContentAlignment="Right"
-                FontFamily="Consolas,MonoSpace"
+                FontFamily="Consolas, MonoSpace"
                 FormatString="X8"
                 HeaderContent="No.Spin:0x"
                 IsAllowDrag="False"
@@ -113,6 +113,7 @@
                 FormatString="{}{0:X8}"
                 HeaderContent="HexNumber(error):"
                 IsAllowDrag="False"
+                FontFamily="Yahei"
                 ParsingNumberStyle="HexNumber"
                 Step="1"
                 Watermark="Input Value"
