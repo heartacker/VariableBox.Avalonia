@@ -121,7 +121,7 @@
                             Maximum="{Binding Maximum}"
                             Minimum="{Binding Minimum}"
                             ParsingNumberStyle="{Binding ParsingNumberStyle}"
-                            ReadCommand="{Binding TrythisReadCommand}"
+                            ReadCommand="{Binding TrythisMessageRequestCommand}"
                             ShowButtonSpinner="{Binding ShowButtonSpinner}"
                             Step="{Binding Step}"
                             Watermark="{Binding Watermark}"

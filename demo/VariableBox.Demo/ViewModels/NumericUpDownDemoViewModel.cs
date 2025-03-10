@@ -2,13 +2,14 @@
 using Avalonia.Layout;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.Messaging;
 using System;
 using System.Globalization;
 using VariableBox.Controls;
 
 namespace VariableBox.Demo.ViewModels;
 
-public partial class NumericUpDownDemoViewModel : ObservableObject
+public partial class NumericUpDownDemoViewModel : ObservableRecipient, IRecipient<UIntValueChangedMessage>
 {
     private double _oldWidth = 200;
     [ObservableProperty]
@@ -44,7 +45,8 @@ public partial class NumericUpDownDemoViewModel : ObservableObject
 
     [ObservableProperty] private string _CommandUpdateText = "Command not Execute";
 
-    [ObservableProperty] private string _ValueChangedUpdateText = "ValueChanged not Execute";
+    [ObservableProperty]
+    public partial string ValueChangedUpdateText { get; set; } = "ValueChanged not Execute";
 
     [ObservableProperty] private string _ReadCommandUpdateText = "ReadCommand not Execute";
     [ObservableProperty] private string _ReadRequestedUpdateText = "ReadRequested not Execute";
@@ -63,7 +65,6 @@ public partial class NumericUpDownDemoViewModel : ObservableObject
         CommandUpdateText = $"Command, Parameter={v}";
     }
 
-
     [RelayCommand]
     // void TrythisRead()
     // void TrythisRead(object v)
@@ -79,7 +80,7 @@ public partial class NumericUpDownDemoViewModel : ObservableObject
         Array_ParsingNumberStyle = Enum.GetValues(typeof(NumberStyles));
         // VariableBoxUInt numericUIntUpDown;
         // TextBox textBox;
-
+        IsActive = true;
     }
 
     partial void OnAutoWidthChanged(bool value)
@@ -99,5 +100,22 @@ public partial class NumericUpDownDemoViewModel : ObservableObject
     {
         // Console.WriteLine(oldValue);
     }
+
+
+
+    #region Messages
+
+    [RelayCommand]
+    void TrythisMessageRequest(uint v)
+    {
+        CommandUpdateText = $"TrythisMessage, Parameter={v}";
+    }
+
+    public void Receive(UIntValueChangedMessage message)
+    {
+        Value = message.Value;
+        // ValueChangedUpdateText = $"Receive, Parameter={message.Value}";
+    }
+    #endregion
 
 }
