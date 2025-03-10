@@ -119,6 +119,65 @@ You can now use VariableBox controls in your Avalonia Application.
 </Window>
 ```
 
+### CommandS and Events
+
+FYI, you can see demo.
+
+#### Event
+
+we have Read and Write(ValueChenged)Event.
+
+- **ValueChanged** or you click write, you can get the old and new value
+
+  `public event EventHandler<ValueChangedEventArgs<T>>? ValueChanged`
+
+- **ReadRequestedEvent** When you Click Read,
+  >**you can update your value while reading and there is not valueChangeEvent**
+
+  `public event RoutedEvent<RoutedEventArgs> ReadRequestedEvent`
+
+- **HeaderDoubleTapedEvent** When you Double the header
+  
+  `public static readonly RoutedEvent<TappedEventArgs> HeaderDoubleTapedEvent`
+
+#### Command for MVVM
+
+- `Commnad` Value changed or click the write
+   >**Please don't set the CommandParater to Current Value, Like `CommandParameter="{Binding Value}"` will get you the old value**
+   
+   1. you can just binding with a command like `WriteCommnad(uint v)`, **you don't need to set the Command parater by default**
+   2. we will send the updated-value  for you
+ 
+- `ReadCommand` When you click Read
+- `HeaderDoubleTapedCommand` when you double click the Header
+
+#### Demo
+
+```csharp
+//view
+Command="{Binding TrythisCommand}"
+
+// viewmodel
+[RelayCommand]
+void Trythis(uint v)
+{
+    CommandUpdateText = 
+    $"Binding without CommandParater, and the default parameter will be the new value={v}";
+}
+
+// viewmodel
+[RelayCommand]
+void Trythis()
+{
+    // also work too
+}
+
+```
+
+#### Note for command
+
+- `CommandParameter="{Binding Value}"` will get you the old value
+
 ### PseudoClasses
 
 - `:editing` for editing
