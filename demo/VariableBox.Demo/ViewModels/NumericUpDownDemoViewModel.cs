@@ -6,10 +6,11 @@ using CommunityToolkit.Mvvm.Messaging;
 using System;
 using System.Globalization;
 using VariableBox.Controls;
+using VariableBox.Demo.ViewModels.Messages;
 
 namespace VariableBox.Demo.ViewModels;
 
-public partial class NumericUpDownDemoViewModel : ObservableObject, IRecipient<UIntValueChangedMessage>
+public partial class NumericUpDownDemoViewModel : ObservableObject, IRecipient<UIntValueChangedMessage>, IRecipient<UIntRequestMessage>
 {
 
     public NumericUpDownDemoViewModel()
@@ -20,6 +21,7 @@ public partial class NumericUpDownDemoViewModel : ObservableObject, IRecipient<U
         // VariableBoxUInt numericUIntUpDown;
         // TextBox textBox;
         WeakReferenceMessenger.Default.Register<UIntValueChangedMessage>(this); // 需要注册自己
+        WeakReferenceMessenger.Default.Register<UIntRequestMessage>(this);      // 需要注册自己
 
         // 或者使用 ObservableRecipient, 并激活自己
         // IsActive = true;
@@ -119,6 +121,11 @@ public partial class NumericUpDownDemoViewModel : ObservableObject, IRecipient<U
     {
         Value = message.Value;
         // ValueChangedUpdateText = $"Receive, Parameter={message.Value}";
+    }
+
+    public void Receive(UIntRequestMessage message)
+    {
+        message.Reply((uint)(Value * message.t));
     }
     #endregion
 

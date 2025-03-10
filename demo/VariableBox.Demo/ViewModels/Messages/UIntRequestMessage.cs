@@ -2,7 +2,7 @@ using System;
 using CommunityToolkit.Mvvm.Messaging;
 using CommunityToolkit.Mvvm.Messaging.Messages;
 
-namespace VariableBox.Demo.ViewModels;
+namespace VariableBox.Demo.ViewModels.Messages;
 
 // Create a message
 /// <summary>
@@ -15,9 +15,12 @@ namespace VariableBox.Demo.ViewModels;
 /// <br/>
 /// <see cref="CommunityToolkit.Mvvm.Messaging.Messages.RequestMessage"/>
 /// </summary>
-public class UIntValueChangedMessage : ValueChangedMessage<UInt32>
+public class UIntRequestMessage : RequestMessage<UInt32>
 {
-    public UIntValueChangedMessage(UInt32 v) : base(v)
+    public double t { get; private set; }
+    // 可以传递参数，但是返回值一定是 UInt32
+    public UIntRequestMessage(double t)
     {
+        this.t = t;
     }
 }

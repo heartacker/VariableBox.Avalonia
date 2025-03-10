@@ -75,7 +75,7 @@
                 IsShowWriteButton="False"
                 Step="1"
                 Watermark="Input Value"
-                Value="4"
+                Value="{Binding Value2}"
                 />
             <v:VariableBoxUInt
                 Name="NoSpnnner"
