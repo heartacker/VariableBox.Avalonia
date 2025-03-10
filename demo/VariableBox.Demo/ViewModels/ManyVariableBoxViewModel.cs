@@ -10,11 +10,14 @@ using VariableBox.Demo.ViewModels.Messages;
 
 namespace VariableBox.Demo.ViewModels;
 
-public partial class ManyVariableBoxViewModel : ObservableRecipient
+/// <summary>
+/// ObservableRecipient 主要用于接收者。所用用 ObservableObject 更加合适。
+/// </summary>
+public partial class ManyVariableBoxViewModel : ObservableObject
 {
     public ManyVariableBoxViewModel()
     {
-        IsActive = true;
+        // IsActive = true;
     }
 
     [ObservableProperty]
@@ -25,7 +28,7 @@ public partial class ManyVariableBoxViewModel : ObservableRecipient
 
     partial void OnValue2Changing(uint oldValue, uint newValue)
     {
-        Broadcast<uint>(oldValue, newValue, nameof(Value2)); // 一般配合 PropertyChangedMsssage 使用
+        // Broadcast<uint>(oldValue, newValue, nameof(Value2)); // 一般配合 PropertyChangedMsssage 使用
     }
 
 

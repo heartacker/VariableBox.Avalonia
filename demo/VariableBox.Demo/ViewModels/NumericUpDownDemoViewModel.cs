@@ -1,4 +1,4 @@
-﻿using Avalonia.Controls;
+using Avalonia.Controls;
 using Avalonia.Layout;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -10,9 +10,8 @@ using VariableBox.Demo.ViewModels.Messages;
 
 namespace VariableBox.Demo.ViewModels;
 
-public partial class NumericUpDownDemoViewModel : ObservableObject, IRecipient<UIntValueChangedMessage>, IRecipient<UIntRequestMessage>
+public partial class NumericUpDownDemoViewModel : ObservableRecipient, IRecipient<UIntValueChangedMessage>, IRecipient<UIntRequestMessage>
 {
-
     public NumericUpDownDemoViewModel()
     {
         Array_HorizontalContentAlignment = Enum.GetValues(typeof(HorizontalAlignment));
@@ -20,11 +19,13 @@ public partial class NumericUpDownDemoViewModel : ObservableObject, IRecipient<U
         Array_ParsingNumberStyle = Enum.GetValues(typeof(NumberStyles));
         // VariableBoxUInt numericUIntUpDown;
         // TextBox textBox;
-        WeakReferenceMessenger.Default.Register<UIntValueChangedMessage>(this); // 需要注册自己
-        WeakReferenceMessenger.Default.Register<UIntRequestMessage>(this);      // 需要注册自己
 
-        // 或者使用 ObservableRecipient, 并激活自己
-        // IsActive = true;
+        //! 不是接收者，就需要自己注册
+        // WeakReferenceMessenger.Default.Register<UIntValueChangedMessage>(this); // 需要注册自己
+        // WeakReferenceMessenger.Default.Register<UIntRequestMessage>(this);      // 需要注册自己
+
+        //! 或者使用 ObservableRecipient, 并激活自己
+        IsActive = true;
     }
 
     private double _oldWidth = 200;
