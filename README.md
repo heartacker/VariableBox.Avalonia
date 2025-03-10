@@ -108,7 +108,7 @@ You can now use VariableBox controls in your Avalonia Application.
     xmlns:vbox="VariableBox"
     ...>
     <StackPanel Margin="20">
-        <vbox:VariableBoxUInt Value="{Binding Value}" 
+        <vbox:VariableBoxUInt Value="{Binding Value}"
             FormatString="X8"
             HeaderContent="0x"
             ParsingNumberStyle="AllowHexSpecifier"
@@ -137,18 +137,21 @@ we have Read and Write(ValueChenged)Event.
   `public event RoutedEvent<RoutedEventArgs> ReadRequestedEvent`
 
 - **HeaderDoubleTapedEvent** When you Double the header
-  
+
   `public static readonly RoutedEvent<TappedEventArgs> HeaderDoubleTapedEvent`
 
 #### Command for MVVM
 
 - `Commnad` Value changed or click the write
    >**Please don't set the CommandParater to Current Value, Like `CommandParameter="{Binding Value}"` will get you the old value**
-   
+
    1. you can just binding with a command like `WriteCommnad(uint v)`, **you don't need to set the Command parater by default**
-   2. we will send the updated-value  for you
- 
+   2. we will send the updated-value for you
+
 - `ReadCommand` When you click Read
+
+   same as `Commnad`, The default parameter will be the **current value**
+
 - `HeaderDoubleTapedCommand` when you double click the Header
 
 #### Demo
@@ -156,18 +159,35 @@ we have Read and Write(ValueChenged)Event.
 ```csharp
 //view
 Command="{Binding TrythisCommand}"
+ReadCommand="{Binding ReadDemoCommand}"
 
 // viewmodel
 [RelayCommand]
 void Trythis(uint v)
 {
-    CommandUpdateText = 
+    CommandUpdateText =
     $"Binding without CommandParater, and the default parameter will be the new value={v}";
 }
 
 // viewmodel
 [RelayCommand]
 void Trythis()
+{
+    // also work too
+}
+
+// viewmodel
+[RelayCommand]
+void ReadDemo(uint v)
+{
+    CommandUpdateText =
+    $"Binding without CommandParater,
+    and the default parameter will be the current value={v}";
+}
+
+// viewmodel
+[RelayCommand]
+void ReadDemo()
 {
     // also work too
 }
@@ -180,6 +200,8 @@ void Trythis()
 
 ### PseudoClasses
 
+> VariableBox is based  vbox:NumericUpDown
+
 - `:editing` for editing
 - `:invalid` for invalid input
 
@@ -187,7 +209,7 @@ e.g.:
 
 <div style="display: flex;">
   <div style="flex: 50%; padding: 2px;">
-  
+
 
 ```xml
 <Style Selector="vbox|NumericUpDown:editing">
@@ -268,7 +290,7 @@ dotnet add package Semi.Avalonia
     xmlns:vbox="VariableBox"
     ....>
     <Application.Styles>
-        <!-- if use semi -->      
+        <!-- if use semi -->
         <semi:SemiTheme Locale="zh-CN"/>
         <vbox:SemiTheme Locale="zh-CN"/>
     </Application.Styles>
