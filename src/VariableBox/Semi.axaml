@@ -29,6 +29,9 @@
 
     </Design.PreviewWith>
 
+
+    <!--  注意，控件主题是资源，而不是 Style， 所以不需要使用 StyleInclude 来引入主题。而是直接引用资源。  -->
+    <!--  如更改 ButtonSpinner 的主题，可以在这里引入主题资源。 他在 Theme 目录下面  -->
     <Styles.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -39,6 +42,8 @@
         </ResourceDictionary>
     </Styles.Resources>
 
+    <!-- style 就是如改变样子的，而不是改变主题的。 -->
+    <StyleInclude Source="../Styles/SemiButtonSpinner.axaml" />
     <StyleInclude Source="../Styles/_index.axaml" />
     <!--  Add Styles Here  -->
 </Styles>

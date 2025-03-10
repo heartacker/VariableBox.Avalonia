@@ -4,9 +4,12 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:u="https://irihi.tech/ursa"
     xmlns:v="VariableBox"
+    xmlns:vm="using:VariableBox.Demo.ViewModels"
     d:DesignHeight="500"
     d:DesignWidth="400"
+    x:DataType="vm:ManyVariableBoxViewModel"
     mc:Ignorable="d"
     >
 
@@ -46,19 +49,22 @@
                 </NumericUpDown.Styles>
             </NumericUpDown>
 
+            <u:Banner Content="Variable" />
             <HyperlinkButton Content="VariableBox:" NavigateUri="https://github.com/heartacker/VariableBox.Avalonia" />
             <!--  =================we should use AllowHexSpecifier  -->
             <v:VariableBoxUInt
                 Name="uint_AllowHexSpecifier"
                 HorizontalContentAlignment="Right"
+                Command="{Binding SendCommand}"
                 FontFamily="Consolas"
                 FormatString="{}{0:X3}"
                 HeaderContent="AllowHexSpecifier"
                 IsAllowDrag="False"
                 ParsingNumberStyle="AllowHexSpecifier"
+                ReadCommand="{Binding ReadCommand}"
                 Step="1"
                 Watermark="AllowHexSpecifier"
-                Value="2"
+                Value="{Binding ValueHex}"
                 />
 
             <v:VariableBoxInt
@@ -69,12 +75,12 @@
                 IsShowWriteButton="False"
                 Step="1"
                 Watermark="Input Value"
-                Value="4"
+                Value="{Binding Value2}"
                 />
             <v:VariableBoxUInt
                 Name="NoSpnnner"
                 HorizontalContentAlignment="Right"
-                FontFamily="Consolas"
+                FontFamily="Consolas, MonoSpace"
                 FormatString="X8"
                 HeaderContent="No.Spin:0x"
                 IsAllowDrag="False"
@@ -107,6 +113,7 @@
                 FormatString="{}{0:X8}"
                 HeaderContent="HexNumber(error):"
                 IsAllowDrag="False"
+                FontFamily="Yahei"
                 ParsingNumberStyle="HexNumber"
                 Step="1"
                 Watermark="Input Value"

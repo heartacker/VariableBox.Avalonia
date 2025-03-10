@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:u="https://irihi.tech/ursa"
     xmlns:v="VariableBox"
     xmlns:vm="using:VariableBox.Demo.ViewModels"
     d:DesignHeight="450"
@@ -51,9 +52,14 @@
             Margin="2"
             BorderBrush="AliceBlue"
             BorderThickness="2"
-            Header="{Binding UserName}"
             IsExpanded="True"
             >
+            <!--  Header="{Binding UserName}"  -->
+            <Expander.HeaderTemplate>
+                <DataTemplate>
+                    <u:Marquee Content="Welcome to use Variabox" />
+                </DataTemplate>
+            </Expander.HeaderTemplate>
             <StackPanel
                 Grid.ColumnSpan="1"
                 Margin="10"
@@ -62,7 +68,7 @@
                 <Border
                     Margin="2"
                     Padding="10"
-                    BorderBrush="Yellow"
+                    BorderBrush="Gray"
                     BorderThickness="1"
                     CornerRadius="2"
                     >
@@ -100,8 +106,6 @@
                             Width="{Binding Width}"
                             HorizontalAlignment="{Binding HorizontalAlignment}"
                             HorizontalContentAlignment="{Binding HorizontalContentAlignment}"
-                            Command="{Binding TrythisCommand}"
-                            FontFamily="{Binding FontFamily, Mode=OneWay}"
                             FormatString="{Binding FormatString}"
                             HeaderContent="{Binding HeaderContent}"
                             HeaderDoubleTaped="Numd_HeaderDoubleTaped"
@@ -115,20 +119,23 @@
                             Maximum="{Binding Maximum}"
                             Minimum="{Binding Minimum}"
                             ParsingNumberStyle="{Binding ParsingNumberStyle}"
-                            ReadCommand="{Binding TrythisReadCommand}"
                             ShowButtonSpinner="{Binding ShowButtonSpinner}"
                             Step="{Binding Step}"
                             Watermark="{Binding Watermark}"
                             Value="{Binding Value}"
                             />
-                        <NumericUpDown Width="{Binding Width}" Value="{Binding Value}" />
+                        <NumericUpDown
+                            Width="{Binding Width}"
+                            IsEnabled="{Binding IsEnable}"
+                            Value="{Binding Value}"
+                            />
 
                     </StackPanel>
                 </Border>
                 <Border
                     Margin="2"
                     Padding="10"
-                    BorderBrush="Green"
+                    BorderBrush="LightGray"
                     BorderThickness="1"
                     CornerRadius="2"
                     >
@@ -152,7 +159,7 @@
                 <Border
                     Margin="2"
                     Padding="10"
-                    BorderBrush="Red"
+                    BorderBrush="DarkGray"
                     BorderThickness="1"
                     CornerRadius="2"
                     >

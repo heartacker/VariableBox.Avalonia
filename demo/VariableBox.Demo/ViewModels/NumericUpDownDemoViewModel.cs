@@ -1,77 +1,18 @@
 ﻿using Avalonia.Controls;
 using Avalonia.Layout;
+using Avalonia.Media;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.Messaging;
 using System;
 using System.Globalization;
 using VariableBox.Controls;
+using VariableBox.Demo.ViewModels.Messages;
 
 namespace VariableBox.Demo.ViewModels;
 
-public partial class NumericUpDownDemoViewModel : ObservableObject
+public partial class NumericUpDownDemoViewModel : ObservableRecipient, IRecipient<UIntValueChangedMessage>, IRecipient<UIntRequestMessage>
 {
-    private double _oldWidth = 200;
-    [ObservableProperty]
-    public partial string? UserName { get; set; } = "Heartacker";
-
-    [ObservableProperty] private bool _AutoWidth = false;
-    [ObservableProperty] private double _Width = 200;//Double.NaN;
-    [ObservableProperty] private uint _Value;
-    [ObservableProperty] private string _FontFamily = "Consolas";
-    [ObservableProperty] private bool _IsAllowDrag = false;
-    [ObservableProperty] private bool _IsReadOnly = false;
-
-    [ObservableProperty] private Array _Array_HorizontalAlignment;
-    [ObservableProperty] private HorizontalAlignment _HorizontalAlignment = HorizontalAlignment.Center;
-
-    [ObservableProperty] private Array _Array_HorizontalContentAlignment;
-    [ObservableProperty] private HorizontalAlignment _HorizontalContentAlignment = HorizontalAlignment.Center;
-    [ObservableProperty] private object? _HeaderContent = "0x";
-    [ObservableProperty] private string _Watermark = "Water mark";
-    [ObservableProperty] private string _FormatString = "X8";
-    [ObservableProperty] private Array _Array_ParsingNumberStyle;
-    [ObservableProperty] private NumberStyles _ParsingNumberStyle = NumberStyles.AllowHexSpecifier;
-    [ObservableProperty] private bool _IsAllowSpin = true;
-    [ObservableProperty] private bool _ShowButtonSpinner = true;
-
-    [ObservableProperty] private UInt32 _Maximum = UInt32.MaxValue;
-    [ObservableProperty] private UInt32 _Minimum = UInt32.MinValue;
-    [ObservableProperty] private UInt32 _Step = 1;
-
-    [ObservableProperty] private bool _IsEnable = true;
-
-    [ObservableProperty] private bool _IsUpdateValueWhenLostFocus = false;
-
-    [ObservableProperty] private string _CommandUpdateText = "Command not Execute";
-
-    [ObservableProperty] private string _ValueChangedUpdateText = "ValueChanged not Execute";
-
-    [ObservableProperty] private string _ReadCommandUpdateText = "ReadCommand not Execute";
-    [ObservableProperty] private string _ReadRequestedUpdateText = "ReadRequested not Execute";
-
-    [ObservableProperty] private bool _IsShowReadButton = true;
-    [ObservableProperty] private bool _IsShowWriteButton = true;
-    // [ObservableProperty] private bool _IsEnableEditingIndicator = true;
-
-
-    uint v = 0;
-    [RelayCommand]
-    // void Trythis()
-    // void Trythis(object v)
-    void Trythis(uint v)
-    {
-        CommandUpdateText = $"Command, Parameter={v}";
-    }
-
-
-    [RelayCommand]
-    // void TrythisRead()
-    // void TrythisRead(object v)
-    void TrythisRead(uint v)
-    {
-        ReadCommandUpdateText = $"ReadCommand, Parameter={v}";
-    }
-
     public NumericUpDownDemoViewModel()
     {
         Array_HorizontalContentAlignment = Enum.GetValues(typeof(HorizontalAlignment));
@@ -80,6 +21,106 @@ public partial class NumericUpDownDemoViewModel : ObservableObject
         // VariableBoxUInt numericUIntUpDown;
         // TextBox textBox;
 
+        //! 不是接收者，就需要自己注册
+        // WeakReferenceMessenger.Default.Register<UIntValueChangedMessage>(this); // 需要注册自己
+        // WeakReferenceMessenger.Default.Register<UIntRequestMessage>(this);      // 需要注册自己
+
+        //! 或者使用 ObservableRecipient, 并激活自己
+        IsActive = true;
+    }
+
+    private double _oldWidth = 200;
+    [ObservableProperty]
+    public partial string? UserName { get; set; } = "Heartacker";
+
+    [ObservableProperty]
+    public partial bool AutoWidth { get; set; } = false;
+    [ObservableProperty]
+    public partial double Width { get; set; } = 200;//Double.NaN;
+
+    [ObservableProperty]
+    public partial uint Value { get; set; }
+
+    [ObservableProperty]
+    public partial FontFamily FontFamily { get; set; } = new FontFamily("Consolas"); // "Consolas";
+
+    [ObservableProperty]
+    public partial bool IsAllowDrag { get; set; } = false;
+    [ObservableProperty]
+    public partial bool IsReadOnly { get; set; } = false;
+
+    [ObservableProperty]
+    public partial Array Array_HorizontalAlignment { get; set; }
+    [ObservableProperty]
+    public partial HorizontalAlignment HorizontalAlignment { get; set; } = HorizontalAlignment.Center;
+
+    [ObservableProperty]
+    public partial Array Array_HorizontalContentAlignment { get; set; }
+    [ObservableProperty]
+    public partial HorizontalAlignment HorizontalContentAlignment { get; set; } = HorizontalAlignment.Center;
+    [ObservableProperty]
+    public partial object? HeaderContent { get; set; } = "0x";
+    [ObservableProperty]
+    public partial string Watermark { get; set; } = "Water mark";
+    [ObservableProperty]
+    public partial string FormatString { get; set; } = "X8";
+    [ObservableProperty]
+    public partial Array Array_ParsingNumberStyle { get; set; }
+    [ObservableProperty]
+    public partial NumberStyles ParsingNumberStyle { get; set; } = NumberStyles.AllowHexSpecifier;
+    [ObservableProperty]
+    public partial bool IsAllowSpin { get; set; } = true;
+    [ObservableProperty]
+    public partial bool ShowButtonSpinner { get; set; } = true;
+
+    [ObservableProperty]
+    public partial UInt32 Maximum { get; set; } = UInt32.MaxValue;
+    [ObservableProperty]
+    public partial UInt32 Minimum { get; set; } = UInt32.MinValue;
+    [ObservableProperty]
+    public partial UInt32 Step { get; set; } = 1;
+
+    [ObservableProperty]
+    public partial bool IsEnable { get; set; } = true;
+
+    [ObservableProperty]
+    public partial bool IsUpdateValueWhenLostFocus { get; set; } = false;
+
+    [ObservableProperty]
+    public partial string CommandUpdateText { get; set; } = "Command not Execute";
+
+    [ObservableProperty]
+    public partial string ValueChangedUpdateText { get; set; } = "ValueChanged not Execute";
+
+    [ObservableProperty]
+    public partial string ReadCommandUpdateText { get; set; } = "ReadCommand not Execute";
+
+    [ObservableProperty]
+    public partial string ReadRequestedUpdateText { get; set; } = "ReadRequested not Execute";
+
+    [ObservableProperty]
+    public partial bool IsShowReadButton { get; set; } = true;
+
+    [ObservableProperty]
+    public partial bool IsShowWriteButton { get; set; } = true;
+    // [ObservableProperty] private bool _IsEnableEditingIndicator = true;
+
+
+    // uint v = 0;
+    [RelayCommand]
+    // void Trythis()
+    // void Trythis(object v)
+    void Trythis(uint v)
+    {
+        CommandUpdateText = $"Command, Parameter={v}";
+    }
+
+    [RelayCommand]
+    // void TrythisRead()
+    // void TrythisRead(object v)
+    void TrythisRead(uint v)
+    {
+        ReadCommandUpdateText = $"ReadCommand, Parameter={v}";
     }
 
     partial void OnAutoWidthChanged(bool value)
@@ -99,5 +140,27 @@ public partial class NumericUpDownDemoViewModel : ObservableObject
     {
         // Console.WriteLine(oldValue);
     }
+
+
+
+    #region Messages
+
+    [RelayCommand]
+    void TrythisMessageRequest(uint v)
+    {
+        CommandUpdateText = $"TrythisMessage, Parameter={v}";
+    }
+
+    public void Receive(UIntValueChangedMessage message)
+    {
+        Value = message.Value;
+        // ValueChangedUpdateText = $"Receive, Parameter={message.Value}";
+    }
+
+    public void Receive(UIntRequestMessage message)
+    {
+        message.Reply((uint)(Value * message.t));
+    }
+    #endregion
 
 }

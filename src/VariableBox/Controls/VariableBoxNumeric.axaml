@@ -109,6 +109,7 @@
         <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
         <Setter Property="MinHeight" Value="{DynamicResource NumericUpDownDefaultHeight}" />
         <!-- <Setter Property="Margin" Value="0" /> -->
+        <Setter Property="FontFamily" Value="MonoSpace, Consolas, SF Mono, Menlo" />
         <Setter Property="BorderBrush" Value="{DynamicResource VboxNumericUpDownBorderBrush}" />
         <Setter Property="Template">
             <ControlTemplate>
