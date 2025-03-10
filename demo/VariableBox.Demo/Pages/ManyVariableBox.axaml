@@ -80,7 +80,7 @@
             <v:VariableBoxUInt
                 Name="NoSpnnner"
                 HorizontalContentAlignment="Right"
-                FontFamily="Consolas"
+                FontFamily="Consolas,MonoSpace"
                 FormatString="X8"
                 HeaderContent="No.Spin:0x"
                 IsAllowDrag="False"
