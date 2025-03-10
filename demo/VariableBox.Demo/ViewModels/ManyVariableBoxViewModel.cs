@@ -33,10 +33,10 @@ public partial class ManyVariableBoxViewModel : ObservableObject
 
 
     [RelayCommand]
-    public void Send()
+    public void Send(uint v)
     {
         // Send a message from some other module
-        WeakReferenceMessenger.Default.Send(new UIntValueChangedMessage(ValueHex));
+        WeakReferenceMessenger.Default.Send(new UIntValueChangedMessage(v));
     }
 
     [RelayCommand]

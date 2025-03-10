@@ -1,5 +1,6 @@
 ﻿using Avalonia.Controls;
 using Avalonia.Layout;
+using Avalonia.Media;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
@@ -41,7 +42,8 @@ public partial class NumericUpDownDemoViewModel : ObservableRecipient, IRecipien
     public partial uint Value { get; set; }
 
     [ObservableProperty]
-    public partial string FontFamily { get; set; } = "Consolas";
+    public partial FontFamily FontFamily { get; set; } = new FontFamily("Consolas"); // "Consolas";
+
     [ObservableProperty]
     public partial bool IsAllowDrag { get; set; } = false;
     [ObservableProperty]
