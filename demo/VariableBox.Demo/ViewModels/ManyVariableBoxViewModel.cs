@@ -11,6 +11,10 @@ namespace VariableBox.Demo.ViewModels;
 
 public partial class ManyVariableBoxViewModel : ObservableRecipient
 {
+    public ManyVariableBoxViewModel()
+    {
+        // IsActive = true;
+    }
 
     [ObservableProperty]
     public partial uint ValueHex { get; set; } = 0;
@@ -20,6 +24,7 @@ public partial class ManyVariableBoxViewModel : ObservableRecipient
     public void Send()
     {
         // Send a message from some other module
+        Broadcast<uint>(0, ValueHex, "demo");
         WeakReferenceMessenger.Default.Send(new UIntValueChangedMessage(ValueHex));
     }
 
