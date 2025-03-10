@@ -126,6 +126,7 @@
                             />
                         <NumericUpDown
                             Width="{Binding Width}"
+                            IsEnabled="{Binding IsEnable}"
                             Value="{Binding Value}"
                             />
 
