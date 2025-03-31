@@ -5,4 +5,8 @@
     <!--<SemiAvaloniaVersion>11.1.0-beta1.1</SemiAvaloniaVersion>-->
     <SemiAvaloniaVersion>11.2.1.6</SemiAvaloniaVersion>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HotAvalonia" PrivateAssets="All" Publish="True" Version="3.0.0" />
+  </ItemGroup>
 </Project>

@@ -28,7 +28,7 @@
         <PackageReference Include="Irihi.Ursa" Version="1.10.0" />
         <PackageReference Include="Irihi.Ursa.Themes.Semi" Version="1.10.0" />
         <!-- <PackageReference Include="AtomUI" Version="0.0.1-build-20241009" />-->
-        <PackageReference Include="HotAvalonia" PrivateAssets="All" Publish="True" Version="3.0.0" />
+        <!-- <PackageReference Include="HotAvalonia" PrivateAssets="All" Publish="True" Version="3.0.0" /> -->
     </ItemGroup>
 
     <ItemGroup>
