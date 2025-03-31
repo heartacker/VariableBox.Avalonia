@@ -51,9 +51,13 @@
                 </NumericUpDown.Styles>
             </NumericUpDown>
 
-            <u:Banner Content="VariableBox" />
-            <HyperlinkButton Content="VariableBox:" NavigateUri="https://github.com/heartacker/VariableBox.Avalonia" />
+            <u:Banner VerticalAlignment="Center" VerticalContentAlignment="Center">
+                <u:Banner.Content>
+                    <HyperlinkButton Content="VariableBox:" NavigateUri="https://github.com/heartacker/VariableBox.Avalonia" />
+                </u:Banner.Content>
+            </u:Banner>
             <!--  =================we should use AllowHexSpecifier  -->
+            <HyperlinkButton Content="commands-and-events:" NavigateUri="https://github.com/heartacker/VariableBox.Avalonia#commands-and-events" />
             <v:VariableBoxUInt
                 Name="uint_AllowHexSpecifier"
                 HorizontalContentAlignment="Right"
