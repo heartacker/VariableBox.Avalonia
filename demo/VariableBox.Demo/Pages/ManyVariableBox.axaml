@@ -20,8 +20,9 @@
         >
 
         <StackPanel Width="250" Margin="5">
+            <u:Banner Content="NumericUpDown" />
             <NumericUpDown Value="0" />
-            <HyperlinkButton Content="Compact:" NavigateUri="https://docs.avaloniaui.net/zh-Hans/docs/basics/user-interface/styling/themes/fluent#%E6%9B%B4%E6%94%B9%E4%B8%BB%E9%A2%98%E5%AF%86%E5%BA%A6" />
+            <HyperlinkButton Content="Fluent Compact Mode:" NavigateUri="https://docs.avaloniaui.net/zh-Hans/docs/basics/user-interface/styling/themes/fluent#%E6%9B%B4%E6%94%B9%E4%B8%BB%E9%A2%98%E5%AF%86%E5%BA%A6" />
             <NumericUpDown
                 FormatString="0"
                 InnerLeftContent="Compact"
@@ -32,7 +33,7 @@
                 </NumericUpDown.Styles>
             </NumericUpDown>
 
-            <HyperlinkButton Content="FluentButtonSpinner:" NavigateUri="https://github.com/heartacker/VariableBox.Avalonia/blob/main/src/VariableBox/Themes/Shared/FluentButtonSpinner.axaml#L71" />
+            <HyperlinkButton Content="vbox:FluentButtonSpinner:" NavigateUri="https://github.com/heartacker/VariableBox.Avalonia/blob/main/src/VariableBox/Themes/Shared/FluentButtonSpinner.axaml#L71" />
             <NumericUpDown InnerLeftContent="Theme" Value="2">
                 <NumericUpDown.Styles>
                     <Style Selector=":is(ButtonSpinner)">
@@ -40,7 +41,8 @@
                     </Style>
                 </NumericUpDown.Styles>
             </NumericUpDown>
-            <NumericUpDown InnerLeftContent="Compact+Theme" Value="3">
+            <HyperlinkButton Content="Compact+vbox:FluentButtonSpinner:" NavigateUri="https://github.com/heartacker/VariableBox.Avalonia/blob/main/src/VariableBox/Themes/Shared/FluentButtonSpinner.axaml#L71" />
+            <NumericUpDown InnerLeftContent="Compact+vbox:FBS:" Value="3">
                 <NumericUpDown.Styles>
                     <FluentTheme DensityStyle="Compact" />
                     <Style Selector=":is(ButtonSpinner)">
@@ -49,7 +51,7 @@
                 </NumericUpDown.Styles>
             </NumericUpDown>
 
-            <u:Banner Content="Variable" />
+            <u:Banner Content="VariableBox" />
             <HyperlinkButton Content="VariableBox:" NavigateUri="https://github.com/heartacker/VariableBox.Avalonia" />
             <!--  =================we should use AllowHexSpecifier  -->
             <v:VariableBoxUInt
@@ -110,10 +112,10 @@
             <!--  =================this is error usage  -->
             <v:VariableBoxUInt
                 Name="uint_HexNumber"
+                FontFamily="Yahei"
                 FormatString="{}{0:X8}"
                 HeaderContent="HexNumber(error):"
                 IsAllowDrag="False"
-                FontFamily="Yahei"
                 ParsingNumberStyle="HexNumber"
                 Step="1"
                 Watermark="Input Value"
