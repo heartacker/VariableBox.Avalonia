@@ -19,7 +19,7 @@
         BorderThickness="1"
         >
 
-        <StackPanel Width="250" Margin="5">
+        <StackPanel Width="280" Margin="5">
             <u:Banner Content="NumericUpDown" />
             <NumericUpDown Value="0" />
             <HyperlinkButton Content="Fluent Compact Mode:" NavigateUri="https://docs.avaloniaui.net/zh-Hans/docs/basics/user-interface/styling/themes/fluent#%E6%9B%B4%E6%94%B9%E4%B8%BB%E9%A2%98%E5%AF%86%E5%BA%A6" />
