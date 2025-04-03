@@ -402,7 +402,7 @@ public abstract class NumericUpDown : TemplatedControl /* , Control */ /*, IClea
 
     private void OnTextBoxKeyDown(object? sender, KeyEventArgs e)
     {
-        System.Diagnostics.Trace.WriteLine(e.Key);
+        System.Diagnostics.Debug.WriteLine(e.Key);
         if (e.Key == Key.Left || e.Key == Key.Right ||
             e.Key == Key.Up || e.Key == Key.Down ||
             e.Key == Key.Enter
@@ -427,13 +427,15 @@ public abstract class NumericUpDown : TemplatedControl /* , Control */ /*, IClea
                 //_spinner?.Focus();
             }
         }
+
+        //* write
         if (e.Key == Key.Enter || (e.Key == Key.Right && e.KeyModifiers == KeyModifiers.Alt))
         {
             // var _fmtedString = ConvertValueToText(Value);
             // if (IsEditing)
             {
-                // if value changed, fire a changed,
-                // if value not changed but text is changed, SyncTextAndValue without trigger
+                //! if value changed, fire a changed,
+                //! if value not changed but text is changed, SyncTextAndValue without trigger
                 var commitSuccess = CommitInput(true);
                 OnTextBoxTextChanged(_textBox, null);
                 e.Handled = commitSuccess;
@@ -445,22 +447,23 @@ public abstract class NumericUpDown : TemplatedControl /* , Control */ /*, IClea
             if (!IsEditing && e.KeyModifiers == KeyModifiers.Alt)
             {
                 OnWrite(this, e);
-                e.Handled = true;
             }
+            e.Handled = true;
         }
+
+        //*read
         else if (e.Key == Key.Left && e.KeyModifiers == KeyModifiers.Alt)
         {
             OnReadBefore(this, e);
             e.Handled = true;
         }
+        //* up and down
         else
         {
-
+            // e.Handled = true;
         }
-        // else if (e.Key == Key.Right && e.KeyModifiers == KeyModifiers.Alt)
-        // {
-        //     OnWrite(this, e);
-        // }
+        // ignore key whhile alt is pressed
+        if (e.KeyModifiers == KeyModifiers.Alt) e.Handled = true;
     }
 
     private void OnDragPanelPointerPressed(object sender, PointerPressedEventArgs e)
