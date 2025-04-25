@@ -1,8 +1,10 @@
 ﻿<linker>
   <!-- Can be removed if CompiledBinding and no reflection are used -->
+  <assembly fullname="VariableBox.Avalonia" preserve="All" />
   <assembly fullname="VariableBox.Demo" preserve="All" />
   <assembly fullname="Avalonia.Themes.Fluent" preserve="All" />
   <assembly fullname="Avalonia.Themes.Simple" preserve="All" />
   <assembly fullname="Semi.Avalonia" preserve="All" />
-  <assembly fullname="VariableBox.Avalonia" preserve="All" />
+  <assembly fullname="Irihi.Ursa" preserve="All" />
+  <assembly fullname="Irihi.Ursa.Themes.Semi" preserve="All" />
 </linker>
