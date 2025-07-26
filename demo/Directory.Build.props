@@ -2,8 +2,7 @@
   <PropertyGroup>
     <Nullable>enable</Nullable>
     <AvaloniaVersion>11.3.2</AvaloniaVersion>
-    <!--<SemiAvaloniaVersion>11.1.0-beta1.1</SemiAvaloniaVersion>-->
-    <SemiAvaloniaVersion>11.2.1.6</SemiAvaloniaVersion>
+    <SemiAvaloniaVersion>11.2.1.9</SemiAvaloniaVersion>
   </PropertyGroup>
 
   <ItemGroup>
