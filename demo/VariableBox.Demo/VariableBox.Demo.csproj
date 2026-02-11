@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFramework>net9.0</TargetFramework>
+        <TargetFramework>net10.0</TargetFramework>
         <Nullable>enable</Nullable>
         <LangVersion>Preview</LangVersion>
         <AvaloniaUseCompiledBindingsByDefault>false</AvaloniaUseCompiledBindingsByDefault>
@@ -25,8 +25,8 @@
         <PackageReference Include="Avalonia.Themes.Simple" Version="$(AvaloniaVersion)" />
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
         <PackageReference Include="Semi.Avalonia" Version="$(SemiAvaloniaVersion)" />
-        <PackageReference Include="Irihi.Ursa" Version="1.12.0" />
-        <PackageReference Include="Irihi.Ursa.Themes.Semi" Version="1.12.0" />
+        <PackageReference Include="Irihi.Ursa" Version="1.14.1" />
+        <PackageReference Include="Irihi.Ursa.Themes.Semi" Version="1.14.1" />
         <!-- <PackageReference Include="AtomUI" Version="0.0.1-build-20241009" />-->
         <!-- <PackageReference Include="HotAvalonia" PrivateAssets="All" Publish="True" Version="3.0.0" /> -->
     </ItemGroup>

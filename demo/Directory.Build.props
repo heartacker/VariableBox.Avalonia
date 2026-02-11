@@ -1,11 +1,11 @@
 <Project>
   <PropertyGroup>
     <Nullable>enable</Nullable>
-    <AvaloniaVersion>11.3.2</AvaloniaVersion>
-    <SemiAvaloniaVersion>11.2.1.9</SemiAvaloniaVersion>
+    <AvaloniaVersion>11.3.11</AvaloniaVersion>
+    <SemiAvaloniaVersion>11.3.7</SemiAvaloniaVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="HotAvalonia" PrivateAssets="All" Publish="True" Version="3.0.0" />
+    <PackageReference Include="HotAvalonia" PrivateAssets="All" Publish="True" Version="3.1.0" />
   </ItemGroup>
 </Project>
