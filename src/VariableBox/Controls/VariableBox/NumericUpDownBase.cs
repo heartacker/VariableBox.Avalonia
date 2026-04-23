@@ -290,6 +290,7 @@ public abstract class NumericUpDown : TemplatedControl
         if (_repeatReadButton != null) _repeatReadButton.Click += OnReadInternal;
         if (_repeatWriteButton != null) _repeatWriteButton.Click += OnWriteInternal;
 
+        SyncTextAndValue(false, null, true);
         SetValidSpinDirection();
     }
 
