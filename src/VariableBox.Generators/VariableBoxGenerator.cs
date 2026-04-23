@@ -78,7 +78,7 @@ using VariableBox.Common;
 
 namespace VariableBox;
 
-public partial class {className} : NumericUpDownBase<{targetType}>
+public partial class {className}
 {{
     protected override Type StyleKeyOverride => typeof(NumericUpDown);
     public {className}() : base(NumericOperations.{GetOperationName(targetType)}) {{ }}

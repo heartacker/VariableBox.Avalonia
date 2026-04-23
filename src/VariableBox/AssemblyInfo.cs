@@ -1,8 +1,4 @@
 using VariableBox;
-using Avalonia.Metadata;
-
-[assembly: XmlnsDefinition("https://github.com/heartacker/VariableBox.Avalonia", "VariableBox")]
-[assembly: XmlnsDefinition("VariableBox", "VariableBox")]
 
 [assembly: GenerateVariableBox(typeof(int), "VariableBoxInt")]
 [assembly: GenerateVariableBox(typeof(uint), "VariableBoxUInt")]
