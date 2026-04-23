@@ -17,12 +17,7 @@
         <FluentTheme />
         <vbox:FluentTheme Locale="zh-CN" />
 
-        <!--<semi:SemiTheme Locale="zh-CN" />-->
-        <!--<vbox:SemiTheme Locale="zh-CN" />-->
-
-        <!-- <SimpleTheme />
-        <vbox:SimpleTheme Locale="zh-CN" />-->
-
+        <semi:SemiTheme Locale="zh-CN" />
         <u-semi:SemiTheme Locale="zh-CN" />
 
         <Style Selector="vbox|NumericUpDown">
