@@ -297,8 +297,8 @@ Phase 2: 质量加固
 
 Phase 3: 功能扩展（未来）
 ├── 1. 内置 Undo/Redo 栈 (DONE ✅)
-├── 2. 引入 IValidationRule<T> 支持自定义业务校验
-├── 3. 设计 EnumerationUpDown 架构
+├── 2. 引入 IValidationRule<T> 支持自定义业务校验 (DONE ✅)
+├── 3. 设计 EnumerationUpDown 架构 (IN PROGRESS ⏳)
 ... Applied fuzzy match at line 292-297.
 └── 4. 如需支持更多数值类型，引入 Source Generator
 ```
