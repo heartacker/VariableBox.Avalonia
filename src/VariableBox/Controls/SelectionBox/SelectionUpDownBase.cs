@@ -73,7 +73,10 @@ public abstract class SelectionUpDownBase<T> : NumericUpDown
         {
             if (fromIndex)
             {
-                int index = Math.Clamp(SelectedIndex, 0, _items.Count - 1);
+                int index = SelectedIndex;
+                if (index < 0) index = 0;
+                if (index > _items.Count - 1) index = _items.Count - 1;
+                
                 if (index != SelectedIndex) SelectedIndex = index;
                 SelectedItem = _items[index];
             }
