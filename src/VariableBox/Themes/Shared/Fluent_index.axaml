@@ -8,6 +8,7 @@
 
     <ResourceDictionary.MergedDictionaries>
         <!--  Add Resources Here  -->
+        <x:Double x:Key="NumericUpDownDefaultHeight">30</x:Double>
         <ResourceInclude Source="FluentButtonSpinner.axaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

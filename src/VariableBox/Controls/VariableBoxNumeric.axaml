@@ -151,7 +151,7 @@
                                 <TextBox
                                     Name="PART_TextBox"
                                     Height="{TemplateBinding Height}"
-                                    MinHeight="{TemplateBinding MinHeight}"
+                                    MinHeight="0"
                                     HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
                                     VerticalContentAlignment="Center"
                                     AcceptsReturn="False"

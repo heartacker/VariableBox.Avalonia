@@ -16,6 +16,8 @@
     </ResourceDictionary.ThemeDictionaries>
 
     <!--  Add Resources Here  -->
+    <x:Double x:Key="NumericUpDownDefaultHeight">30</x:Double>
+
     <ResourceDictionary.MergedDictionaries>
         <ResourceInclude Source="SemiButtonSpinner.axaml" />
     </ResourceDictionary.MergedDictionaries>
