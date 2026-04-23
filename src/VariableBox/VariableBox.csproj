@@ -3,7 +3,7 @@
     <Import Project="../Package.props" />
 
     <PropertyGroup>
-        <TargetFrameworks>netstandard2.0;net8;net9;net10</TargetFrameworks>
+        <TargetFrameworks>netstandard2.0;net8.0;net9.0;net10.0</TargetFrameworks>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <LangVersion>latest</LangVersion>
@@ -25,13 +25,16 @@
     </ItemGroup>
 
     <ItemGroup>
+    </ItemGroup>
+
+    <ItemGroup>
         <None Include="..\..\Logo.png">
-          <Pack>True</Pack>
-          <PackagePath>\</PackagePath>
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
         </None>
         <None Include="..\..\README.md">
-          <Pack>True</Pack>
-          <PackagePath>\</PackagePath>
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
         </None>
     </ItemGroup>
 </Project>

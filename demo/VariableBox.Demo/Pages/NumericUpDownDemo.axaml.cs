@@ -1,11 +1,12 @@
-﻿using Avalonia;
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using System;
 using System.Diagnostics;
-using VariableBox.Controls;
+using VariableBox;
+using VariableBox.Common;
 using VariableBox.Demo.ViewModels;
 
 namespace VariableBox.Demo.Pages;
@@ -46,7 +47,7 @@ public partial class NumericUpDownDemo : UserControl
     {
         Trace.WriteLine(e.Source);
         Trace.WriteLine(sender as VariableBoxUInt);
-        var val = (sender as VariableBoxUInt).Value;
+        var val = (sender as VariableBoxUInt)?.Value;
         var a = (uint)random.Next(0, 100);
         vm.ReadRequestedUpdateText = $"ReadRequested,Old={val} => {a}";
         vm.Value = a;

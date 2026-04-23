@@ -6,7 +6,7 @@ using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
 using System;
 using System.Globalization;
-using VariableBox.Controls;
+using VariableBox;
 using VariableBox.Demo.ViewModels.Messages;
 
 namespace VariableBox.Demo.ViewModels;

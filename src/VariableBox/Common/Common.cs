@@ -18,7 +18,7 @@ public static class AvaloniaPropertyExtension
     public static void AffectsPseudoClass<TControl>(this AvaloniaProperty<bool> property, string pseudoClass, RoutedEvent<RoutedEventArgs>? routedEvent = null) where TControl : Control
     {
         string pseudoClass2 = pseudoClass;
-        RoutedEvent<RoutedEventArgs> routedEvent2 = routedEvent;
+        RoutedEvent<RoutedEventArgs>? routedEvent2 = routedEvent;
         property.Changed.AddClassHandler(delegate (TControl control, AvaloniaPropertyChangedEventArgs<bool> args)
         {
             OnPropertyChanged(control, args, pseudoClass2, routedEvent2);
@@ -43,7 +43,7 @@ public static class AvaloniaPropertyExtension
     public static void AffectsPseudoClass<TControl, TArgs>(this AvaloniaProperty<bool> property, string pseudoClass, RoutedEvent<TArgs>? routedEvent = null) where TControl : Control where TArgs : RoutedEventArgs, new()
     {
         string pseudoClass2 = pseudoClass;
-        RoutedEvent<TArgs> routedEvent2 = routedEvent;
+        RoutedEvent<TArgs>? routedEvent2 = routedEvent;
         property.Changed.AddClassHandler(delegate (TControl control, AvaloniaPropertyChangedEventArgs<bool> args)
         {
             OnPropertyChanged(control, args, pseudoClass2, routedEvent2);
