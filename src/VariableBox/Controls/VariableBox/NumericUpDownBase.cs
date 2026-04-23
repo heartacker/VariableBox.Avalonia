@@ -269,6 +269,22 @@ public abstract class NumericUpDown : TemplatedControl
             _textBox.IsReadOnly = IsReadOnly;
             _textBox.TextChanged += OnTextBoxTextChanged;
             _textBox.KeyDown += OnTextBoxKeyDown;
+            _textBox.KeyDown += (s, args) =>
+            {
+                if (args.KeyModifiers == KeyModifiers.Control)
+                {
+                    if (args.Key == Key.Z)
+                    {
+                        UndoInternal();
+                        args.Handled = true;
+                    }
+                    else if (args.Key == Key.Y)
+                    {
+                        RedoInternal();
+                        args.Handled = true;
+                    }
+                }
+            };
             _textBox.LostFocus += OnTextBoxLostFocus;
         }
 
@@ -327,6 +343,9 @@ public abstract class NumericUpDown : TemplatedControl
         if (CommitInput(true)) OnWrite();
     }
 
+    protected virtual void UndoInternal() { }
+    protected virtual void RedoInternal() { }
+
     protected abstract void SetValidSpinDirection();
     public abstract void Increase();
     public abstract void Decrease();
@@ -344,10 +363,37 @@ public abstract class NumericUpDown : TemplatedControl
 public abstract class NumericUpDownBase<T> : NumericUpDown where T : struct, IComparable<T>
 {
     protected readonly INumericOperations<T> Operations;
+    private readonly System.Collections.Generic.Stack<T?> _undoStack = new();
+    private readonly System.Collections.Generic.Stack<T?> _redoStack = new();
+    private bool _isUndoingRedoing;
 
     protected NumericUpDownBase(INumericOperations<T> operations)
     {
         Operations = operations;
+    }
+
+    public void Undo()
+    {
+        if (_undoStack.Count == 0) return;
+        _isUndoingRedoing = true;
+        try
+        {
+            _redoStack.Push(Value);
+            Value = _undoStack.Pop();
+        }
+        finally { _isUndoingRedoing = false; }
+    }
+
+    public void Redo()
+    {
+        if (_redoStack.Count == 0) return;
+        _isUndoingRedoing = true;
+        try
+        {
+            _undoStack.Push(Value);
+            Value = _redoStack.Pop();
+        }
+        finally { _isUndoingRedoing = false; }
     }
 
     public static readonly StyledProperty<T?> ValueProperty =
@@ -406,6 +452,13 @@ public abstract class NumericUpDownBase<T> : NumericUpDown where T : struct, ICo
     private void OnValueChanged(AvaloniaPropertyChangedEventArgs e)
     {
         if (_isSyncing) return;
+        
+        if (!_isUndoingRedoing)
+        {
+            _undoStack.Push((T?)e.OldValue);
+            _redoStack.Clear();
+        }
+
         SyncTextAndValue(false, null, true);
         SetValidSpinDirection();
         
@@ -490,6 +543,9 @@ public abstract class NumericUpDownBase<T> : NumericUpDown where T : struct, ICo
 
     protected override void OnRead() => RaiseEvent(new RoutedEventArgs(ReadRequestedEvent, this));
     protected override void OnWrite() => RaiseEvent(new ValueChangedEventArgs<T>(ValueChangedEvent, Value, Value));
+
+    protected override void UndoInternal() => Undo();
+    protected override void RedoInternal() => Redo();
 
     public override void Clear() => Value = null;
 }
