@@ -21,6 +21,9 @@ public abstract partial class NumericUpDownBase<T> : NumericUpDown where T : str
     protected NumericUpDownBase(INumericOperations<T> operations)
     {
         Operations = operations;
+        SetCurrentValue(MaximumProperty, Operations.MaxValue);
+        SetCurrentValue(MinimumProperty, Operations.MinValue);
+        SetCurrentValue(StepProperty, Operations.DefaultStep);
     }
 
     public void Undo()

@@ -44,7 +44,7 @@ public static class NumericOperations
         public byte MinValue => byte.MinValue;
         public byte DefaultStep => 1;
         public bool TryParse(string? s, NumberStyles style, IFormatProvider? provider, out byte result) => byte.TryParse(s, style, provider, out result);
-        public string ToString(byte? value, string? format, IFormatProvider? provider) => value?.ToString(format, provider) ?? string.Empty;
+        public string ToString(byte? value, string? format, IFormatProvider? provider) => value == null ? string.Empty : (string.IsNullOrEmpty(format) ? value.Value.ToString(provider) : string.Format(provider, format.Contains("{0") ? format : "{0:" + format + "}", value));
         public byte Add(byte a, byte b) => (byte)Math.Min((int)byte.MaxValue, (int)a + b);
         public byte Subtract(byte a, byte b) => (byte)Math.Max((int)byte.MinValue, (int)a - b);
         public byte Clamp(byte value, byte min, byte max) => InternalClamp(value, min, max);
