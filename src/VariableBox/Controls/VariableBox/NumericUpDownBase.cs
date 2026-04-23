@@ -432,6 +432,15 @@ public abstract class NumericUpDownBase<T> : NumericUpDown where T : struct, ICo
         set => SetValue(MinimumProperty, value);
     }
 
+    public static readonly StyledProperty<System.Collections.Generic.IEnumerable<IValidationRule<T>>?> ValidationRulesProperty =
+        AvaloniaProperty.Register<NumericUpDown, System.Collections.Generic.IEnumerable<IValidationRule<T>>?>(nameof(ValidationRules));
+
+    public System.Collections.Generic.IEnumerable<IValidationRule<T>>? ValidationRules
+    {
+        get => GetValue(ValidationRulesProperty);
+        set => SetValue(ValidationRulesProperty, value);
+    }
+
     public static readonly RoutedEvent<ValueChangedEventArgs<T>> ValueChangedEvent =
         RoutedEvent.Register<NumericUpDown, ValueChangedEventArgs<T>>(nameof(ValueChanged), RoutingStrategies.Bubble);
 
@@ -515,7 +524,27 @@ public abstract class NumericUpDownBase<T> : NumericUpDown where T : struct, ICo
             {
                 if (Operations.TryParse(text, ParsingNumberStyle, NumberFormat, out T val))
                 {
-                    Value = Operations.Clamp(val, Minimum, Maximum);
+                    bool customValidationPassed = true;
+                    if (ValidationRules != null)
+                    {
+                        foreach (var rule in ValidationRules)
+                        {
+                            if (!rule.Validate(val).IsValid)
+                            {
+                                customValidationPassed = false;
+                                break;
+                            }
+                        }
+                    }
+
+                    if (customValidationPassed)
+                    {
+                        Value = Operations.Clamp(val, Minimum, Maximum);
+                    }
+                    else
+                    {
+                        result = false;
+                    }
                 }
                 else
                 {
@@ -539,6 +568,25 @@ public abstract class NumericUpDownBase<T> : NumericUpDown where T : struct, ICo
     {
         isEditingValid = Operations.TryParse(text, ParsingNumberStyle, NumberFormat, out T val);
         isEditing = !Equals(val, Value);
+
+        if (isEditingValid && ValidationRules != null)
+        {
+            foreach (var rule in ValidationRules)
+            {
+                var result = rule.Validate(val);
+                if (!result.IsValid)
+                {
+                    isEditingValid = false;
+                    DataValidationErrors.SetErrors(this, new[] { result.Message ?? "Invalid value" });
+                    break;
+                }
+            }
+        }
+
+        if (isEditingValid)
+        {
+            DataValidationErrors.ClearErrors(this);
+        }
     }
 
     protected override void OnRead() => RaiseEvent(new RoutedEventArgs(ReadRequestedEvent, this));

@@ -23,10 +23,10 @@
             Version="$(AvaloniaVersion)" />
         <PackageReference Include="Avalonia.Themes.Fluent" Version="$(AvaloniaVersion)" />
         <PackageReference Include="Avalonia.Themes.Simple" Version="$(AvaloniaVersion)" />
-        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
         <PackageReference Include="Semi.Avalonia" Version="$(SemiAvaloniaVersion)" />
-        <PackageReference Include="Irihi.Ursa" Version="1.14.1" />
-        <PackageReference Include="Irihi.Ursa.Themes.Semi" Version="1.14.1" />
+        <PackageReference Include="Irihi.Ursa" Version="1.15.1" />
+        <PackageReference Include="Irihi.Ursa.Themes.Semi" Version="1.15.1" />
         <!-- <PackageReference Include="AtomUI" Version="0.0.1-build-20241009" />-->
         <!-- <PackageReference Include="HotAvalonia" PrivateAssets="All" Publish="True" Version="3.0.0" /> -->
     </ItemGroup>

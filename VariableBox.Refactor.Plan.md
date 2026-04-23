@@ -290,15 +290,16 @@ Phase 1: 结构重建（立即执行）
 └── 6. 统一 TemplatePart 命名，检查多主题一致性
 
 Phase 2: 质量加固
-├── 1. 为 NumericOperations<T> 编写纯逻辑单元测试
-├── 2. 引入 Avalonia.Headless 测试键盘/拖拽/事件交互
-├── 3. 边界值测试：Hex 溢出、Min/Max 钳制、无效输入状态
-└── 4. 格式化与可读性审查（恢复属性分行，去除冗余注释）
+├── 1. 为 NumericOperations<T> 编写纯逻辑单元测试 (DONE ✅)
+├── 2. 引入 Avalonia.Headless 测试键盘/拖拽/事件交互 (DONE ✅)
+├── 3. 边界值测试：Hex 溢出、Min/Max 钳制、无效输入状态 (DONE ✅)
+└── 4. 格式化与可读性审查 (DONE ✅)
 
 Phase 3: 功能扩展（未来）
-├── 1. 内置 Undo/Redo 栈
+├── 1. 内置 Undo/Redo 栈 (DONE ✅)
 ├── 2. 引入 IValidationRule<T> 支持自定义业务校验
 ├── 3. 设计 EnumerationUpDown 架构
+... Applied fuzzy match at line 292-297.
 └── 4. 如需支持更多数值类型，引入 Source Generator
 ```
 
