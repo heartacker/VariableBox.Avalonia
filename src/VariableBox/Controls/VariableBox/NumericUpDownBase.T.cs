@@ -126,7 +126,12 @@ public abstract partial class NumericUpDownBase<T> : NumericUpDown where T : str
         T? newValue = e.NewValue is T nv ? (T?)nv : null;
 
         RaiseEvent(new ValueChangedEventArgs<T>(ValueChangedEvent, oldValue, newValue));
-        Command?.Execute(CommandParameter);
+        
+        var parameter = CommandParameter ?? Value;
+        if (Command != null && Command.CanExecute(parameter))
+        {
+            Command.Execute(parameter);
+        }
     }
 
     protected override void SetValidSpinDirection()
