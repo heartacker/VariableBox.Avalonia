@@ -126,6 +126,8 @@
                         <ButtonSpinner
                             Name="PART_Spinner"
                             MinWidth="0"
+                            MinHeight="0"
+                            VerticalAlignment="Stretch"
                             HorizontalContentAlignment="Stretch"
                             VerticalContentAlignment="Stretch"
                             AllowSpin="{TemplateBinding IsAllowSpin}"
