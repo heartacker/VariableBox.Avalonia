@@ -6,8 +6,7 @@
     xmlns:semi="https://irihi.tech/semi"
     xmlns:u="https://irihi.tech/ursa"
     xmlns:u-semi="https://irihi.tech/ursa/themes/semi"
-    xmlns:vbox="clr-namespace:VariableBox;assembly=VariableBox"
-    xmlns:vbox-themes="clr-namespace:VariableBox.Themes;assembly=VariableBox"
+    xmlns:vbox="https://github.com/heartacker/VariableBox.Avalonia"
     RequestedThemeVariant="Default"
     >
     <Application.DataTemplates>
@@ -16,13 +15,13 @@
     <Application.Styles>
 
         <FluentTheme />
-        <vbox-themes:FluentTheme Locale="zh-CN" />
+        <vbox:FluentTheme Locale="zh-CN" />
 
         <!--<semi:SemiTheme Locale="zh-CN" />-->
-        <!--<vbox-themes:SemiTheme Locale="zh-CN" />-->
+        <!--<vbox:SemiTheme Locale="zh-CN" />-->
 
         <!-- <SimpleTheme />
-        <vbox-themes:SimpleTheme Locale="zh-CN" />-->
+        <vbox:SimpleTheme Locale="zh-CN" />-->
 
         <u-semi:SemiTheme Locale="zh-CN" />
 
