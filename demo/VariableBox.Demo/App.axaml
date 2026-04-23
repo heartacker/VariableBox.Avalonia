@@ -14,11 +14,13 @@
     </Application.DataTemplates>
     <Application.Styles>
 
+        <!--  使用 Fluent 主题  -->
         <FluentTheme />
         <vbox:FluentTheme Locale="zh-CN" />
 
-        <semi:SemiTheme Locale="zh-CN" />
-        <u-semi:SemiTheme Locale="zh-CN" />
+        <!--  禁用 Semi 主题  -->
+        <!--<semi:SemiTheme Locale="zh-CN" />
+        <u-semi:SemiTheme Locale="zh-CN" />-->
 
         <Style Selector="vbox|NumericUpDown">
             <!-- <Setter Property="FontFamily" Value="Sarasa Mono SC" /> -->
