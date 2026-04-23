@@ -162,13 +162,13 @@ public abstract partial class NumericUpDownBase<T> : NumericUpDown where T : str
 
     public override void Increase()
     {
-        var v = Value ?? Operations.Zero;
+        T v = Value ?? (IsSet(MinimumProperty) ? Minimum : Operations.Zero);
         Value = Operations.Clamp(Operations.Add(v, Step), Minimum, Maximum);
     }
 
     public override void Decrease()
     {
-        var v = Value ?? Operations.Zero;
+        T v = Value ?? (IsSet(MaximumProperty) ? Maximum : Operations.Zero);
         Value = Operations.Clamp(Operations.Subtract(v, Step), Minimum, Maximum);
     }
 
@@ -181,38 +181,51 @@ public abstract partial class NumericUpDownBase<T> : NumericUpDown where T : str
         {
             if (fromText)
             {
-                if (Operations.TryParse(text, ParsingNumberStyle, NumberFormat, out T val))
+                T val;
+                bool ok = false;
+                if (TextConverter != null)
+                {
+                    try {
+                        var converted = TextConverter.Convert(text, typeof(T?), null, CultureInfo.CurrentCulture);
+                        if (converted is T t) { val = t; ok = true; }
+                        else val = default;
+                    } catch { val = default; }
+                }
+                else
+                {
+                    ok = Operations.TryParse(text, ParsingNumberStyle, NumberFormat, out val);
+                }
+
+                if (ok)
                 {
                     bool customValidationPassed = true;
                     if (ValidationRules != null)
                     {
                         foreach (var rule in ValidationRules)
                         {
-                            if (!rule.Validate(val).IsValid)
-                            {
-                                customValidationPassed = false;
-                                break;
-                            }
+                            if (!rule.Validate(val).IsValid) { customValidationPassed = false; break; }
                         }
                     }
 
-                    if (customValidationPassed)
-                    {
-                        Value = Operations.Clamp(val, Minimum, Maximum);
-                    }
-                    else
-                    {
-                        result = false;
-                    }
+                    if (customValidationPassed) Value = Operations.Clamp(val, Minimum, Maximum);
+                    else result = false;
                 }
-                else
-                {
-                    result = false;
-                }
+                else result = false;
             }
+
             if (forceUpdate && _textBox != null)
             {
-                _textBox.Text = Operations.ToString(Value, FormatString, NumberFormat);
+                string? newText = null;
+                if (TextConverter != null)
+                    newText = TextConverter.ConvertBack(Value, typeof(string), null, CultureInfo.CurrentCulture)?.ToString();
+                else
+                    newText = Operations.ToString(Value, FormatString, NumberFormat);
+
+                if (_textBox.Text != newText)
+                {
+                    _textBox.Text = newText;
+                    _textBox.CaretIndex = newText?.Length ?? 0;
+                }
             }
             SetValidSpinDirection();
         }
@@ -236,7 +249,7 @@ public abstract partial class NumericUpDownBase<T> : NumericUpDown where T : str
                 if (!result.IsValid)
                 {
                     isEditingValid = false;
-                    DataValidationErrors.SetErrors(this, new[] { result.Message ?? "Invalid value" });
+                    DataValidationErrors.SetErrors(this, new System.Collections.Generic.List<string> { result.Message ?? "Invalid value" });
                     break;
                 }
             }
